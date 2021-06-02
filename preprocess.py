@@ -3,6 +3,7 @@ import os
 
 import numpy as np
 import matplotlib.pyplot as plt
+from tqdm import tqdm
 
 from temp_calibration import fit_center
 dir_path = '/Users/mingchiang/Desktop/Work/sara-socket-client/Scripts/0531_test/00500us_020.00W/'
@@ -30,20 +31,19 @@ def parse_name(fn):
 
 def average_images(png_ls):
     im_ls = []
-    for png in png_ls:
-        im_ls.append(plt.imread(png).astype(float))
+    for png in tqdm(png_ls, desc='Reading imgs...'):
+        im_ls.append(plt.imread(png).astype(float)[:,:,2])
     im_arr = np.array(im_ls)
     return np.mean(im_arr, axis=0)
 
-def shift_calibration_to_imgs(png_ls, blank_im, kappa):
+def shift_calibration_to_imgs(ims, blank_im, kappa):
     im_ls = [] 
     xs = []
     ys = []
-    for png in png_ls:
-        im = plt.imread(png).astype(float) - blank_im
-        im = im/blank_im/kappa
-        im_ls.append(im)
-        x, y = fit_center(im)
+    for im in tqdm(ims, desc='Read and find center...'):
+        temp = im_to_temp(im, blank_im, kappa)
+        im_ls.append(temp)
+        x, y = fit_center(temp)
         xs.append(x)
         ys.append(y)
     xs = np.array(xs)
@@ -51,10 +51,14 @@ def shift_calibration_to_imgs(png_ls, blank_im, kappa):
     mx = np.mean(xs)
     my = np.mean(ys)
     for idx, _ in enumerate(im_ls):
-        im_ls[idx] = np.roll(im_ls[idx], int(xs[idx]-mx))
-        im_ls[idx] = np.roll(im_ls[idx], int(ys[idx]-my))
+        im_ls[idx] = np.roll(im_ls[idx], int(mx-xs[idx]))
+        im_ls[idx] = np.roll(im_ls[idx], int(my-ys[idx]))
 
     return im_ls
+
+def im_to_temp(im, blank_im, kappa):
+    im = im-blank_im
+    return im/blank_im/kappa
 
 def plot_blue(png_ls, safe_at=None):
     for png in png_ls:
