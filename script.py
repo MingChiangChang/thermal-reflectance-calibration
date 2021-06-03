@@ -15,6 +15,7 @@ from tqdm import tqdm
 from CalibMnger import CalibMnger
 from error_funcs import twod_surface, power_fit_func, linear
 
+
 directory = '/Users/mingchiang/Desktop/2021.03.09_calib/raw_data/'
 with open('yaml/co2_data.yaml') as file:
 #directory = '/Users/mingchiang/Desktop/Work/thermal-reflectance-calibration/'

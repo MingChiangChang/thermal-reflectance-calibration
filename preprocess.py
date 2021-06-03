@@ -10,6 +10,12 @@ dir_path = '/Users/mingchiang/Desktop/Work/sara-socket-client/Scripts/0531_test/
 
 png_ls = sorted(glob.glob(dir_path + '*'))
 
+def parse_laser_cond(dir_name):
+    cond = {}
+    cond['dwell'] = int(dir_name[:dir_name.index('us')])
+    cond['power'] = int(dir_name[dir_name.index('_':-1)])
+    return cond
+
 def parse_names(png_ls):
     cond_ls = []
     for png in png_ls:

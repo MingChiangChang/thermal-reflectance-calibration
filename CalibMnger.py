@@ -8,7 +8,8 @@ from error_funcs import jacobian_twod_surface
 
 class CalibMnger():
 
-    def __init__(self, fp, yaml_dict):
+    def __init__(self, raw_fp=None, yaml_dict=False,
+            dw_ls=None, pw_ls=None, imgs=None):
         
         self.block_lst = []
         self.power_lst = []
@@ -18,15 +19,21 @@ class CalibMnger():
         self.param_fitting_param = {} 
         self.temp_surface_params = []
         self.cov = []
-
-        for cond in tqdm(yaml_dict, desc='Loading blocks'):
-            dwell, power = self.parse_condition(cond) 
-            self.power_lst.append(int(power))
-            self.dwell_lst.append(np.log10(int(dwell)))
-            dir_path = fp + '{}us/{}W/'.format(dwell, power)
-            for s in yaml_dict[cond]:
-                self.block_lst.append(Block(dir_path, yaml_dict[cond][s],
-                                            dwell, power))
+        
+        if yaml_dict:
+            for cond in tqdm(yaml_dict, desc='Loading blocks'):
+                dwell, power = self.parse_condition(cond) 
+                self.power_lst.append(int(power))
+                self.dwell_lst.append(np.log10(int(dwell)))
+                dir_path = fp + '{}us/{}W/'.format(dwell, power)
+                for s in yaml_dict[cond]:
+                    self.block_lst.append(Block(dir_path, yaml_dict[cond][s],
+                                                dwell, power))
+        else:
+            self.dwell_lst = np.log10(np.array(dw_ls))
+            self.power_lst = np.array(pw_ls)
+            for dw, pw in zip(self.dwell_lst, self.power_lst):
+                self.block_lst.append(Block(im, dw, pw))
 
     def __len__(self):
         return len(self.block_lst)

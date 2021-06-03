@@ -12,26 +12,13 @@ class Block():
     
     kappa = 1.3*10**-4
 
-    def __init__(self, fp, f_dict, dwell, power):
+    def __init__(self, img, dwell, power):
         
-        self.dark_blank = 0#self.read_and_average(fp, f_dict['dark_blank'])
-        #self.blank = self.read_and_average(fp, f_dict['blank'])
-        
-        #self.blank = plt.imread('/Users/mingchiang/Desktop/2021.03.09_calib/5000us/55W/live_000.bmp')[:,:,2].astype(float)
-        self.dark = 0#self.read_and_average(fp, f_dict['dark'])
-        self.live = self.read_and_average(fp, f_dict['live'])
-
-        self.temp = np.zeros(self.live.shape)
-        #self.temp = self.process_image()
+        self.temp = img 
         self.beam = None
 
         self.dwell = dwell
         self.power = power
-
-        if int(self.dwell)==2000:
-            self.blank = self.read_and_average(fp, f_dict['blank'])
-        else:
-            self.blank = plt.imread('/Users/mingchiang/Desktop/2021.03.09_calib/raw_data/5000us/55W/live_000.bmp')[:,:,2].astype(float)
 
         self.tpeak = 0
         self.center = 0
@@ -61,26 +48,6 @@ class Block():
                                                     self.y_shift,
                                                     self.x_shift+self.x_width,
                                                     self.y_shift+self.y_width))
-
-    def read_and_average(self, fp, img_lst):
-        for i, fn in enumerate(img_lst):
-            if i==0:
-                image = plt.imread(fp+fn)[:,:,2].astype(float)
-            else:
-                new = plt.imread(fp+fn)[:,:,2].astype(float)
-                #print(new.shape)
-                #plt.imshow(new)
-                #plt.title('new')
-                #plt.show()
-                image = image + new 
-                #plt.imshow(image)
-                #plt.title(str(i))
-                #plt.show()
-        image = image/len(img_lst)
-        #plt.imshow(image)
-        #plt.title('Averaged')
-        #plt.show()
-        return image
     
     def process_image(self):
         '''
@@ -94,20 +61,8 @@ class Block():
         self.temp = therm/self.kappa
         del self.dark, self.blank, self.dark_blank, self.live
 
-    def plot_data(self):
-        '''Plot readin image for debugging'''
-        _, axs = plt.subplots(2,2)
-        axs[0,0].imshow(self.dark_blank)
-        axs[0,0].set_title('Dark Blank')
-        axs[0,1].imshow(self.blank)
-        axs[0,1].set_title('Blank')
-        axs[1,0].imshow(self.dark)
-        axs[1,0].set_title('Dark')
-        axs[1,1].imshow(self.live)
-        axs[1,1].set_title('Live')
-        plt.show()
-
     def get_beam(self, threshold=0.6):
+        # Need to be changed
         self.x_shift, self.x_width,\
         self.y_shift, self.y_width = (200, 400, 200, 900) 
         print(self.x_shift, self.x_width, self.y_shift, self.y_width)
