@@ -8,27 +8,26 @@ from error_funcs import jacobian_twod_surface
 
 class CalibMnger():
 
-    def __init__(self, raw_fp=None, yaml_dict=False,
-            dw_ls=None, pw_ls=None, imgs=None):
+    def __init__(self, dw_ls=None, pw_ls=None, imgs=None):
         
         self.block_lst = []
         self.power_lst = []
-        self.dwell_lst = []
+        self.dwell_lst = []  # log10 dwells
         self.tpeak_lst = []
         
         self.param_fitting_param = {} 
         self.temp_surface_params = []
         self.cov = []
         
-        if yaml_dict:
-            for cond in tqdm(yaml_dict, desc='Loading blocks'):
-                dwell, power = self.parse_condition(cond) 
-                self.power_lst.append(int(power))
-                self.dwell_lst.append(np.log10(int(dwell)))
-                dir_path = fp + '{}us/{}W/'.format(dwell, power)
-                for s in yaml_dict[cond]:
-                    self.block_lst.append(Block(dir_path, yaml_dict[cond][s],
-                                                dwell, power))
+        #if yaml_dict:
+        #    for cond in tqdm(yaml_dict, desc='Loading blocks'):
+        #        dwell, power = self.parse_condition(cond) 
+        #        self.power_lst.append(int(power))
+        #        self.dwell_lst.append(np.log10(int(dwell)))
+        #        dir_path = fp + '{}us/{}W/'.format(dwell, power)
+        #        for s in yaml_dict[cond]:
+        #            self.block_lst.append(Block(dir_path, yaml_dict[cond][s],
+        #                                        dwell, power))
         else:
             self.dwell_lst = np.log10(np.array(dw_ls))
             self.power_lst = np.array(pw_ls)
@@ -46,12 +45,8 @@ class CalibMnger():
     def fit_tpeak(self):
         ''' Make every block fit their data '''
         for block in tqdm(self.block_lst, desc='Fitting tpeak and profile'):
-            block.process_image()
+            #block.process_image()
             block.get_beam()
-            #fig, axs = plt.subplots(2)
-            #axs[0].imshow(block.temp)
-            #axs[1].imshow(block.beam)
-            #plt.show()
             block.fit_center()
             block.fit_two_gaussian()
             self.tpeak_lst.append(block.tpeak)

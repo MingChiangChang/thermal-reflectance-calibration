@@ -49,17 +49,17 @@ class Block():
                                                     self.x_shift+self.x_width,
                                                     self.y_shift+self.y_width))
     
-    def process_image(self):
-        '''
-        Process the loaded files into temperature profile ready to
-        be fitted.
-        '''
-        live_sub = self.live-self.blank
-        dark_sub = self.dark-self.dark_blank
-        dI = live_sub-dark_sub
-        therm = dI/self.blank
-        self.temp = therm/self.kappa
-        del self.dark, self.blank, self.dark_blank, self.live
+    #def process_image(self):
+    #    '''
+    #    Process the loaded files into temperature profile ready to
+    #    be fitted.
+    #    '''
+    #    live_sub = self.live-self.blank
+    #    dark_sub = self.dark-self.dark_blank
+    #    dI = live_sub-dark_sub
+    #    therm = dI/self.blank
+    #    self.temp = therm/self.kappa
+    #    del self.dark, self.blank, self.dark_blank, self.live
 
     def get_beam(self, threshold=0.6):
         # Need to be changed

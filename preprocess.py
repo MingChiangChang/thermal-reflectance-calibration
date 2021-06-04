@@ -6,14 +6,11 @@ import matplotlib.pyplot as plt
 from tqdm import tqdm
 
 from temp_calibration import fit_center
-dir_path = '/Users/mingchiang/Desktop/Work/sara-socket-client/Scripts/0531_test/00500us_020.00W/'
-
-png_ls = sorted(glob.glob(dir_path + '*'))
 
 def parse_laser_cond(dir_name):
     cond = {}
     cond['dwell'] = int(dir_name[:dir_name.index('us')])
-    cond['power'] = int(dir_name[dir_name.index('_':-1)])
+    cond['power'] = float(dir_name[dir_name.index('_')+1:-1])
     return cond
 
 def parse_names(png_ls):
@@ -64,6 +61,9 @@ def shift_calibration_to_imgs(ims, blank_im, kappa):
 
 def im_to_temp(im, blank_im, kappa):
     im = im-blank_im
+    im = im/blank_im/kappa
+    plt.imshow(im)
+    plt.show()
     return im/blank_im/kappa
 
 def plot_blue(png_ls, safe_at=None):
@@ -75,3 +75,9 @@ def plot_blue(png_ls, safe_at=None):
         else:
             plt.show()
         plt.close()
+
+if __name__ == '__main__':
+    # For testing purpose
+    dir_path = '/Users/mingchiang/Desktop/Work/sara-socket-client/Scripts/0531_test/00500us_020.00W/'
+
+    png_ls = sorted(glob.glob(dir_path + '*'))
