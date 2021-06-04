@@ -1,5 +1,6 @@
 import glob
 import os
+import yaml
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -12,6 +13,11 @@ def parse_laser_cond(dir_name):
     cond['dwell'] = int(dir_name[:dir_name.index('us')])
     cond['power'] = float(dir_name[dir_name.index('_')+1:-1])
     return cond
+
+def get_full_condition(cond):
+    dwell = str(cond['dwell'])+'us'
+    power = str(int(cond['power']))+'W'
+    return f'{dwell}_{power}'
 
 def parse_names(png_ls):
     cond_ls = []
@@ -32,6 +38,16 @@ def parse_name(fn):
          'num': temp[3]}
     return d
 
+def recon_fn(name_dict):
+    LED_status = 'On' if name_dict['LED'] else 'Off'
+    Laser_status = 'On' if name_dict['Laser'] else 'Off'
+
+    return 'Run-{}_LED-{}_Power-{}_Frame-{}.png'.format(
+                str(name_dict['Run']).zfill(4),
+                LED_status, Laser_status, 
+                str(name_dict['num']).zfill(4))
+
+
 def average_images(png_ls):
     im_ls = []
     for png in tqdm(png_ls, desc='Reading imgs...'):
@@ -39,14 +55,14 @@ def average_images(png_ls):
     im_arr = np.array(im_ls)
     return np.mean(im_arr, axis=0)
 
-def shift_calibration_to_imgs(ims, blank_im, kappa):
+def shift_calibration_to_imgs(ims, blank_im, kappa, t, dwell, num, plot):
     im_ls = [] 
     xs = []
     ys = []
     for im in tqdm(ims, desc='Read and find center...'):
         temp = im_to_temp(im, blank_im, kappa)
         im_ls.append(temp)
-        x, y = fit_center(temp)
+        x, y = fit_center(temp, t, dwell, num, plot)
         xs.append(x)
         ys.append(y)
     xs = np.array(xs)
@@ -62,9 +78,7 @@ def shift_calibration_to_imgs(ims, blank_im, kappa):
 def im_to_temp(im, blank_im, kappa):
     im = im-blank_im
     im = im/blank_im/kappa
-    plt.imshow(im)
-    plt.show()
-    return im/blank_im/kappa
+    return im
 
 def plot_blue(png_ls, safe_at=None):
     for png in png_ls:
@@ -75,6 +89,15 @@ def plot_blue(png_ls, safe_at=None):
         else:
             plt.show()
         plt.close()
+
+def get_wanted_frames(yaml_path):
+    '''
+    yaml structure:
+    {cond: [wanted frames]}
+    '''
+    with open(yaml_path, 'r') as f:
+        yaml_dict = yaml.load(f, Loader=yaml.FullLoader)
+    return yaml_dict 
 
 if __name__ == '__main__':
     # For testing purpose

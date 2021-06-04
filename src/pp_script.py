@@ -30,45 +30,34 @@ plt.title('Blank')
 plt.show()
 
 # Read from yaml
-frame_dict = 0
+yaml_path = '../data/yaml/test.yaml'
+wanted_frames = pp.get_wanted_frames(yaml_path) 
 
 for dir_path in dir_path_ls[10:11]:
     print(dir_path)
-    laser_cond = pp.parse_laser_cond(os.path.basename(dir_path))
+    laser_cond_dict = pp.parse_laser_cond(os.path.basename(dir_path))
+    full_condition = pp.get_full_condition(laser_cond_dict)
+    print(full_condition)
     png_ls = sorted(glob.glob(dir_path + '/*'))
     condition_ls = pp.parse_names(png_ls)
 
     live = []
-    #dark = []
-    #blank = []
-    #dark_blank = []
 
     for path, cond in zip(png_ls, condition_ls):
         print(cond)
-        if cond['LED'] and cond['Laser'] 
-           and cond['num'] in frame_dict[laser_cond]:
-#            # Choose desired frames here
-#            # Need a quick visualize method
-#            # if cond['num'] in [########]: 
+        if cond['LED'] and cond['Laser']\
+           and cond['num'] in wanted_frames[full_condition]:
             live.append(dict(cond, path=path))
-        #elif cond['LED']:
-        #    blank.append(dict(cond, path=path))
-        #elif cond['Laser']:
-        #    dark.append(dict(cond, path=path))
-        #else:
-        #    dark_blank.append(dict(cond, path=path))
-#
-#    print(len(live), len(dark), len(blank), len(dark_blank))
-#
-#    dark_im = pp.average_images([d['path'] for d in dark])
-#    blank_im = pp.average_images([b['path'] for b in blank])
-#    db_im = pp.average_images([db['path'] for db in blank])
-#
-#    # Once usable frame is chosen, just need to shift and stack the images
+
+    # Once usable frame is chosen, just need to shift and stack the images
     live_ims = []
     for l in tqdm(live):
         live_ims.append(plt.imread(l['path']).astype(float)[:,:,2])
-    shifted_ims = np.array(pp.shift_calibration_to_imgs(live_ims, blank_im, kappa))
+    shifted_ims = np.array(pp.shift_calibration_to_imgs(
+                           live_ims, blank_im,
+                           kappa))#, laser_cond_dict['power'],
+                           #laser_cond_dict['dwell'], cond['num'], 
+                           #plot=True ))
     temp = np.sum(shifted_ims, axis=0)
     if plot:
         plt.imshow(temp)
