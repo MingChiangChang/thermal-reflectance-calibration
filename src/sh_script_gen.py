@@ -33,27 +33,99 @@ def add_header(f):
     f.write('\n')
 
 def add_commend(f, **kwargs):
-    f.write('python ThermalReflectance.py ')
+    f.write('python3 ThermalReflectance.py ')
     for key, item in kwargs.items():
         f.write(f'-{key} {item} ')
     f.write('\n')
-
 
 def add_condition_grid(f, dw_ls, pw_ls, xr, ymin, ymax, **kwargs):
     xs = np.min(xr)
     for dw in dw_ls:
         for pw in pw_ls:
-            new_dict = dict(kwargs, d=dw, p=pw, pmin=f'{xs} {ymin}', pmax=f'{xs} {ymax}')
+            new_dict = dict(kwargs, d=dw, p=pw, 
+                            pmin=f'{xs} {ymin}',
+                            pmax=f'{xs} {ymax}')
             add_commend(f, **new_dict)
             #xs += 0.01
             if xs > np.max(xr): 
-                return
+                print('Failed. Position requested out of bound.')
+
+def add_dws_n_powers(f, dws, pws, **kwargs):
+    for dw, pw in zip(dws, pws):
+        new_dict = dict(kwargs, d=dw, p=pw)
+        add_commend(f, **new_dict)
+
+def add_moving_scan(f, interval, **kwargs):
+    num = kwargs['n']
+    for i in range(num):
+        kwargs['n'] = 1
+        x, y = parse_position(kwargs['pmin'])
+        new_x = str(float(x)+interval)
+        kwargs['pmin'] = f'{new_x} {y}'
+        add_commend(f, **kwargs)
+
+def parse_position(s):
+    xy = s.split(' ')
+    x = xy[0]
+    y = xy[1]
+    return x, y
 
 if __name__ == '__main__':
+    conditions = {
+            '250': 
+               { 'power': np.linspace(20, 80, 13),
+                 'runs': 10 },
+            '377': 
+               { 'power': np.linspace(20, 80, 13),
+                 'runs': 10 },
+            '567': 
+               { 'power': np.linspace(20, 80, 13),
+                 'runs': 10 },
+            '855': 
+               { 'power': np.linspace(20, 70, 11),
+                 'runs': 10 },
+            '1288': 
+               { 'power': np.linspace(20, 60, 9),
+                 'runs': 10},
+            '1941': 
+               { 'power': np.linspace(20, 60, 9),
+                 'runs': 10},
+            '2924': 
+               { 'power': np.linspace(20, 55, 8),
+                 'runs': 10},
+            '4405': 
+               { 'power': np.linspace(20, 50, 7),
+                 'runs': 10},
+            '6637': 
+               { 'power': np.linspace(20, 50, 7),
+                 'runs': 10},
+            '10000': 
+               { 'power': np.linspace(20, 50, 7),
+                 'runs': 10}
+            }
+
     with open('test.sh', 'w') as f:
         add_header(f)
         add_commend(f, n=1, pmin='0 -20', pmax='0 -20',
                    d=800, p=30, pre='TEST', c='True')
-        add_condition_grid(f, [250, 500, 1000], [15, 20, 25, 30, 35, 40, 45, 50, 55, 60], n=5,
-                           xr=(0, 20), ymin=-40, ymax=40, pre='0603')
+        #add_condition_grid(f, [250, 500, 1000],
+        #                  [15, 20, 25, 30, 35, 40, 45, 50, 55, 60],
+        #                  n=5, xr=(0, 20), ymin=-40, ymax=40, pre='0603')
+        interval = 0.1
+        counter = 0
+        for dw in conditions:
+            for t in conditions[dw]['power']:
+                runs = conditions[dw]['runs']
+                x_pos = counter % 40 - 20 
+                if float(dw)>1000 or t>55:
+                    add_moving_scan(f, interval, n=runs, d=dw, p=t,
+                                pmin=f'{x_pos} -20',
+                                pmax=f'{x_pos} 20',
+                                pre='0607')
+                else:
+                    add_commend(f, n=runs, d=dw, p=t,
+                                pmin=f'{x_pos} -20',
+                                pmax=f'{x_pos} 20',
+                                pre='0607')
+                counter += 5 
 

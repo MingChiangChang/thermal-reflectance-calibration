@@ -55,9 +55,9 @@ for dir_path in dir_path_ls[10:11]:
         live_ims.append(plt.imread(l['path']).astype(float)[:,:,2])
     shifted_ims = np.array(pp.shift_calibration_to_imgs(
                            live_ims, blank_im,
-                           kappa))#, laser_cond_dict['power'],
-                           #laser_cond_dict['dwell'], cond['num'], 
-                           #plot=True ))
+                           kappa, laser_cond_dict['power'],
+                           laser_cond_dict['dwell'], cond['num'], 
+                           plot=True ))
     temp = np.sum(shifted_ims, axis=0)
     if plot:
         plt.imshow(temp)

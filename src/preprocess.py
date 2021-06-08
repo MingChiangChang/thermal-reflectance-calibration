@@ -1,3 +1,9 @@
+'''
+Functions for turning raw data into usable input data for 
+CalibMnger. The process involves stacking beams on top of 
+each other and averages.
+'''
+
 import glob
 import os
 import yaml
@@ -55,7 +61,24 @@ def average_images(png_ls):
     im_arr = np.array(im_ls)
     return np.mean(im_arr, axis=0)
 
-def shift_calibration_to_imgs(ims, blank_im, kappa, t, dwell, num, plot):
+def shift_calibration_to_imgs(ims, blank_im, kappa, 
+                   t=False, dwell=False, num=False, plot=False):
+    '''
+    Take an array of images (which are np arrays) and blank image for 
+    subtracting the background. The image is then fitted with a double
+    gaussian and use the center to algn all the images to get a good 
+    profile.
+
+    Input:
+    ims: array of images, np arrays
+    blank_im: single 2d array
+    kappa: thermal reflectance constant calibrated to silicon melt
+    # Plotting paramters
+    t: tpeak
+    dwell: as is
+    num: number of frames
+    plot: boolean for whether to plot the fitted beam profile
+    '''
     im_ls = [] 
     xs = []
     ys = []
@@ -70,8 +93,8 @@ def shift_calibration_to_imgs(ims, blank_im, kappa, t, dwell, num, plot):
     mx = np.mean(xs)
     my = np.mean(ys)
     for idx, _ in enumerate(im_ls):
-        im_ls[idx] = np.roll(im_ls[idx], int(mx-xs[idx]))
-        im_ls[idx] = np.roll(im_ls[idx], int(my-ys[idx]))
+        im_ls[idx] = np.roll(im_ls[idx], int(mx-xs[idx]), axis=0)
+        im_ls[idx] = np.roll(im_ls[idx], int(my-ys[idx]), axis=1)
 
     return im_ls
 
