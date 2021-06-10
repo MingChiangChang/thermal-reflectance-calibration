@@ -27,14 +27,12 @@ def preprocess(live_img_path, wanted_frames, blank_img_input,
         blank_im = blank_img_input
     else:
         blank_im = get_average_blue_img(blank_img_input)
-    
-
-
-    live_imgs = read_img_array(live_img_paths)
-    live_imgs = live_imgs[wanted_frams]
-    live_imgs = shift_calibration_to_imgs(live_imgs, blank_im) 
+    png_ls = generate_png_names_from_dict(wanted_frames)  
+    png_ls = [live_img_path + '/' + png for png in png_ls]
+    live_imgs = read_img_array(png_ls)
+    live_imgs, xs, ys  = shift_calibration_to_imgs(live_imgs, blank_im) 
     live_img = np.mean(live_imgs, axis=0)
-    return live_img-blank_im
+    return live_img, xs, ys
 
 def generate_png_name(run, led, laser, num):
     l = 'On' if led else 'Off'
@@ -129,8 +127,10 @@ def shift_calibration_to_imgs(imgs, blank_im,
     '''
     xs = []
     ys = []
-    for img in tqdm(imgs, desc='Read and find center...'):
-        x, y = fit_center(im, t, dwell, num, plot)
+
+    for idx, _ in tqdm(enumerate(imgs), desc='Read and find center...'):
+        imgs[idx] = imgs[idx]-blank_im
+        x, y = fit_center(imgs[idx], t, dwell, num, plot)
         xs.append(x)
         ys.append(y)
     xs = np.array(xs)
@@ -140,8 +140,7 @@ def shift_calibration_to_imgs(imgs, blank_im,
     for idx, _ in enumerate(imgs):
         imgs[idx] = np.roll(imgs[idx], int(mx-xs[idx]), axis=0)
         imgs[idx] = np.roll(imgs[idx], int(my-ys[idx]), axis=1)
-
-    return imgs
+    return imgs, xs, ys
 
 def im_to_temp(im, blank_im, kappa):
     im = im-blank_im

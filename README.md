@@ -4,7 +4,7 @@ Developed for calibrating the laser spike annealing system in Michael O. Thompso
 ## TODOs
 - [x] Reading yaml to select images
 - [x] Quick image selection method
-- [ ] Stacking images correclty
+- [x] Stacking images correclty
 - [ ] On-the-fly summerizing data
 
 ## Concept
@@ -31,6 +31,10 @@ To be done
 * Refine yaml frame choosing scheme
 * Refine script for running the preprocess
 * Finish data collection
+
+### 6/10
+* Get first scan averaged (Finally!!)
+
 
 ### Some Remarks
 * Calibration procedure should start from finding the melting power at each dwell first
