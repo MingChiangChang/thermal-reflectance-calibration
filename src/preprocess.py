@@ -7,6 +7,7 @@ each other and averages.
 import glob
 import os
 import yaml
+from pathlib import Path
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -14,7 +15,51 @@ from tqdm import tqdm
 
 from temp_calibration import fit_center
 
-def parse_laser_cond(dir_name):
+def preprocess(live_img_path, wanted_frames, blank_img_input,
+               bypass=False):
+    '''
+    Take a directory of live images, a directory of blank images
+    and a yaml file as input then output the image that is ready
+    to be put into the calibration module. Probably don't want
+    to include kappa.
+    '''
+    if bypass:
+        blank_im = blank_img_input
+    else:
+        blank_im = get_average_blue_img(blank_img_input)
+    
+
+
+    live_imgs = read_img_array(live_img_paths)
+    live_imgs = live_imgs[wanted_frams]
+    live_imgs = shift_calibration_to_imgs(live_imgs, blank_im) 
+    live_img = np.mean(live_imgs, axis=0)
+    return live_img-blank_im
+
+def generate_png_name(run, led, laser, num):
+    l = 'On' if led else 'Off'
+    p = 'On' if laser else 'Off'
+    return f'Run-{run.zfill(4)}_LED-{l}_Power-{p}_Frame-{num.zfill(4)}.png'
+
+def generate_png_names_from_dict(frame_dict):
+    png_ls = []
+    for run in frame_dict:
+        for frame in frame_dict[run]:
+            png_ls.append(generate_png_name(str(run), True,
+                                            True, str(frame)))
+    return png_ls
+
+def read_img_array(img_ls):
+    read_img_ls = []
+    for img in tqdm(img_ls, desc=f'Reading Image Array...'):
+        read_img_ls.append(plt.imread(img).astype(float)[:,:,2])
+    return np.array(read_img_ls)
+
+def get_average_blue_img(img_ls):
+    imgs = read_img_array(img_ls)
+    return np.mean(imgs, axis=0)
+ 
+def parse_laser_condition(dir_name):
     cond = {}
     cond['dwell'] = int(dir_name[:dir_name.index('us')])
     cond['power'] = float(dir_name[dir_name.index('_')+1:-1])
@@ -24,6 +69,9 @@ def get_full_condition(cond):
     dwell = str(cond['dwell'])+'us'
     power = str(int(cond['power']))+'W'
     return f'{dwell}_{power}'
+
+def simplify_dir_name(name):
+    return get_full_condition(parse_laser_condition(name))
 
 def parse_names(png_ls):
     cond_ls = []
@@ -61,7 +109,7 @@ def average_images(png_ls):
     im_arr = np.array(im_ls)
     return np.mean(im_arr, axis=0)
 
-def shift_calibration_to_imgs(ims, blank_im, kappa, 
+def shift_calibration_to_imgs(imgs, blank_im, 
                    t=False, dwell=False, num=False, plot=False):
     '''
     Take an array of images (which are np arrays) and blank image for 
@@ -79,48 +127,68 @@ def shift_calibration_to_imgs(ims, blank_im, kappa,
     num: number of frames
     plot: boolean for whether to plot the fitted beam profile
     '''
-    im_ls = [] 
     xs = []
     ys = []
-    for im in tqdm(ims, desc='Read and find center...'):
-        temp = im_to_temp(im, blank_im, kappa)
-        im_ls.append(temp)
-        x, y = fit_center(temp, t, dwell, num, plot)
+    for img in tqdm(imgs, desc='Read and find center...'):
+        x, y = fit_center(im, t, dwell, num, plot)
         xs.append(x)
         ys.append(y)
     xs = np.array(xs)
     ys = np.array(ys)
     mx = np.mean(xs)
     my = np.mean(ys)
-    for idx, _ in enumerate(im_ls):
-        im_ls[idx] = np.roll(im_ls[idx], int(mx-xs[idx]), axis=0)
-        im_ls[idx] = np.roll(im_ls[idx], int(my-ys[idx]), axis=1)
+    for idx, _ in enumerate(imgs):
+        imgs[idx] = np.roll(imgs[idx], int(mx-xs[idx]), axis=0)
+        imgs[idx] = np.roll(imgs[idx], int(my-ys[idx]), axis=1)
 
-    return im_ls
+    return imgs
 
 def im_to_temp(im, blank_im, kappa):
     im = im-blank_im
     im = im/blank_im/kappa
     return im
 
-def plot_blue(png_ls, safe_at=None):
+def plot_blue(png_ls, save_at=None):
     for png in png_ls:
         sc = plt.imshow(plt.imread(png)[:,:,2])
         plt.colorbar(sc)
-        if safe_at is not None:
-            plt.savefig(f'{safe_at}/{os.path.basename(png)}')
+        if save_at is not None:
+            plt.savefig(f'{save_at}/{os.path.basename(png)}')
         else:
             plt.show()
         plt.close()
 
-def get_wanted_frames(yaml_path):
+def plot_blue_for_dir(d, filetype):
+    '''
+    Take a directory, find all the {filetype} in the directory
+    and replot it with only the blue channel and save at 
+    the same directory
+    '''
+    p = Path(d)
+    img_ls = p.glob(f'*.{filetype}')
+    plot_blue(img_ls, save_at=str(p))
+
+def get_wanted_frames_for_condition(condition, yaml_path):
     '''
     yaml structure:
-    {cond: [wanted frames]}
+    {cond: run_num: [wanted frames]}
     '''
     with open(yaml_path, 'r') as f:
         yaml_dict = yaml.load(f, Loader=yaml.FullLoader)
-    return yaml_dict 
+    for run in yaml_dict[condition]:
+        l = yaml_dict[condition][run]
+        yaml_dict[condition][run] = make_continuous(l)
+    return yaml_dict[condition] 
+
+def make_continuous(l):
+    '''
+    Take a list with numbers, return a continuous integer
+    list between the minimum and the maximum of the list
+    e.g. [1,5] -> [1,2,3,4,5]
+    '''
+    minimum = np.min(l) 
+    maximum = np.max(l)
+    return np.linspace(minimum, maximum, maximum-minimum+1).astype(int).tolist()
 
 if __name__ == '__main__':
     # For testing purpose

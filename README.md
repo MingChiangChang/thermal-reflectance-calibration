@@ -21,7 +21,16 @@ To be done
 * Ran test run and found that the wafer was melted at the power that should not have melt the wafer according to previous data
 * Moving the position after each scan will only overlap the old images
 
-### 6/8 Plans
+### 6/8 
 * Investigate the data that I got on 6/7
 * Find the melting power at each dwell (How to define melt)
 * Max's fix 
+* Start another data collection
+
+### 6/9
+* Refine yaml frame choosing scheme
+* Refine script for running the preprocess
+* Finish data collection
+
+### Some Remarks
+* Calibration procedure should start from finding the melting power at each dwell first

@@ -74,58 +74,49 @@ if __name__ == '__main__':
     conditions = {
             '250': 
                { 'power': np.linspace(20, 80, 13),
-                 'runs': 10 },
+                 'runs': 30 },
             '377': 
                { 'power': np.linspace(20, 80, 13),
-                 'runs': 10 },
+                 'runs': 30 },
             '567': 
-               { 'power': np.linspace(20, 80, 13),
-                 'runs': 10 },
+               { 'power': np.linspace(20, 65, 10),
+                 'runs': 20 },
             '855': 
-               { 'power': np.linspace(20, 70, 11),
-                 'runs': 10 },
+               { 'power': np.linspace(20, 60, 9),
+                 'runs': 20 },
             '1288': 
-               { 'power': np.linspace(20, 60, 9),
-                 'runs': 10},
-            '1941': 
-               { 'power': np.linspace(20, 60, 9),
-                 'runs': 10},
-            '2924': 
                { 'power': np.linspace(20, 55, 8),
                  'runs': 10},
-            '4405': 
+            '1941': 
                { 'power': np.linspace(20, 50, 7),
+                 'runs': 10},
+            '2924': 
+               { 'power': np.linspace(20, 50, 7),
+                 'runs': 10},
+            '4405': 
+               { 'power': np.linspace(20, 45, 6),
                  'runs': 10},
             '6637': 
-               { 'power': np.linspace(20, 50, 7),
+               { 'power': np.linspace(20, 40, 5),
                  'runs': 10},
             '10000': 
-               { 'power': np.linspace(20, 50, 7),
+               { 'power': np.linspace(20, 40, 5),
                  'runs': 10}
             }
 
     with open('test.sh', 'w') as f:
         add_header(f)
         add_commend(f, n=1, pmin='0 -20', pmax='0 -20',
-                   d=800, p=30, pre='TEST', c='True')
+                   d=10000, pre='Calibration_0608', c='True')
         #add_condition_grid(f, [250, 500, 1000],
         #                  [15, 20, 25, 30, 35, 40, 45, 50, 55, 60],
         #                  n=5, xr=(0, 20), ymin=-40, ymax=40, pre='0603')
-        interval = 0.1
         counter = 0
         for dw in conditions:
             for t in conditions[dw]['power']:
                 runs = conditions[dw]['runs']
-                x_pos = counter % 40 - 20 
-                if float(dw)>1000 or t>55:
-                    add_moving_scan(f, interval, n=runs, d=dw, p=t,
-                                pmin=f'{x_pos} -20',
-                                pmax=f'{x_pos} 20',
-                                pre='0607')
-                else:
-                    add_commend(f, n=runs, d=dw, p=t,
-                                pmin=f'{x_pos} -20',
-                                pmax=f'{x_pos} 20',
-                                pre='0607')
-                counter += 5 
-
+                add_commend(f, n=runs, d=dw, p=t, m='r',
+                        yr='-25 25',
+                        xr='{:2f} {:2f}'.format(-40+counter*0.4, counter*0.4),
+                        pre='0608')
+                counter += 1
