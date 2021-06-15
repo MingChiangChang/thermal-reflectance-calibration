@@ -13,8 +13,14 @@ from skimage.restoration import estimate_sigma
 from scipy.ndimage import  rotate
 import yaml
 
-def fit_center(data, t=False, dwell=False, num=False, plot=False, savefig=False):
-    pfit, s_sq = fit_with(gaussian_shift, data, param_estimator=moments)
+def fit_center(data, center_estimate=False, t=False, dwell=False, num=False, plot=False, savefig=False):
+    if center_estimate:
+        params = list(moments(data))
+        params[1] = center_estimate[0]
+        params[2] = center_estimate[1]
+        pfit, s_sq = fit_with(gaussian_shift, data, param=params)
+    else:
+        pfit, s_sq = fit_with(gaussian_shift, data, param_estimator=moments)
     fit = gaussian_shift(*pfit)
     xs, ys = np.indices(data.shape)
     fitted = fit(*(xs, ys))

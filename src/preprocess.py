@@ -16,21 +16,25 @@ from tqdm import tqdm
 from temp_calibration import fit_center
 
 def preprocess(live_img_path, wanted_frames, blank_img_input,
-               bypass=False):
+               blank_bypass=False, center_estimate=False):
     '''
     Take a directory of live images, a directory of blank images
     and a yaml file as input then output the image that is ready
     to be put into the calibration module. Probably don't want
     to include kappa.
     '''
-    if bypass:
+    if blank_bypass:
         blank_im = blank_img_input
     else:
         blank_im = get_average_blue_img(blank_img_input)
     png_ls = generate_png_names_from_dict(wanted_frames)  
     png_ls = [live_img_path + '/' + png for png in png_ls]
     live_imgs = read_img_array(png_ls)
-    live_imgs, xs, ys  = shift_calibration_to_imgs(live_imgs, blank_im) 
+    if center_estimate:
+        live_imgs, xs, ys = shift_calibration_to_imgs(live_imgs, blank_im, 
+                                                      center_estimate)
+    else:
+        live_imgs, xs, ys  = shift_calibration_to_imgs(live_imgs, blank_im) 
     live_img = np.mean(live_imgs, axis=0)
     return live_img, xs, ys
 
@@ -48,10 +52,14 @@ def generate_png_names_from_dict(frame_dict):
     return png_ls
 
 def read_img_array(img_ls):
-    read_img_ls = []
-    for img in tqdm(img_ls, desc=f'Reading Image Array...'):
-        read_img_ls.append(plt.imread(img).astype(float)[:,:,2])
-    return np.array(read_img_ls)
+    width, height = get_dimension(img_ls[0])
+    read_img_arr = np.zeros((len(img_ls), width, height)) 
+    for idx, img in tqdm(enumerate(img_ls), desc=f'Reading Image Array...'):
+        read_img_arr[idx] = plt.imread(img).astype(float)[:,:,2]
+    return read_img_arr 
+
+def get_dimension(img):
+    return plt.imread(img).astype(float)[:,:,2].shape
 
 def get_average_blue_img(img_ls):
     imgs = read_img_array(img_ls)
@@ -90,6 +98,11 @@ def parse_name(fn):
          'num': temp[3]}
     return d
 
+def get_highest_power_for_cond(cond, all_conds):
+    pws = [c['power'] for c in all_conds 
+                      if c['dwell'] == cond['dwell']]
+    return np.max(pws)
+
 def recon_fn(name_dict):
     LED_status = 'On' if name_dict['LED'] else 'Off'
     Laser_status = 'On' if name_dict['Laser'] else 'Off'
@@ -107,7 +120,7 @@ def average_images(png_ls):
     im_arr = np.array(im_ls)
     return np.mean(im_arr, axis=0)
 
-def shift_calibration_to_imgs(imgs, blank_im, 
+def shift_calibration_to_imgs(imgs, blank_im, center_estimate=False,
                    t=False, dwell=False, num=False, plot=False):
     '''
     Take an array of images (which are np arrays) and blank image for 
@@ -130,7 +143,10 @@ def shift_calibration_to_imgs(imgs, blank_im,
 
     for idx, _ in tqdm(enumerate(imgs), desc='Read and find center...'):
         imgs[idx] = imgs[idx]-blank_im
-        x, y = fit_center(imgs[idx], t, dwell, num, plot)
+        if center_estimate:
+            x, y = fit_center(imgs[idx], center_estimate, t, dwell, num, plot)
+        else:
+            x, y = fit_center(imgs[idx], t=t, dwell=dwell, num=num, plot=plot)
         xs.append(x)
         ys.append(y)
     xs = np.array(xs)
@@ -167,17 +183,19 @@ def plot_blue_for_dir(d, filetype):
     img_ls = p.glob(f'*.{filetype}')
     plot_blue(img_ls, save_at=str(p))
 
-def get_wanted_frames_for_condition(condition, yaml_path):
+def get_wanted_frames_for_condition(condition, yaml_dict):
     '''
     yaml structure:
     {cond: run_num: [wanted frames]}
     '''
-    with open(yaml_path, 'r') as f:
-        yaml_dict = yaml.load(f, Loader=yaml.FullLoader)
-    for run in yaml_dict[condition]:
-        l = yaml_dict[condition][run]
-        yaml_dict[condition][run] = make_continuous(l)
-    return yaml_dict[condition] 
+    try:
+        for run in yaml_dict[condition]:
+            l = yaml_dict[condition][run]
+            yaml_dict[condition][run] = make_continuous(l)
+        return yaml_dict[condition] 
+    except KeyError:
+        print('Condition not found! Returning empty list.')
+        return []
 
 def make_continuous(l):
     '''
