@@ -34,6 +34,19 @@ To be done
 
 ### 6/10
 * Get first scan averaged (Finally!!)
+* Summary of all conditions
+
+### 6/11
+* Get aveage image for all conditions
+* Generate yaml files 
+* For some reason does not run well on jugaur. Decided to run locally.
+
+### 6/14
+* Keep running
+* The low power part is not working well
+
+### 6/15
+* Use high power position to give good estimate of the peak position for the lower ones
 
 
 ### Some Remarks
