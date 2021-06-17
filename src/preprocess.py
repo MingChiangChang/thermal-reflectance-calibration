@@ -15,8 +15,9 @@ from tqdm import tqdm
 
 from temp_calibration import fit_center
 
-def preprocess(live_img_path, wanted_frames, blank_img_input,
-               blank_bypass=False, center_estimate=False):
+def preprocess(live_img_path, wanted_frames, blank_img_input, x_r=(0, 1024), y_r=(0, 1280),
+               blank_bypass=False, center_estimate=False,
+               t=False, dwell=False, plot=False, savefig=False):
     '''
     Take a directory of live images, a directory of blank images
     and a yaml file as input then output the image that is ready
@@ -24,17 +25,19 @@ def preprocess(live_img_path, wanted_frames, blank_img_input,
     to include kappa.
     '''
     if blank_bypass:
-        blank_im = blank_img_input
+        blank_im = blank_img_input[x_r[0]:x_r[1], y_r[0]:y_r[1]]
     else:
-        blank_im = get_average_blue_img(blank_img_input)
+        blank_im = get_average_blue_img(blank_img_input)[x_r[0]:x_r[1], y_r[0]:y_r[1]]
     png_ls = generate_png_names_from_dict(wanted_frames)  
     png_ls = [live_img_path + '/' + png for png in png_ls]
-    live_imgs = read_img_array(png_ls)
+    live_imgs = read_img_array(png_ls)[:, x_r[0]:x_r[1], y_r[0]:y_r[1]]
     if center_estimate:
         live_imgs, xs, ys = shift_calibration_to_imgs(live_imgs, blank_im, 
-                                                      center_estimate)
+                                                      center_estimate, 
+                                                      t, dwell, plot, savefig)
     else:
-        live_imgs, xs, ys  = shift_calibration_to_imgs(live_imgs, blank_im) 
+        live_imgs, xs, ys  = shift_calibration_to_imgs(live_imgs, blank_im,
+                                                    t=t, dwell=dwell, plot=plot, savefig=savefig) 
     live_img = np.mean(live_imgs, axis=0)
     return live_img, xs, ys
 
@@ -121,7 +124,7 @@ def average_images(png_ls):
     return np.mean(im_arr, axis=0)
 
 def shift_calibration_to_imgs(imgs, blank_im, center_estimate=False,
-                   t=False, dwell=False, num=False, plot=False):
+                   t=False, dwell=False, plot=False, savefig=False):
     '''
     Take an array of images (which are np arrays) and blank image for 
     subtracting the background. The image is then fitted with a double
@@ -144,9 +147,9 @@ def shift_calibration_to_imgs(imgs, blank_im, center_estimate=False,
     for idx, _ in tqdm(enumerate(imgs), desc='Read and find center...'):
         imgs[idx] = imgs[idx]-blank_im
         if center_estimate:
-            x, y = fit_center(imgs[idx], center_estimate, t, dwell, num, plot)
+            x, y = fit_center(imgs[idx], center_estimate, t, dwell, idx, plot, savefig)
         else:
-            x, y = fit_center(imgs[idx], t=t, dwell=dwell, num=num, plot=plot)
+            x, y = fit_center(imgs[idx], t=t, dwell=dwell, num=idx, plot=plot, savefig=savefig)
         xs.append(x)
         ys.append(y)
     xs = np.array(xs)

@@ -11,7 +11,15 @@ from preprocess import get_wanted_frames_for_condition, preprocess
 from preprocess import get_average_blue_img, get_highest_power_for_cond
 from temp_calibration import moments
 
-path = '/Users/mingchiang/Desktop/github/thermal-reflectance-calibration/data//0608/'
+### Global
+x_r = (400, 800)
+y_r = (400, 1000)
+
+# Mac
+#path = '/Users/mingchiang/Desktop/github/thermal-reflectance-calibration/data//0608/'
+# Linux
+path = '/home/mingchiang/Desktop/Data/0609/'
+
 
 def on_0608(dn):
     ''' Special function because our scans are done on different day'''
@@ -38,7 +46,7 @@ blank_img_0608 = np.load('blank_0608.npy')#get_average_blue_img(dark_imgs_0608)
 #np.save('blank_0609.npy', dark_img_0609)
 blank_img_0609 = np.load('blank_0609.npy')
 
-yaml_path = f'../data/yaml/test.yaml'
+yaml_path = f'../data/yaml/0609.yaml'
 
 with open(yaml_path, 'r') as f:
     yaml_dict = yaml.load(f, Loader=yaml.FullLoader)
@@ -64,12 +72,14 @@ for live_img_dir in live_img_dirs[::-1]:
             estimate = False
         if on_0608(os.path.basename(live_img_dir)):
             live_im, xs, ys = preprocess(live_img_dir, wanted_frame, 
-                                 blank_img_0608, blank_bypass=True, 
-                                 center_estimate=estimate)
+                                 blank_img_0608, x_r=x_r, y_r=y_r, blank_bypass=True, 
+                                 center_estimate=estimate, t=cond_dict['power'],
+                                 dwell=cond_dict['dwell'], plot=True, savefig=True)
         else:
-            live_im, xs, ys = preprocess(live_img_paths, wanted_frame,
-                                 blank_img_0609, blank_bypass=True,
-                                 center_estimate=estimate)
+            live_im, xs, ys = preprocess(live_img_dir, wanted_frame,
+                                 blank_img_0609, x_r=x_r, y_r=y_r, blank_bypass=True,
+                                 center_estimate=estimate, t=cond_dict['power'],
+                                 dwell=cond_dict['dwell'], plot=True, savefig=True)
     #plt.imshow(live_im)
     #plt.show()
 

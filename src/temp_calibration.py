@@ -32,8 +32,7 @@ def fit_center(data, center_estimate=False, t=False, dwell=False, num=False, plo
     if plot:
         fig, axs = plt.subplots(4)
         axs[0].imshow(data)
-        sc = axs[1].imshow(fitted)
-        plt.colorbar(sc)
+        axs[1].imshow(fitted)
         axs[2].plot(fitted[xs])
         axs[2].plot(data[xs])
         axs[2].set_title('x fit')
@@ -41,7 +40,7 @@ def fit_center(data, center_estimate=False, t=False, dwell=False, num=False, plo
         axs[3].plot(data[:, ys])
         axs[3].set_title('y_fit')
         #plt.show()
-        if savefig and t and dwell and num:
+        if savefig:
             plt.savefig(f'{t}_{dwell}_{num}.png')
         else:
             plt.show()
