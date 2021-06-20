@@ -47,6 +47,14 @@ To be done
 
 ### 6/15
 * Use high power position to give good estimate of the peak position for the lower ones
+* The pattern in the background comes from the imperfection of blank image. Should use blank for each condition.
+
+### 6/16
+* Crop the image to use smaller region for fitting. Improved accuracy and efficiency.
+
+### 6/18, 19
+* Redo the anneals using new blank collection scheme
+* Changed structure of Block and Calibmnger to accept new form of data
 
 
 ### Some Remarks

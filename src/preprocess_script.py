@@ -51,10 +51,12 @@ yaml_path = f'../data/yaml/0609.yaml'
 with open(yaml_path, 'r') as f:
     yaml_dict = yaml.load(f, Loader=yaml.FullLoader)
 
-print(live_img_dirs)
+for idx, p in enumerate(live_img_dirs[::-1]):
+    print(idx, p)
+
 all_conds = [parse_laser_condition(os.path.basename(d))
                    for d in live_img_dirs]
-for live_img_dir in live_img_dirs[::-1]: 
+for live_img_dir in live_img_dirs[::-1][11:12]: 
     dir_name = os.path.basename(live_img_dir)
     cond = simplify_dir_name(dir_name)
     wanted_frame = get_wanted_frames_for_condition(cond, yaml_dict)
@@ -65,8 +67,8 @@ for live_img_dir in live_img_dirs[::-1]:
         if max_pw != cond_dict['power']:
             dw = cond_dict['dwell']
             print(f'The center is estimated by {dw}us_{max_pw}W data')
-            ref_xs = np.load(f'{dw}us_{max_pw}W_xs.npy')
-            ref_ys = np.load(f'{dw}us_{max_pw}W_ys.npy')
+            ref_xs = np.load(f'../data/npy/{dw}us_{max_pw}W_xs.npy')
+            ref_ys = np.load(f'../data/npy/{dw}us_{max_pw}W_ys.npy')
             estimate = (np.mean(ref_xs), np.mean(ref_ys))
         else:
             estimate = False
@@ -83,8 +85,8 @@ for live_img_dir in live_img_dirs[::-1]:
     #plt.imshow(live_im)
     #plt.show()
 
-        np.save(f'{cond}_img.npy', live_im)
-        np.save(f'{cond}_xs.npy', xs)
-        np.save(f'{cond}_ys.npy', ys)
+        np.save(f'../data/npy/{cond}_img.npy', live_im)
+        np.save(f'../data/npy/{cond}_xs.npy', xs)
+        np.save(f'../data/npy/{cond}_ys.npy', ys)
 
 # Storing

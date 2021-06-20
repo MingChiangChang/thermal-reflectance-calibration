@@ -106,6 +106,9 @@ def get_highest_power_for_cond(cond, all_conds):
                       if c['dwell'] == cond['dwell']]
     return np.max(pws)
 
+def get_calib_dir_name_from_dwell(dwell):
+    return f'{str(int(dwell)).zfill(5)}us_000.00W'
+
 def recon_fn(name_dict):
     LED_status = 'On' if name_dict['LED'] else 'Off'
     Laser_status = 'On' if name_dict['Laser'] else 'Off'
