@@ -25,20 +25,20 @@ def existed_conditions(d):
 if __name__ == '__main__':
     FIG_PER_ROW = 6
     g = '/home/mingchiang/Desktop/Data/'
-    dir_path = f'{g}/Calibration_0618/'
-    des_path = f'{g}summary/{basename(dir_path)}'
+    dir_path = f'{g}0618/'
+    des_path = f'{g}summary/0618/{basename(dir_path)}'
     try:
         os.mkdir(des_path)
     except:
         print(f'{des_path} directory exists.')
-    dirs = glob.glob(dir_path + '*')
+    dirs = sorted(glob.glob(dir_path + '*'))[13:14]
     print(dirs)
     print(basename(dirs[0]))
     
     #ecs = existed_conditions(des_path + '/')
-
     conditions = [parse_laser_condition(basename(d)) for d in dirs]
-
+    for idx, c in enumerate(conditions):
+        print(idx, c)
     # generate one summary graph for each run
     for d, condition in tqdm(zip(dirs, conditions)):
         print(tuple(condition.values()))
@@ -52,8 +52,7 @@ if __name__ == '__main__':
         for i in range(num_sets):
             a_run = []
             for rc in tqdm(running_conditions, desc="Reading.."):
-                if rc['Run']==i and rc['LED'] and not rc['Laser']: # This line is key
-                    print(recon_fn(rc))
+                if rc['Run']==i and rc['LED'] and rc['Laser']: # This line is key
                     a_run.append(plt.imread(d+'/'+recon_fn(rc)).astype(float)[:,:,2])
      
             rows = ceil(len(a_run)/FIG_PER_ROW)
@@ -68,7 +67,6 @@ if __name__ == '__main__':
                     axs[r][c].yaxis.set_visible(False)
                     if frame_num < len(a_run):
                         axs[r][c].imshow(a_run[frame_num])
-            print(condition)
             title = '{}us_{}W_Run{}'.format(int(condition['dwell']),
                                             int(condition['power']),
                                             str(i))

@@ -44,6 +44,7 @@ def fit_center(data, center_estimate=False, t=False, dwell=False, num=False, plo
             plt.savefig(f'{t}_{dwell}_{num}.png')
         else:
             plt.show()
+        fig.clear()
         plt.close()
     return xs, ys
 

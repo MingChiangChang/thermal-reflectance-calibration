@@ -42,6 +42,9 @@ def preprocess(live_img_path, wanted_frames, blank_img_input, x_r=(0, 1024), y_r
     return live_img, xs, ys
 
 def generate_png_name(run, led, laser, num):
+    '''
+    Return png names with given run, LED status (bool), Laser status (bool), number of frame
+    '''
     l = 'On' if led else 'Off'
     p = 'On' if laser else 'Off'
     return f'Run-{run.zfill(4)}_LED-{l}_Power-{p}_Frame-{num.zfill(4)}.png'
@@ -54,17 +57,24 @@ def generate_png_names_from_dict(frame_dict):
                                             True, str(frame)))
     return png_ls
 
-def read_img_array(img_ls):
+def read_img_array(img_ls, channel_num=2):
+    '''
+    Asserted all the images have the same dimesnion and automatically detect the
+    dimension of the images. Then read the given channel of the image into 
+    a np array with corresponding shape.
+    '''
     width, height = get_dimension(img_ls[0])
     read_img_arr = np.zeros((len(img_ls), width, height)) 
     for idx, img in tqdm(enumerate(img_ls), desc=f'Reading Image Array...'):
-        read_img_arr[idx] = plt.imread(img).astype(float)[:,:,2]
+        read_img_arr[idx] = plt.imread(img).astype(float)[:,:,channel_num]
     return read_img_arr 
 
 def get_dimension(img):
+    ''' give the dimension of the 3rd channel of the image (nominally blue channel)'''
     return plt.imread(img).astype(float)[:,:,2].shape
 
 def get_average_blue_img(img_ls):
+    ''' Return the average of the third channel fo the given array of image path'''
     imgs = read_img_array(img_ls)
     return np.mean(imgs, axis=0)
  
@@ -106,6 +116,15 @@ def get_highest_power_for_cond(cond, all_conds):
                       if c['dwell'] == cond['dwell']]
     return np.max(pws)
 
+def get_dir_name_from_cond(cond):
+    '''
+    Get the directory name by the condition in the form {dwell}us_{power}W
+    '''
+    l = cond.split('_')
+    dwell = l[0][:l[0].index('us')]
+    power = float(l[1][:l[1].index('W')])
+    return f'{dwell.zfill(5)}us_{power:06.2f}W'
+
 def get_calib_dir_name_from_dwell(dwell):
     return f'{str(int(dwell)).zfill(5)}us_000.00W'
 
@@ -117,7 +136,6 @@ def recon_fn(name_dict):
                 str(name_dict['Run']).zfill(4),
                 LED_status, Laser_status, 
                 str(name_dict['num']).zfill(4))
-
 
 def average_images(png_ls):
     im_ls = []
@@ -165,11 +183,23 @@ def shift_calibration_to_imgs(imgs, blank_im, center_estimate=False,
     return imgs, xs, ys
 
 def im_to_temp(im, blank_im, kappa):
+    '''
+    Turn reflectance data and turn into temperature
+    
+    Params:
+    im: Input reflectance data
+    blank_im: blank image. Should have same dimension with im
+    kappa: Constant for increasing temperature to reflectance
+    '''
     im = im-blank_im
     im = im/blank_im/kappa
     return im
 
 def plot_blue(png_ls, save_at=None):
+    '''
+    Plot the third channel of the image and have the option
+    to save it at a directory designated by the param 'save_at'
+    '''
     for png in png_ls:
         sc = plt.imshow(plt.imread(png)[:,:,2])
         plt.colorbar(sc)
