@@ -25,6 +25,7 @@ class CalibMnger():
         self.dwell_lst = np.log10(np.array(dw_ls))
         self.power_lst = np.array(pw_ls)
         print(f'Reading {len(dw_ls)} images...')
+        
         for img, dw, pw in tqdm(zip(img_ls, self.dwell_lst, self.power_lst)):
             im = np.load(img)
             self.block_lst.append(Block(im, dw, pw))
@@ -50,7 +51,7 @@ class CalibMnger():
     def get_tpeak_fitting_params(self, fitting_func, param, mask=None):
         ''' fitting tpeak to the fitting function'''
         if mask is None:
-            mask = np.array(self.tpeak_lst) > 20
+            mask = np.array(self.tpeak_lst) > 0 
         power_data = np.array(self.power_lst)[mask]
         dwell_data = np.array(self.dwell_lst)[mask]
         tpeak_data = np.array(self.tpeak_lst)[mask]

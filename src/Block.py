@@ -183,7 +183,7 @@ class Block():
         pfit, pcov, infodict, errmsg, success = leastsq(errorfunction,
                                                         param, full_output=1,
                                                         maxfev=500)
-        
+         
         if success not in [1,2,3,4]:
             print('Fitting failed.')
             print('Error message: {}'.format(errmsg))
@@ -191,6 +191,10 @@ class Block():
         #fit = _edgeworth(*pfit)
         fit = _gaussian(*pfit)
         xs = np.indices(profile.shape)
+        # Uncertainty estimate
+        s_sq = np.sum(errorfunction(pfit)**2)/(profile.shape[0] - len(param))
+        pcov = pcov*s_sq
+        self.uncertainty = pcov
 
         plt.plot(xs.T, profile)
         plt.plot(xs.T, fit(*xs))

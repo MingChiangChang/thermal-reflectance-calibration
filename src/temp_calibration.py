@@ -172,7 +172,7 @@ def moments(data):
     height = data.max()
     rho = 0.0
     shift = 0.0
-    print('Moments: {}, {}, {}, {}, {}'.format(height, x, y, width_x, width_y))
+    #print('Moments: {}, {}, {}, {}, {}'.format(height, x, y, width_x, width_y))
     return height, x, y, width_x, width_y, rho, shift
 
 def edgeworth(x, x0, s, sk, ku):
