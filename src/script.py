@@ -3,6 +3,7 @@ import os
 import matplotlib.pyplot as plt
 import numpy as np
 import sys
+import glob
 from functools import partial
 
 from mpl_toolkits.mplot3d import Axes3D
@@ -14,16 +15,20 @@ from tqdm import tqdm
 
 from CalibMnger import CalibMnger
 from error_funcs import twod_surface, power_fit_func, linear
+from util import parse
 
-
-directory = '/Users/mingchiang/Desktop/2021.03.09_calib/raw_data/'
-with open('yaml/co2_data.yaml') as file:
+directory = '/Users/mingchiang/Desktop/github/thermal-reflectance-calibration/data/npy/'
+#with open('yaml/co2_data.yaml') as file:
 #directory = '/Users/mingchiang/Desktop/Work/thermal-reflectance-calibration/'
 #with open('/Users/mingchiang/Desktop/Work/thermal-reflectance-calibration/test.yaml') as file:
-    data_structure = yaml.load(file, Loader=yaml.FullLoader)
+#    data_structure = yaml.load(file, Loader=yaml.FullLoader)
 
 # Initiate Class
-Calib = CalibMnger(directory, data_structure)
+print('Creating Objects...')
+img_ls = glob.glob(directory + '*_img.npy')
+dw_ls = [parse(os.path.basename(img))[0] for img in img_ls]
+pw_ls = [parse(os.path.basename(img))[1] for img in img_ls]
+Calib = CalibMnger(img_ls, dw_ls, pw_ls)
 
 Calib.fit_tpeak()
 temp = [block.tpeak for block in Calib.block_lst]

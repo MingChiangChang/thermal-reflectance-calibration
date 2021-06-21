@@ -8,8 +8,11 @@ from error_funcs import jacobian_twod_surface
 
 class CalibMnger():
 
-    def __init__(self, dw_ls=None, pw_ls=None, imgs=None):
-        
+    def __init__(self, img_ls, dw_ls, pw_ls):
+        '''
+        Take image path list, dwell list, power list and
+        create list of block objects
+        '''
         self.block_lst = []
         self.power_lst = []
         self.dwell_lst = []  # log10 dwells
@@ -19,36 +22,28 @@ class CalibMnger():
         self.temp_surface_params = []
         self.cov = []
         
-        #if yaml_dict:
-        #    for cond in tqdm(yaml_dict, desc='Loading blocks'):
-        #        dwell, power = self.parse_condition(cond) 
-        #        self.power_lst.append(int(power))
-        #        self.dwell_lst.append(np.log10(int(dwell)))
-        #        dir_path = fp + '{}us/{}W/'.format(dwell, power)
-        #        for s in yaml_dict[cond]:
-        #            self.block_lst.append(Block(dir_path, yaml_dict[cond][s],
-        #                                        dwell, power))
-        else:
-            self.dwell_lst = np.log10(np.array(dw_ls))
-            self.power_lst = np.array(pw_ls)
-            for dw, pw in zip(self.dwell_lst, self.power_lst):
-                self.block_lst.append(Block(im, dw, pw))
+        self.dwell_lst = np.log10(np.array(dw_ls))
+        self.power_lst = np.array(pw_ls)
+        print(f'Reading {len(dw_ls)} images...')
+        for img, dw, pw in tqdm(zip(img_ls, self.dwell_lst, self.power_lst)):
+            im = np.load(img)
+            self.block_lst.append(Block(im, dw, pw))
 
     def __len__(self):
         return len(self.block_lst)
 
-    def parse_condition(self, condition):
-        ''' Parse the file names to get condition'''
-        sep = condition.index('_')
-        return condition[:sep-2], condition[sep+1:-1]
+    #def parse_condition(self, condition):
+    #    ''' Parse the file names to get condition'''
+    #    sep = condition.index('_')
+    #    return condition[:sep-2], condition[sep+1:-1]
 
     def fit_tpeak(self):
         ''' Make every block fit their data '''
         for block in tqdm(self.block_lst, desc='Fitting tpeak and profile'):
-            #block.process_image()
-            block.get_beam()
+            # block.process_image()
+            # block.get_beam()
             block.fit_center()
-            block.fit_two_gaussian()
+            block.fit_profile()
             self.tpeak_lst.append(block.tpeak)
             print(block)
             
@@ -64,7 +59,7 @@ class CalibMnger():
                                           tpeak_data, fitting_func,
                                           param, uncertainty = uncertainty[:,0,0])
         self.temp_surface_params = p
-        s_sq = (infodict['fvec']**2).sum()/(len(self.block_lst)-6)
+        s_sq = (infodict['fvec']**2).sum()/(len(self.block_lst)-6) # What is this six??
         self.temp_cov = pcov*s_sq
         return p, pcov, infodict
 
@@ -135,6 +130,3 @@ class CalibMnger():
         print(j)
         print(self.temp_cov)
         return j @ self.temp_cov @ j.T
-
-
-

@@ -1,685 +1,84 @@
 #!/bin/sh
-cd /Users/mingchiang/Desktop/Work/sara-socket-client/Scripts/
-python3 ThermalReflectance.py -n 1 -pmin 0 -20 -pmax 0 -20 -d 800 -p 30 -pre TEST -c True 
-python3 ThermalReflectance.py -n 10 -d 250 -p 20.0 -pmin -20 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 10 -d 250 -p 25.0 -pmin -15 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 10 -d 250 -p 30.0 -pmin -10 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 10 -d 250 -p 35.0 -pmin -5 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 10 -d 250 -p 40.0 -pmin 0 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 10 -d 250 -p 45.0 -pmin 5 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 10 -d 250 -p 50.0 -pmin 10 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 10 -d 250 -p 55.0 -pmin 15 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 250 -p 60.0 -pmin -19.9 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 250 -p 60.0 -pmin -19.799999999999997 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 250 -p 60.0 -pmin -19.699999999999996 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 250 -p 60.0 -pmin -19.599999999999994 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 250 -p 60.0 -pmin -19.499999999999993 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 250 -p 60.0 -pmin -19.39999999999999 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 250 -p 60.0 -pmin -19.29999999999999 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 250 -p 60.0 -pmin -19.19999999999999 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 250 -p 60.0 -pmin -19.099999999999987 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 250 -p 60.0 -pmin -18.999999999999986 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 250 -p 65.0 -pmin -14.9 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 250 -p 65.0 -pmin -14.8 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 250 -p 65.0 -pmin -14.700000000000001 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 250 -p 65.0 -pmin -14.600000000000001 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 250 -p 65.0 -pmin -14.500000000000002 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 250 -p 65.0 -pmin -14.400000000000002 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 250 -p 65.0 -pmin -14.300000000000002 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 250 -p 65.0 -pmin -14.200000000000003 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 250 -p 65.0 -pmin -14.100000000000003 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 250 -p 65.0 -pmin -14.000000000000004 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 250 -p 70.0 -pmin -9.9 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 250 -p 70.0 -pmin -9.8 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 250 -p 70.0 -pmin -9.700000000000001 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 250 -p 70.0 -pmin -9.600000000000001 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 250 -p 70.0 -pmin -9.500000000000002 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 250 -p 70.0 -pmin -9.400000000000002 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 250 -p 70.0 -pmin -9.300000000000002 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 250 -p 70.0 -pmin -9.200000000000003 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 250 -p 70.0 -pmin -9.100000000000003 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 250 -p 70.0 -pmin -9.000000000000004 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 250 -p 75.0 -pmin -4.9 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 250 -p 75.0 -pmin -4.800000000000001 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 250 -p 75.0 -pmin -4.700000000000001 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 250 -p 75.0 -pmin -4.600000000000001 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 250 -p 75.0 -pmin -4.500000000000002 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 250 -p 75.0 -pmin -4.400000000000002 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 250 -p 75.0 -pmin -4.3000000000000025 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 250 -p 75.0 -pmin -4.200000000000003 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 250 -p 75.0 -pmin -4.100000000000003 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 250 -p 75.0 -pmin -4.0000000000000036 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 250 -p 80.0 -pmin 0.1 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 250 -p 80.0 -pmin 0.2 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 250 -p 80.0 -pmin 0.30000000000000004 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 250 -p 80.0 -pmin 0.4 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 250 -p 80.0 -pmin 0.5 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 250 -p 80.0 -pmin 0.6 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 250 -p 80.0 -pmin 0.7 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 250 -p 80.0 -pmin 0.7999999999999999 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 250 -p 80.0 -pmin 0.8999999999999999 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 250 -p 80.0 -pmin 0.9999999999999999 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 10 -d 377 -p 20.0 -pmin 5 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 10 -d 377 -p 25.0 -pmin 10 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 10 -d 377 -p 30.0 -pmin 15 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 10 -d 377 -p 35.0 -pmin -20 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 10 -d 377 -p 40.0 -pmin -15 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 10 -d 377 -p 45.0 -pmin -10 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 10 -d 377 -p 50.0 -pmin -5 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 10 -d 377 -p 55.0 -pmin 0 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 377 -p 60.0 -pmin 5.1 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 377 -p 60.0 -pmin 5.199999999999999 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 377 -p 60.0 -pmin 5.299999999999999 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 377 -p 60.0 -pmin 5.399999999999999 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 377 -p 60.0 -pmin 5.499999999999998 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 377 -p 60.0 -pmin 5.599999999999998 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 377 -p 60.0 -pmin 5.6999999999999975 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 377 -p 60.0 -pmin 5.799999999999997 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 377 -p 60.0 -pmin 5.899999999999997 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 377 -p 60.0 -pmin 5.9999999999999964 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 377 -p 65.0 -pmin 10.1 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 377 -p 65.0 -pmin 10.2 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 377 -p 65.0 -pmin 10.299999999999999 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 377 -p 65.0 -pmin 10.399999999999999 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 377 -p 65.0 -pmin 10.499999999999998 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 377 -p 65.0 -pmin 10.599999999999998 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 377 -p 65.0 -pmin 10.699999999999998 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 377 -p 65.0 -pmin 10.799999999999997 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 377 -p 65.0 -pmin 10.899999999999997 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 377 -p 65.0 -pmin 10.999999999999996 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 377 -p 70.0 -pmin 15.1 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 377 -p 70.0 -pmin 15.2 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 377 -p 70.0 -pmin 15.299999999999999 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 377 -p 70.0 -pmin 15.399999999999999 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 377 -p 70.0 -pmin 15.499999999999998 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 377 -p 70.0 -pmin 15.599999999999998 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 377 -p 70.0 -pmin 15.699999999999998 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 377 -p 70.0 -pmin 15.799999999999997 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 377 -p 70.0 -pmin 15.899999999999997 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 377 -p 70.0 -pmin 15.999999999999996 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 377 -p 75.0 -pmin -19.9 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 377 -p 75.0 -pmin -19.799999999999997 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 377 -p 75.0 -pmin -19.699999999999996 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 377 -p 75.0 -pmin -19.599999999999994 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 377 -p 75.0 -pmin -19.499999999999993 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 377 -p 75.0 -pmin -19.39999999999999 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 377 -p 75.0 -pmin -19.29999999999999 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 377 -p 75.0 -pmin -19.19999999999999 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 377 -p 75.0 -pmin -19.099999999999987 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 377 -p 75.0 -pmin -18.999999999999986 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 377 -p 80.0 -pmin -14.9 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 377 -p 80.0 -pmin -14.8 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 377 -p 80.0 -pmin -14.700000000000001 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 377 -p 80.0 -pmin -14.600000000000001 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 377 -p 80.0 -pmin -14.500000000000002 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 377 -p 80.0 -pmin -14.400000000000002 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 377 -p 80.0 -pmin -14.300000000000002 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 377 -p 80.0 -pmin -14.200000000000003 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 377 -p 80.0 -pmin -14.100000000000003 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 377 -p 80.0 -pmin -14.000000000000004 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 10 -d 567 -p 20.0 -pmin -10 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 10 -d 567 -p 25.0 -pmin -5 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 10 -d 567 -p 30.0 -pmin 0 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 10 -d 567 -p 35.0 -pmin 5 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 10 -d 567 -p 40.0 -pmin 10 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 10 -d 567 -p 45.0 -pmin 15 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 10 -d 567 -p 50.0 -pmin -20 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 10 -d 567 -p 55.0 -pmin -15 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 567 -p 60.0 -pmin -9.9 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 567 -p 60.0 -pmin -9.8 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 567 -p 60.0 -pmin -9.700000000000001 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 567 -p 60.0 -pmin -9.600000000000001 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 567 -p 60.0 -pmin -9.500000000000002 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 567 -p 60.0 -pmin -9.400000000000002 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 567 -p 60.0 -pmin -9.300000000000002 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 567 -p 60.0 -pmin -9.200000000000003 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 567 -p 60.0 -pmin -9.100000000000003 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 567 -p 60.0 -pmin -9.000000000000004 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 567 -p 65.0 -pmin -4.9 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 567 -p 65.0 -pmin -4.800000000000001 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 567 -p 65.0 -pmin -4.700000000000001 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 567 -p 65.0 -pmin -4.600000000000001 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 567 -p 65.0 -pmin -4.500000000000002 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 567 -p 65.0 -pmin -4.400000000000002 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 567 -p 65.0 -pmin -4.3000000000000025 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 567 -p 65.0 -pmin -4.200000000000003 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 567 -p 65.0 -pmin -4.100000000000003 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 567 -p 65.0 -pmin -4.0000000000000036 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 567 -p 70.0 -pmin 0.1 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 567 -p 70.0 -pmin 0.2 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 567 -p 70.0 -pmin 0.30000000000000004 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 567 -p 70.0 -pmin 0.4 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 567 -p 70.0 -pmin 0.5 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 567 -p 70.0 -pmin 0.6 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 567 -p 70.0 -pmin 0.7 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 567 -p 70.0 -pmin 0.7999999999999999 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 567 -p 70.0 -pmin 0.8999999999999999 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 567 -p 70.0 -pmin 0.9999999999999999 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 567 -p 75.0 -pmin 5.1 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 567 -p 75.0 -pmin 5.199999999999999 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 567 -p 75.0 -pmin 5.299999999999999 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 567 -p 75.0 -pmin 5.399999999999999 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 567 -p 75.0 -pmin 5.499999999999998 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 567 -p 75.0 -pmin 5.599999999999998 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 567 -p 75.0 -pmin 5.6999999999999975 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 567 -p 75.0 -pmin 5.799999999999997 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 567 -p 75.0 -pmin 5.899999999999997 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 567 -p 75.0 -pmin 5.9999999999999964 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 567 -p 80.0 -pmin 10.1 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 567 -p 80.0 -pmin 10.2 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 567 -p 80.0 -pmin 10.299999999999999 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 567 -p 80.0 -pmin 10.399999999999999 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 567 -p 80.0 -pmin 10.499999999999998 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 567 -p 80.0 -pmin 10.599999999999998 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 567 -p 80.0 -pmin 10.699999999999998 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 567 -p 80.0 -pmin 10.799999999999997 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 567 -p 80.0 -pmin 10.899999999999997 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 567 -p 80.0 -pmin 10.999999999999996 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 10 -d 855 -p 20.0 -pmin 15 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 10 -d 855 -p 25.0 -pmin -20 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 10 -d 855 -p 30.0 -pmin -15 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 10 -d 855 -p 35.0 -pmin -10 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 10 -d 855 -p 40.0 -pmin -5 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 10 -d 855 -p 45.0 -pmin 0 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 10 -d 855 -p 50.0 -pmin 5 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 10 -d 855 -p 55.0 -pmin 10 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 855 -p 60.0 -pmin 15.1 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 855 -p 60.0 -pmin 15.2 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 855 -p 60.0 -pmin 15.299999999999999 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 855 -p 60.0 -pmin 15.399999999999999 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 855 -p 60.0 -pmin 15.499999999999998 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 855 -p 60.0 -pmin 15.599999999999998 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 855 -p 60.0 -pmin 15.699999999999998 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 855 -p 60.0 -pmin 15.799999999999997 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 855 -p 60.0 -pmin 15.899999999999997 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 855 -p 60.0 -pmin 15.999999999999996 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 855 -p 65.0 -pmin -19.9 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 855 -p 65.0 -pmin -19.799999999999997 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 855 -p 65.0 -pmin -19.699999999999996 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 855 -p 65.0 -pmin -19.599999999999994 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 855 -p 65.0 -pmin -19.499999999999993 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 855 -p 65.0 -pmin -19.39999999999999 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 855 -p 65.0 -pmin -19.29999999999999 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 855 -p 65.0 -pmin -19.19999999999999 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 855 -p 65.0 -pmin -19.099999999999987 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 855 -p 65.0 -pmin -18.999999999999986 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 855 -p 70.0 -pmin -14.9 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 855 -p 70.0 -pmin -14.8 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 855 -p 70.0 -pmin -14.700000000000001 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 855 -p 70.0 -pmin -14.600000000000001 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 855 -p 70.0 -pmin -14.500000000000002 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 855 -p 70.0 -pmin -14.400000000000002 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 855 -p 70.0 -pmin -14.300000000000002 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 855 -p 70.0 -pmin -14.200000000000003 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 855 -p 70.0 -pmin -14.100000000000003 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 855 -p 70.0 -pmin -14.000000000000004 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 20.0 -pmin -9.9 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 20.0 -pmin -9.8 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 20.0 -pmin -9.700000000000001 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 20.0 -pmin -9.600000000000001 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 20.0 -pmin -9.500000000000002 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 20.0 -pmin -9.400000000000002 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 20.0 -pmin -9.300000000000002 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 20.0 -pmin -9.200000000000003 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 20.0 -pmin -9.100000000000003 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 20.0 -pmin -9.000000000000004 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 25.0 -pmin -4.9 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 25.0 -pmin -4.800000000000001 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 25.0 -pmin -4.700000000000001 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 25.0 -pmin -4.600000000000001 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 25.0 -pmin -4.500000000000002 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 25.0 -pmin -4.400000000000002 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 25.0 -pmin -4.3000000000000025 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 25.0 -pmin -4.200000000000003 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 25.0 -pmin -4.100000000000003 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 25.0 -pmin -4.0000000000000036 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 30.0 -pmin 0.1 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 30.0 -pmin 0.2 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 30.0 -pmin 0.30000000000000004 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 30.0 -pmin 0.4 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 30.0 -pmin 0.5 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 30.0 -pmin 0.6 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 30.0 -pmin 0.7 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 30.0 -pmin 0.7999999999999999 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 30.0 -pmin 0.8999999999999999 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 30.0 -pmin 0.9999999999999999 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 35.0 -pmin 5.1 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 35.0 -pmin 5.199999999999999 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 35.0 -pmin 5.299999999999999 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 35.0 -pmin 5.399999999999999 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 35.0 -pmin 5.499999999999998 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 35.0 -pmin 5.599999999999998 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 35.0 -pmin 5.6999999999999975 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 35.0 -pmin 5.799999999999997 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 35.0 -pmin 5.899999999999997 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 35.0 -pmin 5.9999999999999964 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 40.0 -pmin 10.1 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 40.0 -pmin 10.2 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 40.0 -pmin 10.299999999999999 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 40.0 -pmin 10.399999999999999 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 40.0 -pmin 10.499999999999998 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 40.0 -pmin 10.599999999999998 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 40.0 -pmin 10.699999999999998 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 40.0 -pmin 10.799999999999997 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 40.0 -pmin 10.899999999999997 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 40.0 -pmin 10.999999999999996 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 45.0 -pmin 15.1 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 45.0 -pmin 15.2 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 45.0 -pmin 15.299999999999999 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 45.0 -pmin 15.399999999999999 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 45.0 -pmin 15.499999999999998 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 45.0 -pmin 15.599999999999998 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 45.0 -pmin 15.699999999999998 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 45.0 -pmin 15.799999999999997 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 45.0 -pmin 15.899999999999997 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 45.0 -pmin 15.999999999999996 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 50.0 -pmin -19.9 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 50.0 -pmin -19.799999999999997 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 50.0 -pmin -19.699999999999996 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 50.0 -pmin -19.599999999999994 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 50.0 -pmin -19.499999999999993 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 50.0 -pmin -19.39999999999999 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 50.0 -pmin -19.29999999999999 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 50.0 -pmin -19.19999999999999 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 50.0 -pmin -19.099999999999987 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 50.0 -pmin -18.999999999999986 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 55.0 -pmin -14.9 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 55.0 -pmin -14.8 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 55.0 -pmin -14.700000000000001 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 55.0 -pmin -14.600000000000001 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 55.0 -pmin -14.500000000000002 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 55.0 -pmin -14.400000000000002 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 55.0 -pmin -14.300000000000002 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 55.0 -pmin -14.200000000000003 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 55.0 -pmin -14.100000000000003 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 55.0 -pmin -14.000000000000004 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 60.0 -pmin -9.9 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 60.0 -pmin -9.8 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 60.0 -pmin -9.700000000000001 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 60.0 -pmin -9.600000000000001 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 60.0 -pmin -9.500000000000002 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 60.0 -pmin -9.400000000000002 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 60.0 -pmin -9.300000000000002 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 60.0 -pmin -9.200000000000003 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 60.0 -pmin -9.100000000000003 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1288 -p 60.0 -pmin -9.000000000000004 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 20.0 -pmin -4.9 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 20.0 -pmin -4.800000000000001 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 20.0 -pmin -4.700000000000001 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 20.0 -pmin -4.600000000000001 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 20.0 -pmin -4.500000000000002 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 20.0 -pmin -4.400000000000002 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 20.0 -pmin -4.3000000000000025 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 20.0 -pmin -4.200000000000003 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 20.0 -pmin -4.100000000000003 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 20.0 -pmin -4.0000000000000036 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 25.0 -pmin 0.1 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 25.0 -pmin 0.2 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 25.0 -pmin 0.30000000000000004 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 25.0 -pmin 0.4 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 25.0 -pmin 0.5 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 25.0 -pmin 0.6 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 25.0 -pmin 0.7 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 25.0 -pmin 0.7999999999999999 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 25.0 -pmin 0.8999999999999999 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 25.0 -pmin 0.9999999999999999 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 30.0 -pmin 5.1 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 30.0 -pmin 5.199999999999999 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 30.0 -pmin 5.299999999999999 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 30.0 -pmin 5.399999999999999 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 30.0 -pmin 5.499999999999998 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 30.0 -pmin 5.599999999999998 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 30.0 -pmin 5.6999999999999975 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 30.0 -pmin 5.799999999999997 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 30.0 -pmin 5.899999999999997 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 30.0 -pmin 5.9999999999999964 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 35.0 -pmin 10.1 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 35.0 -pmin 10.2 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 35.0 -pmin 10.299999999999999 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 35.0 -pmin 10.399999999999999 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 35.0 -pmin 10.499999999999998 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 35.0 -pmin 10.599999999999998 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 35.0 -pmin 10.699999999999998 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 35.0 -pmin 10.799999999999997 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 35.0 -pmin 10.899999999999997 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 35.0 -pmin 10.999999999999996 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 40.0 -pmin 15.1 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 40.0 -pmin 15.2 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 40.0 -pmin 15.299999999999999 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 40.0 -pmin 15.399999999999999 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 40.0 -pmin 15.499999999999998 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 40.0 -pmin 15.599999999999998 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 40.0 -pmin 15.699999999999998 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 40.0 -pmin 15.799999999999997 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 40.0 -pmin 15.899999999999997 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 40.0 -pmin 15.999999999999996 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 45.0 -pmin -19.9 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 45.0 -pmin -19.799999999999997 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 45.0 -pmin -19.699999999999996 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 45.0 -pmin -19.599999999999994 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 45.0 -pmin -19.499999999999993 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 45.0 -pmin -19.39999999999999 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 45.0 -pmin -19.29999999999999 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 45.0 -pmin -19.19999999999999 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 45.0 -pmin -19.099999999999987 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 45.0 -pmin -18.999999999999986 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 50.0 -pmin -14.9 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 50.0 -pmin -14.8 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 50.0 -pmin -14.700000000000001 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 50.0 -pmin -14.600000000000001 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 50.0 -pmin -14.500000000000002 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 50.0 -pmin -14.400000000000002 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 50.0 -pmin -14.300000000000002 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 50.0 -pmin -14.200000000000003 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 50.0 -pmin -14.100000000000003 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 50.0 -pmin -14.000000000000004 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 55.0 -pmin -9.9 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 55.0 -pmin -9.8 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 55.0 -pmin -9.700000000000001 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 55.0 -pmin -9.600000000000001 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 55.0 -pmin -9.500000000000002 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 55.0 -pmin -9.400000000000002 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 55.0 -pmin -9.300000000000002 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 55.0 -pmin -9.200000000000003 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 55.0 -pmin -9.100000000000003 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 55.0 -pmin -9.000000000000004 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 60.0 -pmin -4.9 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 60.0 -pmin -4.800000000000001 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 60.0 -pmin -4.700000000000001 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 60.0 -pmin -4.600000000000001 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 60.0 -pmin -4.500000000000002 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 60.0 -pmin -4.400000000000002 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 60.0 -pmin -4.3000000000000025 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 60.0 -pmin -4.200000000000003 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 60.0 -pmin -4.100000000000003 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 1941 -p 60.0 -pmin -4.0000000000000036 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 20.0 -pmin 0.1 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 20.0 -pmin 0.2 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 20.0 -pmin 0.30000000000000004 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 20.0 -pmin 0.4 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 20.0 -pmin 0.5 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 20.0 -pmin 0.6 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 20.0 -pmin 0.7 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 20.0 -pmin 0.7999999999999999 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 20.0 -pmin 0.8999999999999999 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 20.0 -pmin 0.9999999999999999 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 25.0 -pmin 5.1 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 25.0 -pmin 5.199999999999999 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 25.0 -pmin 5.299999999999999 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 25.0 -pmin 5.399999999999999 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 25.0 -pmin 5.499999999999998 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 25.0 -pmin 5.599999999999998 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 25.0 -pmin 5.6999999999999975 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 25.0 -pmin 5.799999999999997 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 25.0 -pmin 5.899999999999997 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 25.0 -pmin 5.9999999999999964 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 30.0 -pmin 10.1 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 30.0 -pmin 10.2 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 30.0 -pmin 10.299999999999999 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 30.0 -pmin 10.399999999999999 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 30.0 -pmin 10.499999999999998 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 30.0 -pmin 10.599999999999998 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 30.0 -pmin 10.699999999999998 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 30.0 -pmin 10.799999999999997 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 30.0 -pmin 10.899999999999997 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 30.0 -pmin 10.999999999999996 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 35.0 -pmin 15.1 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 35.0 -pmin 15.2 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 35.0 -pmin 15.299999999999999 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 35.0 -pmin 15.399999999999999 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 35.0 -pmin 15.499999999999998 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 35.0 -pmin 15.599999999999998 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 35.0 -pmin 15.699999999999998 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 35.0 -pmin 15.799999999999997 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 35.0 -pmin 15.899999999999997 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 35.0 -pmin 15.999999999999996 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 40.0 -pmin -19.9 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 40.0 -pmin -19.799999999999997 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 40.0 -pmin -19.699999999999996 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 40.0 -pmin -19.599999999999994 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 40.0 -pmin -19.499999999999993 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 40.0 -pmin -19.39999999999999 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 40.0 -pmin -19.29999999999999 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 40.0 -pmin -19.19999999999999 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 40.0 -pmin -19.099999999999987 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 40.0 -pmin -18.999999999999986 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 45.0 -pmin -14.9 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 45.0 -pmin -14.8 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 45.0 -pmin -14.700000000000001 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 45.0 -pmin -14.600000000000001 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 45.0 -pmin -14.500000000000002 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 45.0 -pmin -14.400000000000002 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 45.0 -pmin -14.300000000000002 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 45.0 -pmin -14.200000000000003 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 45.0 -pmin -14.100000000000003 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 45.0 -pmin -14.000000000000004 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 50.0 -pmin -9.9 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 50.0 -pmin -9.8 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 50.0 -pmin -9.700000000000001 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 50.0 -pmin -9.600000000000001 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 50.0 -pmin -9.500000000000002 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 50.0 -pmin -9.400000000000002 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 50.0 -pmin -9.300000000000002 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 50.0 -pmin -9.200000000000003 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 50.0 -pmin -9.100000000000003 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 50.0 -pmin -9.000000000000004 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 55.0 -pmin -4.9 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 55.0 -pmin -4.800000000000001 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 55.0 -pmin -4.700000000000001 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 55.0 -pmin -4.600000000000001 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 55.0 -pmin -4.500000000000002 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 55.0 -pmin -4.400000000000002 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 55.0 -pmin -4.3000000000000025 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 55.0 -pmin -4.200000000000003 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 55.0 -pmin -4.100000000000003 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 2924 -p 55.0 -pmin -4.0000000000000036 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 20.0 -pmin 0.1 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 20.0 -pmin 0.2 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 20.0 -pmin 0.30000000000000004 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 20.0 -pmin 0.4 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 20.0 -pmin 0.5 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 20.0 -pmin 0.6 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 20.0 -pmin 0.7 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 20.0 -pmin 0.7999999999999999 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 20.0 -pmin 0.8999999999999999 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 20.0 -pmin 0.9999999999999999 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 25.0 -pmin 5.1 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 25.0 -pmin 5.199999999999999 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 25.0 -pmin 5.299999999999999 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 25.0 -pmin 5.399999999999999 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 25.0 -pmin 5.499999999999998 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 25.0 -pmin 5.599999999999998 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 25.0 -pmin 5.6999999999999975 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 25.0 -pmin 5.799999999999997 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 25.0 -pmin 5.899999999999997 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 25.0 -pmin 5.9999999999999964 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 30.0 -pmin 10.1 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 30.0 -pmin 10.2 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 30.0 -pmin 10.299999999999999 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 30.0 -pmin 10.399999999999999 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 30.0 -pmin 10.499999999999998 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 30.0 -pmin 10.599999999999998 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 30.0 -pmin 10.699999999999998 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 30.0 -pmin 10.799999999999997 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 30.0 -pmin 10.899999999999997 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 30.0 -pmin 10.999999999999996 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 35.0 -pmin 15.1 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 35.0 -pmin 15.2 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 35.0 -pmin 15.299999999999999 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 35.0 -pmin 15.399999999999999 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 35.0 -pmin 15.499999999999998 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 35.0 -pmin 15.599999999999998 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 35.0 -pmin 15.699999999999998 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 35.0 -pmin 15.799999999999997 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 35.0 -pmin 15.899999999999997 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 35.0 -pmin 15.999999999999996 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 40.0 -pmin -19.9 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 40.0 -pmin -19.799999999999997 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 40.0 -pmin -19.699999999999996 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 40.0 -pmin -19.599999999999994 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 40.0 -pmin -19.499999999999993 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 40.0 -pmin -19.39999999999999 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 40.0 -pmin -19.29999999999999 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 40.0 -pmin -19.19999999999999 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 40.0 -pmin -19.099999999999987 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 40.0 -pmin -18.999999999999986 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 45.0 -pmin -14.9 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 45.0 -pmin -14.8 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 45.0 -pmin -14.700000000000001 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 45.0 -pmin -14.600000000000001 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 45.0 -pmin -14.500000000000002 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 45.0 -pmin -14.400000000000002 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 45.0 -pmin -14.300000000000002 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 45.0 -pmin -14.200000000000003 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 45.0 -pmin -14.100000000000003 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 45.0 -pmin -14.000000000000004 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 50.0 -pmin -9.9 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 50.0 -pmin -9.8 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 50.0 -pmin -9.700000000000001 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 50.0 -pmin -9.600000000000001 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 50.0 -pmin -9.500000000000002 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 50.0 -pmin -9.400000000000002 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 50.0 -pmin -9.300000000000002 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 50.0 -pmin -9.200000000000003 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 50.0 -pmin -9.100000000000003 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 4405 -p 50.0 -pmin -9.000000000000004 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 20.0 -pmin -4.9 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 20.0 -pmin -4.800000000000001 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 20.0 -pmin -4.700000000000001 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 20.0 -pmin -4.600000000000001 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 20.0 -pmin -4.500000000000002 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 20.0 -pmin -4.400000000000002 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 20.0 -pmin -4.3000000000000025 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 20.0 -pmin -4.200000000000003 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 20.0 -pmin -4.100000000000003 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 20.0 -pmin -4.0000000000000036 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 25.0 -pmin 0.1 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 25.0 -pmin 0.2 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 25.0 -pmin 0.30000000000000004 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 25.0 -pmin 0.4 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 25.0 -pmin 0.5 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 25.0 -pmin 0.6 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 25.0 -pmin 0.7 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 25.0 -pmin 0.7999999999999999 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 25.0 -pmin 0.8999999999999999 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 25.0 -pmin 0.9999999999999999 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 30.0 -pmin 5.1 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 30.0 -pmin 5.199999999999999 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 30.0 -pmin 5.299999999999999 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 30.0 -pmin 5.399999999999999 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 30.0 -pmin 5.499999999999998 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 30.0 -pmin 5.599999999999998 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 30.0 -pmin 5.6999999999999975 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 30.0 -pmin 5.799999999999997 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 30.0 -pmin 5.899999999999997 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 30.0 -pmin 5.9999999999999964 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 35.0 -pmin 10.1 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 35.0 -pmin 10.2 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 35.0 -pmin 10.299999999999999 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 35.0 -pmin 10.399999999999999 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 35.0 -pmin 10.499999999999998 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 35.0 -pmin 10.599999999999998 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 35.0 -pmin 10.699999999999998 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 35.0 -pmin 10.799999999999997 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 35.0 -pmin 10.899999999999997 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 35.0 -pmin 10.999999999999996 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 40.0 -pmin 15.1 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 40.0 -pmin 15.2 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 40.0 -pmin 15.299999999999999 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 40.0 -pmin 15.399999999999999 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 40.0 -pmin 15.499999999999998 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 40.0 -pmin 15.599999999999998 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 40.0 -pmin 15.699999999999998 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 40.0 -pmin 15.799999999999997 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 40.0 -pmin 15.899999999999997 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 40.0 -pmin 15.999999999999996 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 45.0 -pmin -19.9 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 45.0 -pmin -19.799999999999997 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 45.0 -pmin -19.699999999999996 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 45.0 -pmin -19.599999999999994 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 45.0 -pmin -19.499999999999993 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 45.0 -pmin -19.39999999999999 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 45.0 -pmin -19.29999999999999 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 45.0 -pmin -19.19999999999999 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 45.0 -pmin -19.099999999999987 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 45.0 -pmin -18.999999999999986 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 50.0 -pmin -14.9 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 50.0 -pmin -14.8 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 50.0 -pmin -14.700000000000001 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 50.0 -pmin -14.600000000000001 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 50.0 -pmin -14.500000000000002 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 50.0 -pmin -14.400000000000002 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 50.0 -pmin -14.300000000000002 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 50.0 -pmin -14.200000000000003 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 50.0 -pmin -14.100000000000003 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 6637 -p 50.0 -pmin -14.000000000000004 -20 -pmax -15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 20.0 -pmin -9.9 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 20.0 -pmin -9.8 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 20.0 -pmin -9.700000000000001 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 20.0 -pmin -9.600000000000001 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 20.0 -pmin -9.500000000000002 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 20.0 -pmin -9.400000000000002 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 20.0 -pmin -9.300000000000002 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 20.0 -pmin -9.200000000000003 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 20.0 -pmin -9.100000000000003 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 20.0 -pmin -9.000000000000004 -20 -pmax -10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 25.0 -pmin -4.9 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 25.0 -pmin -4.800000000000001 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 25.0 -pmin -4.700000000000001 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 25.0 -pmin -4.600000000000001 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 25.0 -pmin -4.500000000000002 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 25.0 -pmin -4.400000000000002 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 25.0 -pmin -4.3000000000000025 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 25.0 -pmin -4.200000000000003 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 25.0 -pmin -4.100000000000003 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 25.0 -pmin -4.0000000000000036 -20 -pmax -5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 30.0 -pmin 0.1 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 30.0 -pmin 0.2 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 30.0 -pmin 0.30000000000000004 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 30.0 -pmin 0.4 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 30.0 -pmin 0.5 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 30.0 -pmin 0.6 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 30.0 -pmin 0.7 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 30.0 -pmin 0.7999999999999999 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 30.0 -pmin 0.8999999999999999 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 30.0 -pmin 0.9999999999999999 -20 -pmax 0 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 35.0 -pmin 5.1 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 35.0 -pmin 5.199999999999999 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 35.0 -pmin 5.299999999999999 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 35.0 -pmin 5.399999999999999 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 35.0 -pmin 5.499999999999998 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 35.0 -pmin 5.599999999999998 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 35.0 -pmin 5.6999999999999975 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 35.0 -pmin 5.799999999999997 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 35.0 -pmin 5.899999999999997 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 35.0 -pmin 5.9999999999999964 -20 -pmax 5 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 40.0 -pmin 10.1 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 40.0 -pmin 10.2 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 40.0 -pmin 10.299999999999999 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 40.0 -pmin 10.399999999999999 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 40.0 -pmin 10.499999999999998 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 40.0 -pmin 10.599999999999998 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 40.0 -pmin 10.699999999999998 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 40.0 -pmin 10.799999999999997 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 40.0 -pmin 10.899999999999997 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 40.0 -pmin 10.999999999999996 -20 -pmax 10 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 45.0 -pmin 15.1 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 45.0 -pmin 15.2 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 45.0 -pmin 15.299999999999999 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 45.0 -pmin 15.399999999999999 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 45.0 -pmin 15.499999999999998 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 45.0 -pmin 15.599999999999998 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 45.0 -pmin 15.699999999999998 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 45.0 -pmin 15.799999999999997 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 45.0 -pmin 15.899999999999997 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 45.0 -pmin 15.999999999999996 -20 -pmax 15 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 50.0 -pmin -19.9 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 50.0 -pmin -19.799999999999997 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 50.0 -pmin -19.699999999999996 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 50.0 -pmin -19.599999999999994 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 50.0 -pmin -19.499999999999993 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 50.0 -pmin -19.39999999999999 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 50.0 -pmin -19.29999999999999 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 50.0 -pmin -19.19999999999999 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 50.0 -pmin -19.099999999999987 -20 -pmax -20 20 -pre 0607 
-python3 ThermalReflectance.py -n 1 -d 10000 -p 50.0 -pmin -18.999999999999986 -20 -pmax -20 20 -pre 0607 
+python3 ThermalReflectance.py -n 30 -d 250 -p 20.0 -m r -yr -25 25 -xr -40.000000 0.000000 -pre 0608 
+python3 ThermalReflectance.py -n 30 -d 250 -p 25.0 -m r -yr -25 25 -xr -39.600000 0.400000 -pre 0608 
+python3 ThermalReflectance.py -n 30 -d 250 -p 30.0 -m r -yr -25 25 -xr -39.200000 0.800000 -pre 0608 
+python3 ThermalReflectance.py -n 30 -d 250 -p 35.0 -m r -yr -25 25 -xr -38.800000 1.200000 -pre 0608 
+python3 ThermalReflectance.py -n 30 -d 250 -p 40.0 -m r -yr -25 25 -xr -38.400000 1.600000 -pre 0608 
+python3 ThermalReflectance.py -n 30 -d 250 -p 45.0 -m r -yr -25 25 -xr -38.000000 2.000000 -pre 0608 
+python3 ThermalReflectance.py -n 30 -d 250 -p 50.0 -m r -yr -25 25 -xr -37.600000 2.400000 -pre 0608 
+python3 ThermalReflectance.py -n 30 -d 250 -p 55.0 -m r -yr -25 25 -xr -37.200000 2.800000 -pre 0608 
+python3 ThermalReflectance.py -n 30 -d 250 -p 60.0 -m r -yr -25 25 -xr -36.800000 3.200000 -pre 0608 
+python3 ThermalReflectance.py -n 30 -d 250 -p 65.0 -m r -yr -25 25 -xr -36.400000 3.600000 -pre 0608 
+python3 ThermalReflectance.py -n 30 -d 250 -p 70.0 -m r -yr -25 25 -xr -36.000000 4.000000 -pre 0608 
+python3 ThermalReflectance.py -n 30 -d 250 -p 75.0 -m r -yr -25 25 -xr -35.600000 4.400000 -pre 0608 
+python3 ThermalReflectance.py -n 30 -d 250 -p 80.0 -m r -yr -25 25 -xr -35.200000 4.800000 -pre 0608 
+python3 ThermalReflectance.py -n 30 -d 377 -p 20.0 -m r -yr -25 25 -xr -34.800000 5.200000 -pre 0608 
+python3 ThermalReflectance.py -n 30 -d 377 -p 25.0 -m r -yr -25 25 -xr -34.400000 5.600000 -pre 0608 
+python3 ThermalReflectance.py -n 30 -d 377 -p 30.0 -m r -yr -25 25 -xr -34.000000 6.000000 -pre 0608 
+python3 ThermalReflectance.py -n 30 -d 377 -p 35.0 -m r -yr -25 25 -xr -33.600000 6.400000 -pre 0608 
+python3 ThermalReflectance.py -n 30 -d 377 -p 40.0 -m r -yr -25 25 -xr -33.200000 6.800000 -pre 0608 
+python3 ThermalReflectance.py -n 30 -d 377 -p 45.0 -m r -yr -25 25 -xr -32.800000 7.200000 -pre 0608 
+python3 ThermalReflectance.py -n 30 -d 377 -p 50.0 -m r -yr -25 25 -xr -32.400000 7.600000 -pre 0608 
+python3 ThermalReflectance.py -n 30 -d 377 -p 55.0 -m r -yr -25 25 -xr -32.000000 8.000000 -pre 0608 
+python3 ThermalReflectance.py -n 30 -d 377 -p 60.0 -m r -yr -25 25 -xr -31.600000 8.400000 -pre 0608 
+python3 ThermalReflectance.py -n 30 -d 377 -p 65.0 -m r -yr -25 25 -xr -31.200000 8.800000 -pre 0608 
+python3 ThermalReflectance.py -n 30 -d 377 -p 70.0 -m r -yr -25 25 -xr -30.800000 9.200000 -pre 0608 
+python3 ThermalReflectance.py -n 30 -d 377 -p 75.0 -m r -yr -25 25 -xr -30.400000 9.600000 -pre 0608 
+python3 ThermalReflectance.py -n 30 -d 377 -p 80.0 -m r -yr -25 25 -xr -30.000000 10.000000 -pre 0608 
+python3 ThermalReflectance.py -n 20 -d 567 -p 20.0 -m r -yr -25 25 -xr -29.600000 10.400000 -pre 0608 
+python3 ThermalReflectance.py -n 20 -d 567 -p 25.0 -m r -yr -25 25 -xr -29.200000 10.800000 -pre 0608 
+python3 ThermalReflectance.py -n 20 -d 567 -p 30.0 -m r -yr -25 25 -xr -28.800000 11.200000 -pre 0608 
+python3 ThermalReflectance.py -n 20 -d 567 -p 35.0 -m r -yr -25 25 -xr -28.400000 11.600000 -pre 0608 
+python3 ThermalReflectance.py -n 20 -d 567 -p 40.0 -m r -yr -25 25 -xr -28.000000 12.000000 -pre 0608 
+python3 ThermalReflectance.py -n 20 -d 567 -p 45.0 -m r -yr -25 25 -xr -27.600000 12.400000 -pre 0608 
+python3 ThermalReflectance.py -n 20 -d 567 -p 50.0 -m r -yr -25 25 -xr -27.200000 12.800000 -pre 0608 
+python3 ThermalReflectance.py -n 20 -d 567 -p 55.0 -m r -yr -25 25 -xr -26.800000 13.200000 -pre 0608 
+python3 ThermalReflectance.py -n 20 -d 567 -p 60.0 -m r -yr -25 25 -xr -26.400000 13.600000 -pre 0608 
+python3 ThermalReflectance.py -n 20 -d 567 -p 65.0 -m r -yr -25 25 -xr -26.000000 14.000000 -pre 0608 
+python3 ThermalReflectance.py -n 20 -d 855 -p 20.0 -m r -yr -25 25 -xr -25.600000 14.400000 -pre 0608 
+python3 ThermalReflectance.py -n 20 -d 855 -p 25.0 -m r -yr -25 25 -xr -25.200000 14.800000 -pre 0608 
+python3 ThermalReflectance.py -n 20 -d 855 -p 30.0 -m r -yr -25 25 -xr -24.800000 15.200000 -pre 0608 
+python3 ThermalReflectance.py -n 20 -d 855 -p 35.0 -m r -yr -25 25 -xr -24.400000 15.600000 -pre 0608 
+python3 ThermalReflectance.py -n 20 -d 855 -p 40.0 -m r -yr -25 25 -xr -24.000000 16.000000 -pre 0608 
+python3 ThermalReflectance.py -n 20 -d 855 -p 45.0 -m r -yr -25 25 -xr -23.600000 16.400000 -pre 0608 
+python3 ThermalReflectance.py -n 20 -d 855 -p 50.0 -m r -yr -25 25 -xr -23.200000 16.800000 -pre 0608 
+python3 ThermalReflectance.py -n 20 -d 855 -p 55.0 -m r -yr -25 25 -xr -22.800000 17.200000 -pre 0608 
+python3 ThermalReflectance.py -n 20 -d 855 -p 60.0 -m r -yr -25 25 -xr -22.400000 17.600000 -pre 0608 
+python3 ThermalReflectance.py -n 10 -d 1288 -p 20.0 -m r -yr -25 25 -xr -22.000000 18.000000 -pre 0608 
+python3 ThermalReflectance.py -n 10 -d 1288 -p 25.0 -m r -yr -25 25 -xr -21.600000 18.400000 -pre 0608 
+python3 ThermalReflectance.py -n 10 -d 1288 -p 30.0 -m r -yr -25 25 -xr -21.200000 18.800000 -pre 0608 
+python3 ThermalReflectance.py -n 10 -d 1288 -p 35.0 -m r -yr -25 25 -xr -20.800000 19.200000 -pre 0608 
+python3 ThermalReflectance.py -n 10 -d 1288 -p 40.0 -m r -yr -25 25 -xr -20.400000 19.600000 -pre 0608 
+python3 ThermalReflectance.py -n 10 -d 1288 -p 45.0 -m r -yr -25 25 -xr -20.000000 20.000000 -pre 0608 
+python3 ThermalReflectance.py -n 10 -d 1288 -p 50.0 -m r -yr -25 25 -xr -19.600000 20.400000 -pre 0608 
+python3 ThermalReflectance.py -n 10 -d 1288 -p 55.0 -m r -yr -25 25 -xr -19.200000 20.800000 -pre 0608 
+python3 ThermalReflectance.py -n 10 -d 1941 -p 20.0 -m r -yr -25 25 -xr -18.800000 21.200000 -pre 0608 
+python3 ThermalReflectance.py -n 10 -d 1941 -p 25.0 -m r -yr -25 25 -xr -18.400000 21.600000 -pre 0608 
+python3 ThermalReflectance.py -n 10 -d 1941 -p 30.0 -m r -yr -25 25 -xr -18.000000 22.000000 -pre 0608 
+python3 ThermalReflectance.py -n 10 -d 1941 -p 35.0 -m r -yr -25 25 -xr -17.600000 22.400000 -pre 0608 
+python3 ThermalReflectance.py -n 10 -d 1941 -p 40.0 -m r -yr -25 25 -xr -17.200000 22.800000 -pre 0608 
+python3 ThermalReflectance.py -n 10 -d 1941 -p 45.0 -m r -yr -25 25 -xr -16.800000 23.200000 -pre 0608 
+python3 ThermalReflectance.py -n 10 -d 1941 -p 50.0 -m r -yr -25 25 -xr -16.400000 23.600000 -pre 0608 
+python3 ThermalReflectance.py -n 10 -d 2924 -p 20.0 -m r -yr -25 25 -xr -16.000000 24.000000 -pre 0608 
+python3 ThermalReflectance.py -n 10 -d 2924 -p 25.0 -m r -yr -25 25 -xr -15.600000 24.400000 -pre 0608 
+python3 ThermalReflectance.py -n 10 -d 2924 -p 30.0 -m r -yr -25 25 -xr -15.200000 24.800000 -pre 0608 
+python3 ThermalReflectance.py -n 10 -d 2924 -p 35.0 -m r -yr -25 25 -xr -14.800000 25.200000 -pre 0608 
+python3 ThermalReflectance.py -n 10 -d 2924 -p 40.0 -m r -yr -25 25 -xr -14.400000 25.600000 -pre 0608 
+python3 ThermalReflectance.py -n 10 -d 2924 -p 45.0 -m r -yr -25 25 -xr -14.000000 26.000000 -pre 0608 
+python3 ThermalReflectance.py -n 10 -d 2924 -p 50.0 -m r -yr -25 25 -xr -13.600000 26.400000 -pre 0608 
+python3 ThermalReflectance.py -n 10 -d 4405 -p 20.0 -m r -yr -25 25 -xr -13.200000 26.800000 -pre 0608 
+python3 ThermalReflectance.py -n 10 -d 4405 -p 25.0 -m r -yr -25 25 -xr -12.800000 27.200000 -pre 0608 
+python3 ThermalReflectance.py -n 10 -d 4405 -p 30.0 -m r -yr -25 25 -xr -12.400000 27.600000 -pre 0608 
+python3 ThermalReflectance.py -n 10 -d 4405 -p 35.0 -m r -yr -25 25 -xr -12.000000 28.000000 -pre 0608 
+python3 ThermalReflectance.py -n 10 -d 4405 -p 40.0 -m r -yr -25 25 -xr -11.600000 28.400000 -pre 0608 
+python3 ThermalReflectance.py -n 10 -d 4405 -p 45.0 -m r -yr -25 25 -xr -11.200000 28.800000 -pre 0608 
+python3 ThermalReflectance.py -n 10 -d 6637 -p 20.0 -m r -yr -25 25 -xr -10.800000 29.200000 -pre 0608 
+python3 ThermalReflectance.py -n 10 -d 6637 -p 25.0 -m r -yr -25 25 -xr -10.400000 29.600000 -pre 0608 
+python3 ThermalReflectance.py -n 10 -d 6637 -p 30.0 -m r -yr -25 25 -xr -10.000000 30.000000 -pre 0608 
+python3 ThermalReflectance.py -n 10 -d 6637 -p 35.0 -m r -yr -25 25 -xr -9.600000 30.400000 -pre 0608 
+python3 ThermalReflectance.py -n 10 -d 6637 -p 40.0 -m r -yr -25 25 -xr -9.200000 30.800000 -pre 0608 
+python3 ThermalReflectance.py -n 10 -d 10000 -p 20.0 -m r -yr -25 25 -xr -8.800000 31.200000 -pre 0608 
+python3 ThermalReflectance.py -n 10 -d 10000 -p 25.0 -m r -yr -25 25 -xr -8.400000 31.600000 -pre 0608 
+python3 ThermalReflectance.py -n 10 -d 10000 -p 30.0 -m r -yr -25 25 -xr -8.000000 32.000000 -pre 0608 
+python3 ThermalReflectance.py -n 10 -d 10000 -p 35.0 -m r -yr -25 25 -xr -7.600000 32.400000 -pre 0608 
+python3 ThermalReflectance.py -n 10 -d 10000 -p 40.0 -m r -yr -25 25 -xr -7.200000 32.800000 -pre 0608 

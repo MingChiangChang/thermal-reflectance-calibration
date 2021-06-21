@@ -75,6 +75,3 @@ if __name__ == '__main__':
             plt.savefig(des_path + title + '.png')
             fig.clear()
             plt.close(fig)
-
-
-

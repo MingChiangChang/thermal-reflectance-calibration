@@ -10,12 +10,12 @@ from temp_calibration import fit_with, get_box, gaussian_shift, moments
 
 class Block():
     
-    kappa = 1.3*10**-4
+    kappa = 1*10**-4
 
     def __init__(self, img, dwell, power):
         
-        self.temp = img 
-        self.beam = None
+        self.temp = img/self.kappa 
+        self.beam = self.temp 
 
         self.dwell = dwell
         self.power = power
@@ -116,7 +116,8 @@ class Block():
         plt.colorbar(sc)
         axs[2].plot(fitted[self.center])
         axs[2].plot(self.beam[self.center])
-        t = self.dwell + ' us '+self.power + ' W'
+        print(self.dwell, self.power)
+        t = f'{str(int(10**self.dwell))}us_{str(self.power)}W'
         plt.title(t)
         plt.savefig(t)
         plt.close()
@@ -193,8 +194,9 @@ class Block():
 
         plt.plot(xs.T, profile)
         plt.plot(xs.T, fit(*xs))
-        plt.title(self.dwell + 'us ' + self.power + 'A') 
-        plt.show()
+        title = f'{int(10**self.dwell)}us_{int(self.power)}W_gauss'
+        plt.title(f'{int(10**self.dwell)}us_{int(self.power)}W') 
+        plt.savefig(title)
         plt.close()
         self.profile_params = pfit
         self.tpeak = np.max(fit(*xs))
