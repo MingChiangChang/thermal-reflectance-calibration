@@ -25,13 +25,13 @@ def existed_conditions(d):
 if __name__ == '__main__':
     FIG_PER_ROW = 6
     g = '/home/mingchiang/Desktop/Data/'
-    dir_path = f'{g}0618/'
-    des_path = f'{g}summary/0618/{basename(dir_path)}'
+    dir_path = f'{g}0617/'
+    des_path = f'{g}summary/0617/{basename(dir_path)}'
     try:
         os.mkdir(des_path)
     except:
         print(f'{des_path} directory exists.')
-    dirs = sorted(glob.glob(dir_path + '*'))[13:14]
+    dirs = sorted(glob.glob(dir_path + '*'))
     print(dirs)
     print(basename(dirs[0]))
     

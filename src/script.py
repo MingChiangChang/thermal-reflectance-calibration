@@ -17,11 +17,10 @@ from CalibMnger import CalibMnger
 from error_funcs import twod_surface, power_fit_func, linear
 from util import parse
 
+# Mac path
 directory = '/Users/mingchiang/Desktop/github/thermal-reflectance-calibration/data/npy/'
-#with open('yaml/co2_data.yaml') as file:
-#directory = '/Users/mingchiang/Desktop/Work/thermal-reflectance-calibration/'
-#with open('/Users/mingchiang/Desktop/Work/thermal-reflectance-calibration/test.yaml') as file:
-#    data_structure = yaml.load(file, Loader=yaml.FullLoader)
+# Linux path
+directory = '/home/mingchiang/Desktop/Code/thermal-reflectance-calibration/data/npy/'
 
 # Initiate Class
 print('Creating Objects...')
@@ -83,6 +82,17 @@ real_power_to_melt = {'1000': 72,
                       '6000': 56,
                       '7500': 55,
                       '10000': 53}
+#real_power_to_melt = {
+#        '567': 69.5,
+#        '855': 63,
+#        '1288': 59,
+#        '1941': 53,
+#        '2924': 50.5,
+#        '4405': 48.25,
+#        '6637': 45.5,
+#        '10000': 44 
+#        }
+
 fitted_melting_power = {}
 lower_melting_power = {}
 upper_melting_power = {}
@@ -124,7 +134,7 @@ plt.ylabel('Power required to reach 1414C')
 plt.legend()
 plt.show()
 
-for d in [250, 500, 1000, 2000, 5000, 10000]:
+for d in np.log10(list(real_power_to_melt.keys())):
     # TODO plot uncertainty as well
     # TODO investigate some of the weird fitting
     p_lst, t_lst, uncer_lst = Calib.get_data_along_dw(d)

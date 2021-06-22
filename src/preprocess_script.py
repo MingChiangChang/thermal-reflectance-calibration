@@ -37,7 +37,7 @@ for idx, p in enumerate(live_img_conds):
 all_conds = [parse_laser_condition(d)
                    for d in live_img_conds]
 
-for cond in live_img_conds[14:]: 
+for cond in live_img_conds[27:28]: 
     dir_name = get_dir_name_from_cond(cond)
     live_img_dir = path + dir_name
     print(live_img_dir)

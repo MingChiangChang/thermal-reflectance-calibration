@@ -10,7 +10,7 @@ from temp_calibration import fit_with, get_box, gaussian_shift, moments
 
 class Block():
     
-    kappa = 1*10**-4
+    kappa = 1.2*10**-4
 
     def __init__(self, img, dwell, power):
         
@@ -30,7 +30,7 @@ class Block():
         self.y_width = 0
     
     def __repr__(self):
-        return ('Condition: {}us, {}W\n'.format(self.dwell, self.power)
+        return ('Condition: {}us, {}W\n'.format(10**self.dwell, self.power)
                +'Fitted results: {}C \n'.format(self.tpeak)
                +'Center: {}\n'.format(self.center) 
                +'Fitting paramters: {}\n'.format(self.profile_params)
@@ -40,7 +40,7 @@ class Block():
                                                     self.y_shift+self.y_width))
 
     def __str__(self):
-        return ('Condition: {}us, {}W\n'.format(self.dwell, self.power)
+        return ('Condition: {}us, {}W\n'.format(int(10**self.dwell), int(self.power))
                +'Fitted results: {}C \n'.format(self.tpeak)
                +'Center: {}\n'.format(self.center)
                +'Fitting paramters: {}\n'.format(self.profile_params)
@@ -116,7 +116,6 @@ class Block():
         plt.colorbar(sc)
         axs[2].plot(fitted[self.center])
         axs[2].plot(self.beam[self.center])
-        print(self.dwell, self.power)
         t = f'{str(int(10**self.dwell))}us_{str(self.power)}W'
         plt.title(t)
         plt.savefig(t)

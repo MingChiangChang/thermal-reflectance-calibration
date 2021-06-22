@@ -51,7 +51,7 @@ class CalibMnger():
     def get_tpeak_fitting_params(self, fitting_func, param, mask=None):
         ''' fitting tpeak to the fitting function'''
         if mask is None:
-            mask = np.array(self.tpeak_lst) > 0 
+            mask = np.ones(self.power_lst.shape).astype(bool)#np.array(self.tpeak_lst) > 0 
         power_data = np.array(self.power_lst)[mask]
         dwell_data = np.array(self.dwell_lst)[mask]
         tpeak_data = np.array(self.tpeak_lst)[mask]
