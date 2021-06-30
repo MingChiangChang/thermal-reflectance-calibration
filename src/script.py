@@ -40,12 +40,15 @@ temp = [block.tpeak for block in Calib.block_lst]
 #    plt.close()
 # Temperature fitting summary plot
 sc = plt.scatter(Calib.dwell_lst, Calib.power_lst, c=temp)
-plt.xlabel('Dwell us')
+plt.xlabel('log Dwell')
 plt.ylabel('Power (W)')
 ax = plt.gca()
 ax.set_xscale('log')
 plt.colorbar(sc)
 plt.show()
+
+Calib.store_dw_pw_temp_at('temp.npy')
+
 
 param_dict = Calib.collect_fitting_params()
 mask = ( (param_dict["Std"] >305)
@@ -67,12 +70,13 @@ dw = np.array(Calib.dwell_lst)
 pw = np.array(Calib.power_lst)
 tp = np.array(Calib.tpeak_lst)
 pw_x, dw_y = np.meshgrid(pw, dw)
-ax.plot_surface(pw_x, dw_y, t_func(*(pw_x, dw_y)), alpha=0.1)
-ax.set_ylabel('log(Dwell)')
-ax.set_xlabel('Current (A)')
+#ax.plot_surface(pw_x, dw_y, t_func(*(pw_x, dw_y)), facecolor=(0, 1, 0, 0.1))
+ax.set_ylabel('log Dwell')
+ax.set_xlabel('Power (W)')
 ax.set_zlabel('Tpeak (C)')
 plt.title('Tpeak fit')
 plt.show()
+
 
 #### Linear Correction ####
 real_power_to_melt = {'1000': 72,
@@ -134,17 +138,19 @@ plt.ylabel('Power required to reach 1414C')
 plt.legend()
 plt.show()
 
-for d in np.log10(list(real_power_to_melt.keys())):
+unique_dws = sorted(np.unique(Calib.dwell_lst))
+
+for d in unique_dws:
     # TODO plot uncertainty as well
     # TODO investigate some of the weird fitting
     p_lst, t_lst, uncer_lst = Calib.get_data_along_dw(d)
     p_lst, t_lst, uncer_lst = zip(*sorted(zip(p_lst, t_lst, uncer_lst)))
     xx = np.linspace(np.min(p_lst), np.max(p_lst), 100)
-    sol_t = partial(t_func, y=np.log10(float(d)))
+    sol_t = partial(t_func, y=float(d))
     plt.plot(xx, sol_t(xx))
     plt.plot(p_lst, t_lst)
     plt.errorbar(p_lst, t_lst, yerr=np.sqrt(uncer_lst))
-    plt.title(str(d)+' us')
+    plt.title(str(int(10**d))+' us')
     plt.show()
 
 #k = Calib.get_power_fitting_params(power_fit_func, param)
@@ -172,7 +178,7 @@ tp_x, dw_y = np.meshgrid(tp, dw)
 ax.plot_surface(tp_x, dw_y, p_func(*(tp_x, dw_y)), alpha=0.1)
 ax.set_xlabel('Tpeak (C)')
 ax.set_ylabel('Dwell (us)')
-ax.set_zlabel('Current (A)')
+ax.set_zlabel('Power (W)')
 plt.title('Power fit')
 plt.show()
 
@@ -191,10 +197,10 @@ for param in param_dict:
     pw = np.array(Calib.power_lst)
     pw_x, dw_y = np.meshgrid(pw, dw)
     fit = twod_surface(*Calib.param_fitting_param[param])
-    ax.plot_surface(pw_x, dw_y, fit(*(pw_x, dw_y)), alpha=0.1)
+    #ax.plot_surface(pw_x, dw_y, fit(*(pw_x, dw_y)), alpha=0.1)
     ax.set_ylabel('Dwell us')
-    ax.set_xlabel('Current (A)')
-    ax.set_zlabel('Tpeak (C)')
+    ax.set_xlabel('Power (W)')
+    ax.set_zlabel('Width in pixels')
     plt.title(param)
     plt.show()
 

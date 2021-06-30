@@ -78,51 +78,51 @@ if __name__ == '__main__':
 #            '377': 
 #               { 'power': np.linspace(20, 80, 13),
 #                 'runs': 30 },
-            '567': 
-               { 'power': np.linspace(20, 65, 10),
-                 'runs': 20 },
-            '855': 
-               { 'power': np.linspace(20, 60, 9),
-                 'runs': 20 },
-            '1288': 
-               { 'power': np.linspace(20, 55, 8),
-                 'runs': 10},
-            '1941': 
-               { 'power': np.linspace(20, 50, 7),
-                 'runs': 10},
-#            '2924': 
+#            '567': 
+#               { 'power': np.linspace(20, 65, 10),
+#                 'runs': 20 },
+#            '855': 
+#               { 'power': np.linspace(20, 60, 9),
+#                 'runs': 20 },
+#            '1288': 
+#               { 'power': np.linspace(20, 55, 8),
+#                 'runs': 10},
+#            '1941': 
 #               { 'power': np.linspace(20, 50, 7),
-#                 'runs': 5},
-#            '4405': 
-#               { 'power': np.linspace(20, 45, 6),
-#                 'runs': 5},
-#            '6637': 
-#               { 'power': np.linspace(20, 40, 5),
-#                 'runs': 5},
-#            '10000': 
-#               { 'power': np.linspace(20, 40, 5),
-#                 'runs': 5}
+#                 'runs': 10},
+            '2924': 
+               { 'power': np.linspace(20, 50, 7),
+                 'runs': 7},
+            '4405': 
+               { 'power': np.linspace(20, 45, 6),
+                 'runs': 6},
+            '6637': 
+               { 'power': np.linspace(20, 40, 5),
+                 'runs': 5},
+            '10000': 
+               { 'power': np.linspace(20, 40, 5),
+                 'runs': 4}
             }
 
-    with open('0618.sh', 'w') as f:
+    with open('0622.sh', 'w') as f:
         add_header(f)
         counter = 0
         for dw in conditions:
             runs = conditions[dw]['runs']
             if int(dw)<=1941:
                 add_commend(f, n=runs, pmin='1 -40', pmax='1 40',
-                           d=dw, p=0, pre='Calibration_0618', c='True', r=100)
+                           d=dw, p=0, pre='Calibration_0622', c='True', r=100)
                 for i in conditions[dw]['power']:
-                    add_commend(f, n=runs, d=dw, p=i, m='r', yr='-40 40', xr='1.5 2', pre='0618', r=100)
+                    add_commend(f, n=runs, d=dw, p=i, m='r', yr='-40 40', xr='1.5 2', pre='0622', r=100)
             else:
-                add_commend(f, n=runs, pmin='{} -25'.format(-40+counter*0.8),
-                             pamx='{} 25'.format(-40+counter*0.8),
-                            d=dw, p=0, pre='Calibration_0617', c='True', r=100)
+                add_commend(f, n=runs, pmin='{} -25'.format(0+counter*0.8),
+                             pmax='{} 25'.format(0+counter*0.8),
+                            d=dw, p=0, pre='Calibration_0622', c='True', r=200)
                 for i in conditions[dw]['power']:
                     add_commend(f, n=runs, d=dw, p=i, m='r',
                             yr='-25 25',
-                            xr='{:2f} {:2f}'.format(-40+counter*0.8, -39.6+counter*0.8),
-                            pre='0617', r=100)
+                            xr='{:2f} {:2f}'.format(0+counter*0.8, 0.4+counter*0.8),
+                            pre='0622', r=200)
                     counter += 1
         #add_condition_grid(f, [250, 500, 1000],
         #                  [15, 20, 25, 30, 35, 40, 45, 50, 55, 60],

@@ -10,11 +10,12 @@ from preprocess import recon_fn
 
 data = '0618'
 
-yaml_path = '/home/mingchiang/thermal-reflectance-calibration/data/yaml/Calibration_0618.yaml'
+yaml_path = '/home/mingchiang/Desktop/Code/thermal-reflectance-calibration/data/yaml/Calibration_0622.yaml'
 
-dir_path = '/home/mingchiang/Desktop/Data/Calibration_0618/'
+dir_path = '/home/mingchiang/Desktop/Data/Calibration_0622/'
 
-dwell = ['567us', '855us', '1288us', '1941us']
+dwell = ['2924us', '4405us', '6637us', '10000us']
+
 for d in dwell:
     
     with open(yaml_path, 'r') as f:

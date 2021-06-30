@@ -19,11 +19,11 @@ y_r = (400, 1000)
 # Mac
 #path = '/Users/mingchiang/Desktop/github/thermal-reflectance-calibration/data//0608/'
 # Linux
-path = '/home/mingchiang/Desktop/Data/0618/'
+path = '/home/mingchiang/Desktop/Data/0622/'
 
-blank_path = '/home/mingchiang/Desktop/Data/Calibration_0618'
+blank_path = '/home/mingchiang/Desktop/Data/Calibration_0622'
 
-yaml_path = f'../data/yaml/0618.yaml'
+yaml_path = f'../data/yaml/0622.yaml'
 
 with open(yaml_path, 'r') as f:
     yaml_dict = yaml.load(f, Loader=yaml.FullLoader)
@@ -37,7 +37,7 @@ for idx, p in enumerate(live_img_conds):
 all_conds = [parse_laser_condition(d)
                    for d in live_img_conds]
 
-for cond in live_img_conds[27:28]: 
+for cond in live_img_conds[11:]: 
     dir_name = get_dir_name_from_cond(cond)
     live_img_dir = path + dir_name
     print(live_img_dir)
@@ -48,10 +48,7 @@ for cond in live_img_conds[27:28]:
   
     dw = cond_dict['dwell']
     
-    if cond_dict['dwell']>=2924:
-        blank_im = np.load(blank_path + '/377us.npy')
-    else:
-        blank_im = np.load(blank_path + f'/{dw}us.npy')
+    blank_im = np.load(blank_path + f'/{dw}us.npy')
 
     if wanted_frame:
         if max_pw != cond_dict['power']:
@@ -62,12 +59,13 @@ for cond in live_img_conds[27:28]:
             estimate = (np.mean(ref_xs), np.mean(ref_ys))
         else:
             estimate = False
-        live_im, xs, ys = preprocess(live_img_dir, wanted_frame, 
+        live_im, xs, ys, pfits = preprocess(live_img_dir, wanted_frame, 
                              blank_im, x_r=x_r, y_r=y_r, blank_bypass=True, 
                              center_estimate=estimate, t=cond_dict['power'],
-                             dwell=cond_dict['dwell'], plot=True, savefig=True)
+                             dwell=cond_dict['dwell'], plot=False, savefig=False)
 
         np.save(f'../data/npy/{cond}_img.npy', live_im)
         np.save(f'../data/npy/{cond}_xs.npy', xs)
         np.save(f'../data/npy/{cond}_ys.npy', ys)
+        np.save(f'../data/npy/{cond}_pfit.npy', pfits)
 

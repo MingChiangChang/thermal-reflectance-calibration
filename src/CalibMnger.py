@@ -107,13 +107,13 @@ class CalibMnger():
                       'Base': np.array(base_lst)}
         return param_dict
 
-    #def get_data_along_t(self):
     def get_data_along_dw(self, dwell):
         tpeak = []
         power = []
         uncer = []
         for block in self.block_lst:
-            if int(block.dwell) == dwell:
+            print(block.dwell, dwell)
+            if block.dwell == dwell:
                 tpeak.append(block.tpeak)
                 power.append(float(block.power))
                 uncer.append(block.uncertainty[0,0])
@@ -131,3 +131,14 @@ class CalibMnger():
         print(j)
         print(self.temp_cov)
         return j @ self.temp_cov @ j.T
+
+    def store_dw_pw_temp_at(self, path):
+        dw = []
+        pw = []
+        temp = []
+        for block in self.block_lst:
+            dw.append(block.dwell)
+            pw.append(block.power)
+            temp.append(block.tpeak)
+        data = np.array([dw, pw, temp])
+        np.save(path, data)

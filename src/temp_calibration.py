@@ -46,7 +46,7 @@ def fit_center(data, center_estimate=False, t=False, dwell=False, num=False, plo
             plt.show()
         fig.clear()
         plt.close()
-    return xs, ys
+    return xs, ys, pfit
 
 
 def fit_xy_to_z_surface_with_func(x, y, z, func, param, uncertainty=None):

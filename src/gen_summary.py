@@ -25,8 +25,8 @@ def existed_conditions(d):
 if __name__ == '__main__':
     FIG_PER_ROW = 6
     g = '/home/mingchiang/Desktop/Data/'
-    dir_path = f'{g}0617/'
-    des_path = f'{g}summary/0617/{basename(dir_path)}'
+    dir_path = f'{g}Calibration_0622/'
+    des_path = f'{g}summary/Calibration_0622/{basename(dir_path)}'
     try:
         os.mkdir(des_path)
     except:
@@ -52,7 +52,8 @@ if __name__ == '__main__':
         for i in range(num_sets):
             a_run = []
             for rc in tqdm(running_conditions, desc="Reading.."):
-                if rc['Run']==i and rc['LED'] and rc['Laser']: # This line is key
+                if rc['Run']==i and rc['LED'] and not rc['Laser']: # This line is key
+                    print(recon_fn(rc))
                     a_run.append(plt.imread(d+'/'+recon_fn(rc)).astype(float)[:,:,2])
      
             rows = ceil(len(a_run)/FIG_PER_ROW)

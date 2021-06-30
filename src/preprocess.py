@@ -32,14 +32,14 @@ def preprocess(live_img_path, wanted_frames, blank_img_input, x_r=(0, 1024), y_r
     png_ls = [live_img_path + '/' + png for png in png_ls]
     live_imgs = read_img_array(png_ls)[:, x_r[0]:x_r[1], y_r[0]:y_r[1]]
     if center_estimate:
-        live_imgs, xs, ys = shift_calibration_to_imgs(live_imgs, blank_im, 
+        live_imgs, xs, ys, pfits = shift_calibration_to_imgs(live_imgs, blank_im, 
                                                       center_estimate, 
                                                       t, dwell, plot, savefig)
     else:
-        live_imgs, xs, ys  = shift_calibration_to_imgs(live_imgs, blank_im,
+        live_imgs, xs, ys, pfits = shift_calibration_to_imgs(live_imgs, blank_im,
                                                     t=t, dwell=dwell, plot=plot, savefig=savefig) 
     live_img = np.mean(live_imgs, axis=0)
-    return live_img, xs, ys
+    return live_img, xs, ys, pfits
 
 def generate_png_name(run, led, laser, num):
     '''
@@ -164,23 +164,25 @@ def shift_calibration_to_imgs(imgs, blank_im, center_estimate=False,
     '''
     xs = []
     ys = []
-
+    pfits = []
     for idx, _ in tqdm(enumerate(imgs), desc='Read and find center...'):
         imgs[idx] = imgs[idx]-blank_im
         if center_estimate:
-            x, y = fit_center(imgs[idx], center_estimate, t, dwell, idx, plot, savefig)
+            x, y, pfit = fit_center(imgs[idx], center_estimate, t, dwell, idx, plot, savefig)
         else:
-            x, y = fit_center(imgs[idx], t=t, dwell=dwell, num=idx, plot=plot, savefig=savefig)
+            x, y, pfit = fit_center(imgs[idx], t=t, dwell=dwell, num=idx, plot=plot, savefig=savefig)
         xs.append(x)
         ys.append(y)
+        pfits.append(pfit)
     xs = np.array(xs)
     ys = np.array(ys)
+    pfits = np.array(pfits)
     mx = np.mean(xs)
     my = np.mean(ys)
     for idx, _ in enumerate(imgs):
         imgs[idx] = np.roll(imgs[idx], int(mx-xs[idx]), axis=0)
         imgs[idx] = np.roll(imgs[idx], int(my-ys[idx]), axis=1)
-    return imgs, xs, ys
+    return imgs, xs, ys, pfits
 
 def im_to_temp(im, blank_im, kappa):
     '''
