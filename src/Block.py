@@ -184,9 +184,9 @@ class Block():
                                                         maxfev=500)
          
         if success not in [1,2,3,4]:
-            print('Fitting failed.')
+            print(f'Fitting failed for fitting {self.dwell}us {self.power}A.')
             print('Error message: {}'.format(errmsg))
-        
+            return
         #fit = _edgeworth(*pfit)
         fit = _gaussian(*pfit)
         xs = np.indices(profile.shape)

@@ -29,7 +29,7 @@ Acceptible keywords:
 def add_header(f):
     f.write('#!/bin/sh')
     f.write('\n')
-    f.write('cd /Users/mingchiang/Desktop/Work/sara-socket-client/Scripts/')
+    # f.write('cd /Users/mingchiang/Desktop/Work/sara-socket-client/Scripts/')
     f.write('\n')
 
 def add_commend(f, **kwargs):
@@ -124,15 +124,3 @@ if __name__ == '__main__':
                             xr='{:2f} {:2f}'.format(0+counter*0.8, 0.4+counter*0.8),
                             pre='0622', r=200)
                     counter += 1
-        #add_condition_grid(f, [250, 500, 1000],
-        #                  [15, 20, 25, 30, 35, 40, 45, 50, 55, 60],
-        #                  n=5, xr=(0, 20), ymin=-40, ymax=40, pre='0603')
-        #counter = 0
-        #for dw in conditions:
-        #    for t in conditions[dw]['power']:
-        #        runs = conditions[dw]['runs']
-        #        add_commend(f, n=runs, d=dw, p=t, m='r',
-        #                yr='-25 25',
-        #                xr='{:2f} {:2f}'.format(-40+counter*0.4, counter*0.4),
-        #                pre='0608')
-        #        counter += 1

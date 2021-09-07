@@ -31,13 +31,7 @@ Calib = CalibMnger(img_ls, dw_ls, pw_ls)
 
 Calib.fit_tpeak()
 temp = [block.tpeak for block in Calib.block_lst]
-#for block in tqdm(Calib.block_lst):
-#    fig = plt.imshow(block.beam)
-#    plt.colorbar(fig)
-#    n = block.dwell + ' us ' + block.power + ' W Beam'
-#    plt.title(n)
-#    plt.savefig('figures/'+n)
-#    plt.close()
+
 # Temperature fitting summary plot
 sc = plt.scatter(Calib.dwell_lst, Calib.power_lst, c=temp)
 plt.xlabel('log Dwell')
@@ -48,7 +42,6 @@ plt.colorbar(sc)
 plt.show()
 
 Calib.store_dw_pw_temp_at('temp.npy')
-
 
 param_dict = Calib.collect_fitting_params()
 mask = ( (param_dict["Std"] >305)
@@ -203,42 +196,3 @@ for param in param_dict:
     ax.set_zlabel('Width in pixels')
     plt.title(param)
     plt.show()
-
-#param = (0,0,0,0,0,0)
-#p = Calib.get_tpeak_fitting_params(twod_surface, param, mask)
-#p.tolist()
-#t_func = twod_surface(*p)
-#
-#fig = plt.figure()
-#ax = fig.add_subplot(111, projection='3d')
-#ax.scatter(Calib.power_lst, Calib.dwell_lst, Calib.tpeak_lst)
-#dw = np.array(Calib.dwell_lst)
-#pw = np.array(Calib.power_lst)
-#tp = np.array(Calib.tpeak_lst)
-#pw_x, dw_y = np.meshgrid(pw, dw)
-#ax.plot_surface(pw_x, dw_y, t_func(*(pw_x, dw_y)), alpha=0.1)
-#ax.set_ylabel('Dwell us')
-#ax.set_xlabel('Current (A)')
-#ax.set_zlabel('Tpeak (C)')
-#plt.title('Tpeak fit with mask')
-#plt.show()
-
-
-#k = Calib.get_power_fitting_params(power_fit_func, param, mask)
-#k.tolist()
-#p_func = power_fit_func(*k)
-#
-#fig = plt.figure()
-#ax = fig.add_subplot(111, projection='3d')
-#ax.scatter(Calib.tpeak_lst, Calib.dwell_lst, Calib.power_lst)
-#dw = np.array(Calib.dwell_lst)
-#pw = np.array(Calib.power_lst)
-#tp = np.array(Calib.tpeak_lst)
-#tp_x, dw_y = np.meshgrid(tp, dw)
-#ax.plot_surface(tp_x, dw_y, p_func(*(tp_x, dw_y)), alpha=0.1)
-#ax.set_xlabel('Tpeak (C)')
-#ax.set_ylabel('Dwell (us)')
-#ax.set_zlabel('Power (A)')
-#plt.label('Power fit with mask')
-#plt.show()
-
