@@ -1,0 +1,105 @@
+250us_80W:
+  set1:
+    live:
+        - live1_008.bmp
+        - live1_009.bmp
+        - live1_010.bmp
+        - live1_011.bmp
+        - live1_012.bmp
+    blank:
+        - live1_008.bmp
+500us_80W:
+  set1:
+    live:
+        - live_009.bmp
+        - live_010.bmp
+        - live_011.bmp
+        - live_012.bmp
+        - live_013.bmp
+        - live_014.bmp
+        - live_015.bmp
+    blank:
+        - live_008.bmp
+1000us_70W:
+  set1:
+    live:
+        - live_009.bmp
+        - live_010.bmp
+        - live_011.bmp
+        - live_012.bmp
+        - live_013.bmp
+        - live_014.bmp
+        - live_015.bmp
+        - live_016.bmp
+    blank:
+        - live_000.bmp
+2000us_60W:
+  set1:
+    live:
+        - live_010.bmp
+        - live_011.bmp
+        - live_012.bmp
+        - live_013.bmp
+        - live_014.bmp
+        - live_015.bmp
+        - live_016.bmp
+        - live_017.bmp
+        - live_018.bmp
+        - live_019.bmp
+        - live_020.bmp
+        - live_022.bmp
+        - live_023.bmp
+    blank:
+        - live_000.bmp
+5000us_55W:
+  set1:
+    live:
+        - live_003.bmp
+        - live_004.bmp
+        - live_005.bmp
+        - live_006.bmp
+        - live_007.bmp
+        - live_008.bmp 
+        - live_009.bmp
+        - live_010.bmp
+        - live_011.bmp
+        - live_012.bmp
+        - live_013.bmp
+        - live_014.bmp
+        - live_015.bmp
+        - live_016.bmp
+        - live_019.bmp
+        - live_020.bmp
+        - live_021.bmp
+        - live_022.bmp
+        - live_023.bmp
+    blank:
+        - live_000.bmp
+10000us_50W:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+        - live_004.bmp
+        - live_005.bmp
+        - live_006.bmp
+        - live_007.bmp
+        - live_008.bmp
+        - live_009.bmp
+        - live_010.bmp
+        - live_011.bmp
+        - live_012.bmp
+        - live_013.bmp
+        - live_014.bmp
+        - live_015.bmp
+        - live_016.bmp
+        - live_017.bmp
+        - live_018.bmp
+        - live_019.bmp
+        - live_020.bmp
+        - live_021.bmp
+        - live_022.bmp
+        - live_023.bmp
+    blank:
+        - live_000.bmp

@@ -1,7 +1,6 @@
 import glob
 import os
 from os.path import basename
-import argparse
 from math import ceil
 
 import numpy as np
@@ -18,15 +17,17 @@ def existed_conditions(d):
         print(png) 
         condition = os.path.basename(png)
         condition = condition.split('_')
-        c = (int(condition[0][:condition[0].index('us')]),  int(condition[1][:2]))
+        c = (int(condition[0][:condition[0].index('us')]),
+             int(condition[1][:2]))
         ecs.add(c)
     return ecs
 
 if __name__ == '__main__':
     FIG_PER_ROW = 6
-    g = '/home/mingchiang/Desktop/Data/'
-    dir_path = f'{g}Calibration_0622/'
-    des_path = f'{g}summary/Calibration_0622/{basename(dir_path)}'
+    g = '/Users/mingchiang/Desktop/Data/'
+    p = 'black'
+    dir_path = f'{g}{p}/'
+    des_path = f'{g}summary/{p}/{basename(dir_path)}'
     try:
         os.mkdir(des_path)
     except:
@@ -52,7 +53,7 @@ if __name__ == '__main__':
         for i in range(num_sets):
             a_run = []
             for rc in tqdm(running_conditions, desc="Reading.."):
-                if rc['Run']==i and rc['LED'] and not rc['Laser']: # This line is key
+                if rc['Run']==i and rc['LED'] and rc['Laser']: # This line is key
                     print(recon_fn(rc))
                     a_run.append(plt.imread(d+'/'+recon_fn(rc)).astype(float)[:,:,2])
      

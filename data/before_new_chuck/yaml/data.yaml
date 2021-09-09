@@ -1,0 +1,2152 @@
+1000us_15A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp 
+1000us_20A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+1000us_25A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_002.bmp
+        - dark_003.bmp
+        - dark_004.bmp
+    dark_blank:
+        - dark_000.bmp
+1000us_30A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_003.bmp
+        - dark_004.bmp
+        - dark_005.bmp
+    dark_blank:
+        - dark_001.bmp
+1000us_35A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+1000us_40A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_002.bmp
+        - dark_003.bmp
+        - dark_004.bmp
+    dark_blank:
+        - dark_000.bmp
+1000us_40A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+1000us_45A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_004.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_001.bmp
+1000us_50A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_002.bmp
+        - dark_003.bmp
+        - dark_004.bmp
+    dark_blank:
+        - dark_001.bmp
+1000us_55A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_004.bmp
+        - dark_004.bmp
+        - dark_005.bmp
+    dark_blank:
+        - dark_000.bmp
+1000us_60A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_002.bmp
+        - dark_003.bmp
+        - dark_004.bmp
+    dark_blank:
+        - dark_000.bmp
+1000us_65A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+1000us_70A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_004.bmp
+        - dark_005.bmp
+        - dark_006.bmp
+    dark_blank:
+        - dark_000.bmp
+1000us_75A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_004.bmp
+        - dark_005.bmp
+        - dark_006.bmp
+    dark_blank:
+        - dark_000.bmp
+1000us_80A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_004.bmp
+        - dark_005.bmp
+        - dark_006.bmp
+    dark_blank:
+        - dark_000.bmp
+1000us_85A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_003.bmp
+        - dark_004.bmp
+    dark_blank:
+        - dark_000.bmp
+1000us_90A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_003.bmp
+        - dark_004.bmp
+    dark_blank:
+        - dark_000.bmp
+1000us_95A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_004.bmp
+        - dark_005.bmp
+    dark_blank:
+        - dark_000.bmp
+1000us_100A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_004.bmp
+        - dark_005.bmp
+    dark_blank:
+        - dark_000.bmp
+1000us_105A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_003.bmp
+        - dark_004.bmp
+        - dark_005.bmp
+    dark_blank:
+        - dark_000.bmp
+1000us_110A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_005.bmp
+        - dark_007.bmp
+        - dark_007.bmp
+    dark_blank:
+        - dark_000.bmp
+1292us_15A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+1292us_20A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+1292us_25A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+1292us_30A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+1292us_35A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+1292us_40A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+1292us_45A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+1292us_50A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+1292us_55A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+1292us_60A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+1292us_65A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+1292us_70A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_004.bmp
+    dark_blank:
+        - dark_000.bmp
+1292us_75A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+1292us_80A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+1292us_85A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+1292us_90A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+1292us_95A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+1292us_100A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+1292us_105A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+1292us_110A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+1668us_15A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+1668us_20A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+1668us_25A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+1668us_30A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+1668us_35A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+1668us_40A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+1668us_45A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+1668us_50A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+1668us_55A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+1668us_60A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+1668us_65A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+1668us_70A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+1668us_75A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+1668us_80A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+1668us_85A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+1668us_90A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+1668us_95A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+1668us_100A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+1668us_105A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+1668us_110A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+2154us_15A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+2154us_20A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+2154us_25A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+2154us_30A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+2154us_30A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+2154us_35A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+2154us_40A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+2154us_45A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+2154us_45A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+2154us_50A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+2154us_55A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+2154us_60A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+2154us_65A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+2154us_70A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+2154us_75A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+2154us_80A:
+  set1:
+    live:
+        - live_002.bmp
+        - live_003.bmp
+        - live_004.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_002.bmp
+        - dark_003.bmp
+        - dark_004.bmp
+    dark_blank:
+        - dark_000.bmp
+2154us_85A:
+  set1:
+    live:
+        - live_003.bmp
+        - live_004.bmp
+        - live_005.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_003.bmp
+        - dark_004.bmp
+        - dark_005.bmp
+    dark_blank:
+        - dark_000.bmp
+2154us_90A:
+  set1:
+    live:
+        - live_002.bmp
+        - live_003.bmp
+        - live_004.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_002.bmp
+        - dark_003.bmp
+        - dark_004.bmp
+    dark_blank:
+        - dark_000.bmp
+2154us_95A:
+  set1:
+    live:
+        - live_002.bmp
+        - live_003.bmp
+        - live_004.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_002.bmp
+        - dark_003.bmp
+        - dark_004.bmp
+    dark_blank:
+        - dark_000.bmp
+2154us_100A:
+  set1:
+    live:
+        - live_002.bmp
+        - live_003.bmp
+        - live_004.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_002.bmp
+        - dark_003.bmp
+        - dark_004.bmp
+    dark_blank:
+        - dark_000.bmp
+2154us_105A:
+  set1:
+    live:
+        - live_003.bmp
+        - live_004.bmp
+        - live_005.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_003.bmp
+        - dark_004.bmp
+        - dark_005.bmp
+    dark_blank:
+        - dark_000.bmp
+3594us_15A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+3594us_20A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+3594us_25A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+3594us_30A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+3594us_35A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+3594us_40A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+3594us_45A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+3594us_50A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+3594us_55A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+3594us_60A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+3594us_65A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+3594us_70A:
+  set1:
+    live:
+        - live_001.bmp
+        - live_002.bmp
+        - live_003.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_001.bmp
+        - dark_002.bmp
+        - dark_003.bmp
+    dark_blank:
+        - dark_000.bmp
+3594us_75A:
+  set1:
+    live:
+        - live_003.bmp
+        - live_004.bmp
+        - live_005.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_003.bmp
+        - dark_004.bmp
+        - dark_005.bmp
+    dark_blank:
+        - dark_000.bmp
+3594us_80A:
+  set1:
+    live:
+        - live_003.bmp
+        - live_004.bmp
+        - live_005.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_003.bmp
+        - dark_004.bmp
+        - dark_005.bmp
+    dark_blank:
+        - dark_000.bmp
+3594us_85A:
+  set1:
+    live:
+        - live_003.bmp
+        - live_004.bmp
+        - live_005.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_003.bmp
+        - dark_004.bmp
+        - dark_005.bmp
+    dark_blank:
+        - dark_000.bmp
+3594us_90A:
+  set1:
+    live:
+        - live_003.bmp
+        - live_004.bmp
+        - live_005.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_003.bmp
+        - dark_004.bmp
+        - dark_005.bmp
+    dark_blank:
+        - dark_000.bmp
+4642us_15A:
+  set1:
+    live:
+        - live_003.bmp
+        - live_004.bmp
+        - live_005.bmp
+    blank:
+        - live_002.bmp
+    dark:
+        - dark_003.bmp
+        - dark_004.bmp
+        - dark_005.bmp
+    dark_blank:
+        - dark_002.bmp
+4642us_20A:
+  set1:
+    live:
+        - live_003.bmp
+        - live_004.bmp
+        - live_005.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_003.bmp
+        - dark_004.bmp
+        - dark_005.bmp
+    dark_blank:
+        - dark_000.bmp
+4642us_25A:
+  set1:
+    live:
+        - live_003.bmp
+        - live_004.bmp
+        - live_005.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_003.bmp
+        - dark_004.bmp
+        - dark_005.bmp
+    dark_blank:
+        - dark_000.bmp
+4642us_30A:
+  set1:
+    live:
+        - live_003.bmp
+        - live_004.bmp
+        - live_005.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_003.bmp
+        - dark_004.bmp
+        - dark_005.bmp
+    dark_blank:
+        - dark_000.bmp
+4642us_35A:
+  set1:
+    live:
+        - live_003.bmp
+        - live_004.bmp
+        - live_002.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_003.bmp
+        - dark_004.bmp
+        - dark_002.bmp
+    dark_blank:
+        - dark_000.bmp
+4642us_40A:
+  set1:
+    live:
+        - live_002.bmp
+        - live_004.bmp
+        - live_005.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_002.bmp
+        - dark_004.bmp
+        - dark_005.bmp
+    dark_blank:
+        - dark_000.bmp
+4642us_45A:
+  set1:
+    live:
+        - live_002.bmp
+        - live_003.bmp
+        - live_004.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_002.bmp
+        - dark_003.bmp
+        - dark_004.bmp
+    dark_blank:
+        - dark_000.bmp
+4642us_50A:
+  set1:
+    live:
+        - live_002.bmp
+        - live_004.bmp
+        - live_005.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_002.bmp
+        - dark_004.bmp
+        - dark_005.bmp
+    dark_blank:
+        - dark_000.bmp
+4642us_55A:
+  set1:
+    live:
+        - live_003.bmp
+        - live_004.bmp
+        - live_005.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_003.bmp
+        - dark_004.bmp
+        - dark_005.bmp
+    dark_blank:
+        - dark_000.bmp
+4642us_60A:
+  set1:
+    live:
+        - live_003.bmp
+        - live_004.bmp
+        - live_005.bmp
+    blank:
+        - live_001.bmp
+    dark:
+        - dark_003.bmp
+        - dark_004.bmp
+        - dark_005.bmp
+    dark_blank:
+        - dark_001.bmp
+4642us_65A:
+  set1:
+    live:
+        - live_003.bmp
+        - live_004.bmp
+        - live_005.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_003.bmp
+        - dark_004.bmp
+        - dark_005.bmp
+    dark_blank:
+        - dark_000.bmp
+4642us_70A:
+  set1:
+    live:
+        - live_003.bmp
+        - live_004.bmp
+        - live_005.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_003.bmp
+        - dark_004.bmp
+        - dark_005.bmp
+    dark_blank:
+        - dark_000.bmp
+4642us_75A:
+  set1:
+    live:
+        - live_003.bmp
+        - live_004.bmp
+        - live_005.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_003.bmp
+        - dark_004.bmp
+        - dark_005.bmp
+    dark_blank:
+        - dark_000.bmp
+4642us_80A:
+  set1:
+    live:
+        - live_003.bmp
+        - live_004.bmp
+        - live_005.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_003.bmp
+        - dark_004.bmp
+        - dark_005.bmp
+    dark_blank:
+        - dark_000.bmp
+4642us_85A:
+  set1:
+    live:
+        - live_003.bmp
+        - live_004.bmp
+        - live_005.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_003.bmp
+        - dark_004.bmp
+        - dark_005.bmp
+    dark_blank:
+        - dark_000.bmp
+5995us_15A:
+  set1:
+    live:
+        - live_004.bmp
+        - live_005.bmp
+        - live_006.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_004.bmp
+        - dark_005.bmp
+        - dark_006.bmp
+    dark_blank:
+        - dark_000.bmp
+5995us_20A:
+  set1:
+    live:
+        - live_004.bmp
+        - live_005.bmp
+        - live_006.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_004.bmp
+        - dark_005.bmp
+        - dark_006.bmp
+    dark_blank:
+        - dark_000.bmp
+5995us_25A:
+  set1:
+    live:
+        - live_004.bmp
+        - live_005.bmp
+        - live_006.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_004.bmp
+        - dark_005.bmp
+        - dark_006.bmp
+    dark_blank:
+        - dark_000.bmp
+5995us_30A:
+  set1:
+    live:
+        - live_004.bmp
+        - live_005.bmp
+        - live_006.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_004.bmp
+        - dark_005.bmp
+        - dark_006.bmp
+    dark_blank:
+        - dark_000.bmp
+5995us_35A:
+  set1:
+    live:
+        - live_004.bmp
+        - live_005.bmp
+        - live_006.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_004.bmp
+        - dark_005.bmp
+        - dark_006.bmp
+    dark_blank:
+        - dark_000.bmp
+5995us_40A:
+  set1:
+    live:
+        - live_004.bmp
+        - live_005.bmp
+        - live_006.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_004.bmp
+        - dark_005.bmp
+        - dark_006.bmp
+    dark_blank:
+        - dark_000.bmp
+5995us_45A:
+  set1:
+    live:
+        - live_004.bmp
+        - live_005.bmp
+        - live_006.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_004.bmp
+        - dark_005.bmp
+        - dark_006.bmp
+    dark_blank:
+        - dark_000.bmp
+5995us_50A:
+  set1:
+    live:
+        - live_004.bmp
+        - live_005.bmp
+        - live_006.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_004.bmp
+        - dark_005.bmp
+        - dark_006.bmp
+    dark_blank:
+        - dark_000.bmp
+5995us_55A:
+  set1:
+    live:
+        - live_004.bmp
+        - live_005.bmp
+        - live_006.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_004.bmp
+        - dark_005.bmp
+        - dark_006.bmp
+    dark_blank:
+        - dark_000.bmp
+5995us_60A:
+  set1:
+    live:
+        - live_004.bmp
+        - live_005.bmp
+        - live_006.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_004.bmp
+        - dark_005.bmp
+        - dark_006.bmp
+    dark_blank:
+        - dark_000.bmp
+5995us_65A:
+  set1:
+    live:
+        - live_004.bmp
+        - live_005.bmp
+        - live_006.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_004.bmp
+        - dark_005.bmp
+        - dark_006.bmp
+    dark_blank:
+        - dark_000.bmp
+5995us_70A:
+  set1:
+    live:
+        - live_004.bmp
+        - live_005.bmp
+        - live_006.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_004.bmp
+        - dark_005.bmp
+        - dark_006.bmp
+    dark_blank:
+        - dark_000.bmp
+5995us_75A:
+  set1:
+    live:
+        - live_004.bmp
+        - live_005.bmp
+        - live_006.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_004.bmp
+        - dark_005.bmp
+        - dark_006.bmp
+    dark_blank:
+        - dark_000.bmp
+5995us_80A:
+  set1:
+    live:
+        - live_004.bmp
+        - live_005.bmp
+        - live_006.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_004.bmp
+        - dark_005.bmp
+        - dark_006.bmp
+    dark_blank:
+        - dark_000.bmp
+7743us_15A:
+  set1:
+    live:
+        - live_004.bmp
+        - live_005.bmp
+        - live_006.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_004.bmp
+        - dark_005.bmp
+        - dark_006.bmp
+    dark_blank:
+        - dark_000.bmp
+7743us_20A:
+  set1:
+    live:
+        - live_004.bmp
+        - live_005.bmp
+        - live_006.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_004.bmp
+        - dark_005.bmp
+        - dark_006.bmp
+    dark_blank:
+        - dark_000.bmp
+7743us_25A:
+  set1:
+    live:
+        - live_004.bmp
+        - live_005.bmp
+        - live_006.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_004.bmp
+        - dark_005.bmp
+        - dark_006.bmp
+    dark_blank:
+        - dark_000.bmp
+7743us_30A:
+  set1:
+    live:
+        - live_004.bmp
+        - live_005.bmp
+        - live_006.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_004.bmp
+        - dark_005.bmp
+        - dark_006.bmp
+    dark_blank:
+        - dark_000.bmp
+7743us_35A:
+  set1:
+    live:
+        - live_004.bmp
+        - live_005.bmp
+        - live_006.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_004.bmp
+        - dark_005.bmp
+        - dark_006.bmp
+    dark_blank:
+        - dark_000.bmp
+7743us_40A:
+  set1:
+    live:
+        - live_004.bmp
+        - live_005.bmp
+        - live_006.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_004.bmp
+        - dark_005.bmp
+        - dark_006.bmp
+    dark_blank:
+        - dark_000.bmp
+7743us_45A:
+  set1:
+    live:
+        - live_004.bmp
+        - live_005.bmp
+        - live_006.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_004.bmp
+        - dark_005.bmp
+        - dark_006.bmp
+    dark_blank:
+        - dark_000.bmp
+7743us_50A:
+  set1:
+    live:
+        - live_004.bmp
+        - live_005.bmp
+        - live_006.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_004.bmp
+        - dark_005.bmp
+        - dark_006.bmp
+    dark_blank:
+        - dark_000.bmp
+7743us_55A:
+  set1:
+    live:
+        - live_005.bmp
+        - live_006.bmp
+        - live_007.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_005.bmp
+        - dark_006.bmp
+        - dark_007.bmp
+    dark_blank:
+        - dark_000.bmp
+7743us_60A:
+  set1:
+    live:
+        - live_004.bmp
+        - live_005.bmp
+        - live_006.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_004.bmp
+        - dark_005.bmp
+        - dark_006.bmp
+    dark_blank:
+        - dark_000.bmp
+7743us_65A:
+  set1:
+    live:
+        - live_005.bmp
+        - live_006.bmp
+        - live_007.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_005.bmp
+        - dark_006.bmp
+        - dark_007.bmp
+    dark_blank:
+        - dark_000.bmp
+7743us_70A:
+  set1:
+    live:
+        - live_005.bmp
+        - live_006.bmp
+        - live_007.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_005.bmp
+        - dark_006.bmp
+        - dark_007.bmp
+    dark_blank:
+        - dark_000.bmp
+7743us_75A:
+  set1:
+    live:
+        - live_005.bmp
+        - live_006.bmp
+        - live_007.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_005.bmp
+        - dark_006.bmp
+        - dark_007.bmp
+    dark_blank:
+        - dark_000.bmp
+10000us_15A:
+  set1:
+    live:
+        - live_004.bmp
+        - live_005.bmp
+        - live_006.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_004.bmp
+        - dark_005.bmp
+        - dark_006.bmp
+    dark_blank:
+        - dark_000.bmp
+10000us_15A:
+  set1:
+    live:
+        - live_004.bmp
+        - live_005.bmp
+        - live_006.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_004.bmp
+        - dark_005.bmp
+        - dark_006.bmp
+    dark_blank:
+        - dark_000.bmp
+10000us_20A:
+  set1:
+    live:
+        - live_004.bmp
+        - live_005.bmp
+        - live_006.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_004.bmp
+        - dark_005.bmp
+        - dark_006.bmp
+    dark_blank:
+        - dark_000.bmp
+10000us_25A:
+  set1:
+    live:
+        - live_004.bmp
+        - live_005.bmp
+        - live_006.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_004.bmp
+        - dark_005.bmp
+        - dark_006.bmp
+    dark_blank:
+        - dark_000.bmp
+10000us_30A:
+  set1:
+    live:
+        - live_004.bmp
+        - live_005.bmp
+        - live_006.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_004.bmp
+        - dark_005.bmp
+        - dark_006.bmp
+    dark_blank:
+        - dark_000.bmp
+10000us_35A:
+  set1:
+    live:
+        - live_004.bmp
+        - live_005.bmp
+        - live_006.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_004.bmp
+        - dark_005.bmp
+        - dark_006.bmp
+    dark_blank:
+        - dark_000.bmp
+10000us_40A:
+  set1:
+    live:
+        - live_004.bmp
+        - live_005.bmp
+        - live_006.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_004.bmp
+        - dark_005.bmp
+        - dark_006.bmp
+    dark_blank:
+        - dark_000.bmp
+10000us_45A:
+  set1:
+    live:
+        - live_004.bmp
+        - live_005.bmp
+        - live_006.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_004.bmp
+        - dark_005.bmp
+        - dark_006.bmp
+    dark_blank:
+        - dark_000.bmp
+10000us_50A:
+  set1:
+    live:
+        - live_004.bmp
+        - live_005.bmp
+        - live_006.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_004.bmp
+        - dark_005.bmp
+        - dark_006.bmp
+    dark_blank:
+        - dark_000.bmp
+10000us_55A:
+  set1:
+    live:
+        - live_004.bmp
+        - live_005.bmp
+        - live_006.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_004.bmp
+        - dark_005.bmp
+        - dark_006.bmp
+    dark_blank:
+        - dark_000.bmp
+10000us_60A:
+  set1:
+    live:
+        - live_004.bmp
+        - live_005.bmp
+        - live_006.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_004.bmp
+        - dark_005.bmp
+        - dark_006.bmp
+    dark_blank:
+        - dark_000.bmp
+          #10000us_65A:
+          #  set1:
+          #    live:
+          #        - live_004.bmp
+          #        - live_005.bmp
+          #        - live_006.bmp
+          #    blank:
+          #        - live_000.bmp
+          #    dark:
+          #    dark_blank:
+10000us_70A:
+  set1:
+    live:
+        - live_004.bmp
+        - live_005.bmp
+        - live_006.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_004.bmp
+        - dark_005.bmp
+        - dark_006.bmp
+    dark_blank:
+        - dark_000.bmp
+10000us_75A:
+  set1:
+    live:
+        - live_005.bmp
+        - live_006.bmp
+        - live_007.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_005.bmp
+        - dark_006.bmp
+        - dark_007.bmp
+    dark_blank:
+        - dark_000.bmp

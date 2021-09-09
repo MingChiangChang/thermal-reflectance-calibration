@@ -1,0 +1,543 @@
+250us_15W:
+  set1:
+    live:
+        - live1_010.bmp
+        - live1_011.bmp
+        - live1_012.bmp
+    blank:
+        - live1_009.bmp
+250us_20W:
+  set1:
+    live:
+        - live1_011.bmp
+        - live1_012.bmp
+    blank:
+        - live1_009.bmp
+250us_25W:
+  set1:
+    live:
+        - live2_010.bmp
+        - live2_011.bmp
+        - live2_012.bmp
+    blank:
+        - live2_008.bmp
+250us_30W:
+  set1:
+    live:
+        - live1_010.bmp
+        - live1_011.bmp
+        - live1_012.bmp
+    blank:
+        - live1_008.bmp
+250us_35W:
+  set1:
+    live:
+        - live1_013.bmp
+        - live1_011.bmp
+        - live1_012.bmp
+    blank:
+        - live1_009.bmp
+250us_40W:
+  set1:
+    live:
+        - live2_010.bmp
+        - live2_011.bmp
+        - live2_012.bmp
+    blank:
+        - live2_008.bmp
+250us_45W:
+  set1:
+    live:
+        - live1_010.bmp
+        - live1_011.bmp
+        - live1_012.bmp
+    blank:
+        - live1_008.bmp
+250us_50W:
+  set1:
+    live:
+        - live1_010.bmp
+        - live1_011.bmp
+        - live1_012.bmp
+    blank:
+        - live1_009.bmp
+250us_55W:
+  set1:
+    live:
+        - live1_010.bmp
+        - live1_011.bmp
+        - live1_012.bmp
+    blank:
+        - live1_009.bmp
+250us_60W:
+  set1:
+    live:
+        - live2_010.bmp
+        - live2_011.bmp
+        - live2_012.bmp
+    blank:
+        - live2_009.bmp
+250us_65W:
+  set1:
+    live:
+        - live1_010.bmp
+        - live1_011.bmp
+        - live1_012.bmp
+    blank:
+        - live1_008.bmp
+250us_70W:
+  set1:
+    live:
+        - live1_010.bmp
+        - live1_011.bmp
+        - live1_012.bmp
+    blank:
+        - live1_008.bmp
+250us_75W:
+  set1:
+    live:
+        - live2_010.bmp
+        - live2_011.bmp
+        - live2_012.bmp
+    blank:
+        - live2_009.bmp
+250us_80W:
+  set1:
+    live:
+        - live1_010.bmp
+        - live1_011.bmp
+        - live1_012.bmp
+    blank:
+        - live1_008.bmp
+500us_15W:
+  set1:
+    live:
+        - live_010.bmp
+        - live_011.bmp
+        - live_012.bmp
+    blank:
+        - live_008.bmp
+500us_20W:
+  set1:
+    live:
+        - live_010.bmp
+        - live_011.bmp
+        - live_012.bmp
+    blank:
+        - live_008.bmp
+500us_25W:
+  set1:
+    live:
+        - live_013.bmp
+        - live_011.bmp
+        - live_012.bmp
+    blank:
+        - live_008.bmp
+500us_30W:
+  set1:
+    live:
+        - live_013.bmp
+        - live_011.bmp
+        - live_012.bmp
+    blank:
+        - live_008.bmp
+500us_35W:
+  set1:
+    live:
+        - live_013.bmp
+        - live_011.bmp
+        - live_012.bmp
+    blank:
+        - live_008.bmp
+500us_40W:
+  set1:
+    live:
+        - live_013.bmp
+        - live_011.bmp
+        - live_012.bmp
+    blank:
+        - live_008.bmp
+500us_45W:
+  set1:
+    live:
+        - live_013.bmp
+        - live_011.bmp
+        - live_012.bmp
+    blank:
+        - live_008.bmp
+500us_50W:
+  set1:
+    live:
+        - live_013.bmp
+        - live_011.bmp
+        - live_012.bmp
+    blank:
+        - live_008.bmp
+500us_55W:
+  set1:
+    live:
+        - live_015.bmp
+        - live_016.bmp
+        - live_017.bmp
+    blank:
+        - live_012.bmp
+500us_60W:
+  set1:
+    live:
+        - live_015.bmp
+        - live_016.bmp
+        - live_017.bmp
+    blank:
+        - live_012.bmp
+500us_65W:
+  set1:
+    live:
+        - live_013.bmp
+        - live_011.bmp
+        - live_012.bmp
+    blank:
+        - live_008.bmp
+500us_70W:
+  set1:
+    live:
+        - live_010.bmp
+        - live_011.bmp
+        - live_012.bmp
+    blank:
+        - live_008.bmp
+500us_75W:
+  set1:
+    live:
+        - live_010.bmp
+        - live_011.bmp
+        - live_012.bmp
+    blank:
+        - live_008.bmp
+500us_80W:
+  set1:
+    live:
+        - live_012.bmp
+        - live_011.bmp
+        - live_013.bmp
+    blank:
+        - live_008.bmp
+1000us_15W:
+  set1:
+    live:
+        - live_010.bmp
+        - live_011.bmp
+        - live_012.bmp
+    blank:
+        - live_000.bmp
+1000us_20W:
+  set1:
+    live:
+        - live_011.bmp
+        - live_012.bmp
+        - live_013.bmp
+    blank:
+        - live_000.bmp
+1000us_25W:
+  set1:
+    live:
+        - live_010.bmp
+        - live_011.bmp
+        - live_012.bmp
+    blank:
+        - live_000.bmp
+1000us_30W:
+  set1:
+    live:
+        - live_011.bmp
+        - live_012.bmp
+        - live_013.bmp
+    blank:
+        - live_000.bmp
+1000us_35W:
+  set1:
+    live:
+        - live_010.bmp
+        - live_011.bmp
+        - live_012.bmp
+    blank:
+        - live_000.bmp
+1000us_40W:
+  set1:
+    live:
+        - live_011.bmp
+        - live_012.bmp
+        - live_013.bmp
+    blank:
+        - live_000.bmp
+1000us_45W:
+  set1:
+    live:
+        - live_011.bmp
+        - live_012.bmp
+        - live_014.bmp
+    blank:
+        - live_000.bmp
+1000us_50W:
+  set1:
+    live:
+        - live_011.bmp
+        - live_012.bmp
+        - live_013.bmp
+    blank:
+        - live_000.bmp
+1000us_55W:
+  set1:
+    live:
+        - live_011.bmp
+        - live_012.bmp
+        - live_013.bmp
+    blank:
+        - live_000.bmp
+1000us_60W:
+  set1:
+    live:
+        - live_011.bmp
+        - live_012.bmp
+        - live_013.bmp
+    blank:
+        - live_000.bmp
+1000us_65W:
+  set1:
+    live:
+        - live_011.bmp
+        - live_012.bmp
+        - live_013.bmp
+    blank:
+        - live_000.bmp
+1000us_70W:
+  set1:
+    live:
+        - live_011.bmp
+        - live_012.bmp
+        - live_013.bmp
+    blank:
+        - live_000.bmp
+2000us_15W:
+  set1:
+    live:
+        - live_016.bmp
+        - live_014.bmp
+        - live_015.bmp
+    blank:
+        - live_000.bmp
+2000us_20W:
+  set1:
+    live:
+        - live_016.bmp
+        - live_014.bmp
+        - live_015.bmp
+    blank:
+        - live_000.bmp
+2000us_25W:
+  set1:
+    live:
+        - live_016.bmp
+        - live_014.bmp
+        - live_015.bmp
+    blank:
+        - live_000.bmp
+2000us_30W:
+  set1:
+    live:
+        - live_016.bmp
+        - live_014.bmp
+        - live_015.bmp
+    blank:
+        - live_000.bmp
+2000us_35W:
+  set1:
+    live:
+        - live_016.bmp
+        - live_014.bmp
+        - live_015.bmp
+    blank:
+        - live_000.bmp
+2000us_40W:
+  set1:
+    live:
+        - live_016.bmp
+        - live_014.bmp
+        - live_015.bmp
+    blank:
+        - live_000.bmp
+2000us_45W:
+  set1:
+    live:
+        - live_016.bmp
+        - live_014.bmp
+        - live_015.bmp
+    blank:
+        - live_000.bmp
+2000us_50W:
+  set1:
+    live:
+        - live_016.bmp
+        - live_014.bmp
+        - live_015.bmp
+    blank:
+        - live_000.bmp
+2000us_55W:
+  set1:
+    live:
+        - live_016.bmp
+        - live_014.bmp
+        - live_015.bmp
+    blank:
+        - live_000.bmp
+2000us_60W:
+  set1:
+    live:
+        - live_016.bmp
+        - live_014.bmp
+        - live_015.bmp
+    blank:
+        - live_000.bmp
+5000us_15W:
+  set1:
+    live:
+        - live_013.bmp
+        - live_014.bmp
+        - live_015.bmp
+    blank:
+        - live_000.bmp
+5000us_20W:
+  set1:
+    live:
+        - live_012.bmp
+        - live_013.bmp
+        - live_014.bmp
+    blank:
+        - live_000.bmp
+5000us_25W:
+  set1:
+    live:
+        - live_013.bmp
+        - live_014.bmp
+        - live_015.bmp
+    blank:
+        - live_000.bmp
+5000us_30W:
+  set1:
+    live:
+        - live_013.bmp
+        - live_014.bmp
+        - live_015.bmp
+    blank:
+        - live_000.bmp
+5000us_35W:
+  set1:
+    live:
+        - live_011.bmp
+        - live_012.bmp
+        - live_013.bmp
+    blank:
+        - live_000.bmp
+5000us_40W:
+  set1:
+    live:
+        - live_010.bmp
+        - live_011.bmp
+        - live_012.bmp
+    blank:
+        - live_000.bmp
+5000us_45W:
+  set1:
+    live:
+        - live_010.bmp
+        - live_011.bmp
+        - live_012.bmp
+    blank:
+        - live_000.bmp
+5000us_50W:
+  set1:
+    live:
+        - live_010.bmp
+        - live_011.bmp
+        - live_012.bmp
+    blank:
+        - live_000.bmp
+5000us_55W:
+  set1:
+    live:
+        - live_010.bmp
+        - live_011.bmp
+        - live_012.bmp
+    blank:
+        - live_000.bmp
+10000us_15W:
+  set1:
+    live:
+        - live_011.bmp
+        - live_012.bmp
+        - live_013.bmp
+    blank:
+        - live_000.bmp
+10000us_20W:
+  set1:
+    live:
+        - live_010.bmp
+        - live_011.bmp
+        - live_012.bmp
+    blank:
+        - live_000.bmp
+10000us_25W:
+  set1:
+    live:
+        - live_011.bmp
+        - live_012.bmp
+        - live_013.bmp
+    blank:
+        - live_000.bmp
+10000us_30W:
+  set1:
+    live:
+        - live_010.bmp
+        - live_011.bmp
+        - live_012.bmp
+    blank:
+        - live_000.bmp
+10000us_35W:
+  set1:
+    live:
+        - live_011.bmp
+        - live_012.bmp
+        - live_013.bmp
+    blank:
+        - live_000.bmp
+10000us_40W:
+  set1:
+    live:
+        - live_010.bmp
+        - live_011.bmp
+        - live_012.bmp
+    blank:
+        - live_000.bmp
+10000us_45W:
+  set1:
+    live:
+        - live_011.bmp
+        - live_012.bmp
+        - live_013.bmp
+    blank:
+        - live_000.bmp
+10000us_50W:
+  set1:
+    live:
+        - live_010.bmp
+        - live_011.bmp
+        - live_012.bmp
+    blank:
+        - live_000.bmp
+10000us_55W:
+  set1:
+    live:
+        - live_006.bmp
+        - live_012.bmp
+        - live_013.bmp
+    blank:
+        - live_000.bmp

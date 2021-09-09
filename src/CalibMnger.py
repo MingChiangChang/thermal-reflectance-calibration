@@ -33,11 +33,6 @@ class CalibMnger():
     def __len__(self):
         return len(self.block_lst)
 
-    #def parse_condition(self, condition):
-    #    ''' Parse the file names to get condition'''
-    #    sep = condition.index('_')
-    #    return condition[:sep-2], condition[sep+1:-1]
-
     def fit_tpeak(self):
         ''' Make every block fit their data '''
         for block in tqdm(self.block_lst, desc='Fitting tpeak and profile'):
@@ -72,32 +67,36 @@ class CalibMnger():
         dwell_data = np.array(self.dwell_lst)[mask]
         tpeak_data = np.array(self.tpeak_lst)[mask]
 
-        p, pcov, infodict= fit_xy_to_z_surface_with_func(tpeak_data, dwell_data,
-                                          power_data, fitting_func,
-                                          param)
+        p, pcov, infodict= fit_xy_to_z_surface_with_func(tpeak_data,
+                                          dwell_data, power_data,
+                                          fitting_func, param)
         return p, pcov
 
     def fitting_profile_params(self, fitting_func, param, mask=None):
         if mask is None:
-            mask = np.array(self.tpeak_lst) > 20 
+            mask = np.array(self.tpeak_lst) > 20 # make this higher? 
         params_arr_to_fit = self.collect_fitting_params() 
         
         power_data = np.array(self.power_lst)[mask]
         dwell_data = np.array(self.dwell_lst)[mask]
 
         for params in params_arr_to_fit:
-            p, pcov, _ = fit_xy_to_z_surface_with_func(power_data, dwell_data,
-                                              params_arr_to_fit[params][mask],
-                                              fitting_func, param)
+            p, pcov, _ = fit_xy_to_z_surface_with_func(power_data,
+                         dwell_data, params_arr_to_fit[params][mask],
+                         fitting_func, param)
             print(params, ': ', p)
             self.param_fitting_param[params] = p
 
     def collect_fitting_params(self):
-        ''' Collect fitting parameters. Currently fixed for gaussian'''
+        ''' 
+        Collect Gaussian fitting parameters.
+        return height, std, base    
+         '''
         height_lst = []
         s_lst = []
         base_lst = []
-        for block in tqdm(self.block_lst, desc="Collecting fitting params"):
+        for block in tqdm(self.block_lst,
+                          desc="Collecting fitting params"):
              height_lst.append(block.profile_params[0])
              s_lst.append(block.profile_params[1])
              base_lst.append(block.profile_params[2])

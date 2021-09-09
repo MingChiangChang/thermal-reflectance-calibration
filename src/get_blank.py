@@ -8,13 +8,16 @@ from tqdm import tqdm
 from preprocess import get_wanted_frames_for_condition, get_calib_dir_name_from_dwell
 from preprocess import recon_fn
 
-data = '0618'
+#data = '0618'
 
-yaml_path = '/home/mingchiang/Desktop/Code/thermal-reflectance-calibration/data/yaml/Calibration_0622.yaml'
+#yaml_path = '/home/mingchiang/Desktop/Code/thermal-reflectance-calibration/data/yaml/Calibration_0622.yaml'
+yaml_path = '/Users/mingchiang/Desktop/github/thermal-reflectance-calibration/data/yaml/black_blank.yaml'
 
-dir_path = '/home/mingchiang/Desktop/Data/Calibration_0622/'
+#dir_path = '/home/mingchiang/Desktop/Data/Calibration_0622/'
+dir_path = '/Users/mingchiang/Desktop/Data/Calibration_dot/'
 
-dwell = ['2924us', '4405us', '6637us', '10000us']
+#dwell = ['2924us', '4405us', '6637us', '10000us']
+dwell = ['2500us']
 
 for d in dwell:
     

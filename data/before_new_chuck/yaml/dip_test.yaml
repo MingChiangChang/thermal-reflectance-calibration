@@ -1,0 +1,14 @@
+2154us_105A:
+  set1:
+    live:
+        - live_003.bmp
+        - live_004.bmp
+        - live_005.bmp
+    blank:
+        - live_000.bmp
+    dark:
+        - dark_003.bmp
+        - dark_004.bmp
+        - dark_005.bmp
+    dark_blank:
+        - dark_000.bmp
