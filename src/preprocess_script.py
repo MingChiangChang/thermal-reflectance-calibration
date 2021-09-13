@@ -13,17 +13,17 @@ from preprocess import get_dir_name_from_cond
 from temp_calibration import moments
 
 ### Global
-x_r = (400, 800)
-y_r = (400, 1000)
+x_r = (250, 650)
+y_r = (500, 1100)
 
 # Mac
 #path = '/Users/mingchiang/Desktop/github/thermal-reflectance-calibration/data//0608/'
 # Linux
-path = '/home/mingchiang/Desktop/Data/0622/'
+path = '/home/mingchiang/Desktop/Data/even_temp_test/'
 
-blank_path = '/home/mingchiang/Desktop/Data/Calibration_0622'
+blank_path = '/home/mingchiang/Desktop/Data/even_temp_test_calibration'
 
-yaml_path = f'../data/yaml/0622.yaml'
+yaml_path = f'../data/yaml/even_temp_test.yaml'
 
 with open(yaml_path, 'r') as f:
     yaml_dict = yaml.load(f, Loader=yaml.FullLoader)
@@ -37,7 +37,7 @@ for idx, p in enumerate(live_img_conds):
 all_conds = [parse_laser_condition(d)
                    for d in live_img_conds]
 
-for cond in live_img_conds[11:]: 
+for cond in live_img_conds: 
     dir_name = get_dir_name_from_cond(cond)
     live_img_dir = path + dir_name
     print(live_img_dir)
@@ -62,7 +62,7 @@ for cond in live_img_conds[11:]:
         live_im, xs, ys, pfits = preprocess(live_img_dir, wanted_frame, 
                              blank_im, x_r=x_r, y_r=y_r, blank_bypass=True, 
                              center_estimate=estimate, t=cond_dict['power'],
-                             dwell=cond_dict['dwell'], plot=False, savefig=False)
+                             dwell=cond_dict['dwell'], plot=True, savefig=True)
 
         np.save(f'../data/npy/{cond}_img.npy', live_im)
         np.save(f'../data/npy/{cond}_xs.npy', xs)

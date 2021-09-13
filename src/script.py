@@ -44,10 +44,6 @@ plt.show()
 Calib.store_dw_pw_temp_at('temp.npy')
 
 param_dict = Calib.collect_fitting_params()
-mask = ( (param_dict["Std"] >305)
-        & (param_dict["Std"] < 598)
-        & (np.array(Calib.tpeak_lst) > 50)
-        & (np.array(Calib.power_lst) > 30) )
 param = (0,0,0,0,0,0)
 #Calib.fitting_profile_params(twod_surface, param)
 p, pcov, infodict = Calib.get_tpeak_fitting_params(twod_surface, param)
@@ -56,6 +52,7 @@ print(pcov.shape)
 p.tolist()
 t_func = twod_surface(*p)
 
+# 3D plot
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
 ax.scatter(Calib.power_lst, Calib.dwell_lst, Calib.tpeak_lst)
@@ -70,15 +67,9 @@ ax.set_zlabel('Tpeak (C)')
 plt.title('Tpeak fit')
 plt.show()
 
-
 #### Linear Correction ####
-real_power_to_melt = {'1000': 72,
-                      '2000': 64,
-                      '2500': 62,
-                      '5000': 55,
-                      '6000': 56,
-                      '7500': 55,
-                      '10000': 53}
+with open("../data/yaml/melt.yaml", "r") as f:
+    real_power_to_melt = yaml.load(f, Loader=yaml.FullLoader)
 #real_power_to_melt = {
 #        '567': 69.5,
 #        '855': 63,

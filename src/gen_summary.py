@@ -23,10 +23,11 @@ def existed_conditions(d):
     return ecs
 
 if __name__ == '__main__':
+    d = 'even_temp_test_calibration'
     FIG_PER_ROW = 6
     g = '/home/mingchiang/Desktop/Data/'
-    dir_path = f'{g}Calibration_0622/'
-    des_path = f'{g}summary/Calibration_0622/{basename(dir_path)}'
+    dir_path = f'{g}{d}/'
+    des_path = f'{g}summary/{d}/{basename(dir_path)}'
     try:
         os.mkdir(des_path)
     except:
