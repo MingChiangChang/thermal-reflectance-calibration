@@ -8,22 +8,20 @@ from tqdm import tqdm
 from preprocess import get_wanted_frames_for_condition, get_calib_dir_name_from_dwell
 from preprocess import recon_fn
 
-#data = '0618'
+data = '0618'
+name = 'even_temp_test_calibration'
 
-#yaml_path = '/home/mingchiang/Desktop/Code/thermal-reflectance-calibration/data/yaml/Calibration_0622.yaml'
-yaml_path = '/Users/mingchiang/Desktop/github/thermal-reflectance-calibration/data/yaml/black_blank.yaml'
+yaml_path = f'/home/mingchiang/Desktop/github/thermal-reflectance-calibration/data/yaml/{name}.yaml'
 
-#dir_path = '/home/mingchiang/Desktop/Data/Calibration_0622/'
-dir_path = '/Users/mingchiang/Desktop/Data/Calibration_dot/'
+dir_path = f'/home/mingchiang/Desktop/Data/{name}/'
 
-#dwell = ['2924us', '4405us', '6637us', '10000us']
-dwell = ['2500us']
+dwell = ['6637us']
 
 for d in dwell:
     
     with open(yaml_path, 'r') as f:
         frames = yaml.load(f, Loader=yaml.FullLoader)
-
+    print(frames)
     frames = get_wanted_frames_for_condition(d, frames)
     fs = np.sum([len(frames[i]) for i in frames]) 
     imgs = np.zeros((fs, 1024, 1280))

@@ -23,6 +23,7 @@ def existed_conditions(d):
     return ecs
 
 if __name__ == '__main__':
+    d = 'even_temp_test_calibration'
     FIG_PER_ROW = 6
     g = '/Users/mingchiang/Desktop/Data/'
     p = 'black'

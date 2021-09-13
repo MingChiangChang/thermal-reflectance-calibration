@@ -13,8 +13,8 @@ from preprocess import get_highest_power_for_cond
 from preprocess import get_dir_name_from_cond
 
 ### Global
-x_r = (0, 600)
-y_r = (100, 1000)
+x_r = (250, 650)
+y_r = (500, 1100)
 
 # Mac
 PATH = '/Users/mingchiang/Desktop/Data/black/'
@@ -23,11 +23,11 @@ YAML_PATH = '../data/yaml/black.yaml'
 
 
 # Linux
-#path = '/home/mingchiang/Desktop/Data/0622/'
+path = '/home/mingchiang/Desktop/Data/even_temp_test/'
 
-#blank_path = '/home/mingchiang/Desktop/Data/Calibration_0622'
+blank_path = '/home/mingchiang/Desktop/Data/even_temp_test_calibration'
 
-#yaml_path = f'../data/yaml/0622.yaml'
+yaml_path = f'../data/yaml/even_temp_test.yaml'
 
 with open(YAML_PATH, 'r') as f:
     yaml_dict = yaml.load(f, Loader=yaml.FullLoader)
@@ -41,7 +41,7 @@ for idx, p in enumerate(live_img_conds):
 all_conds = [parse_laser_condition(d)
                    for d in live_img_conds]
 
-for cond in live_img_conds:
+for cond in live_img_conds: 
     dir_name = get_dir_name_from_cond(cond)
     live_img_dir = PATH + dir_name
     print(live_img_dir)
