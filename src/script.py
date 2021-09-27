@@ -67,6 +67,9 @@ ax.set_zlabel('Tpeak (C)')
 plt.title('Tpeak fit')
 plt.show()
 
+np.save("../data/dw.npy", dw)
+np.save("../data/pw.npy", pw)
+np.save("../data/pw.npy", tp)
 #### Linear Correction ####
 with open("../data/yaml/melt.yaml", "r") as f:
     real_power_to_melt = yaml.load(f, Loader=yaml.FullLoader)

@@ -23,12 +23,12 @@ def existed_conditions(d):
     return ecs
 
 if __name__ == '__main__':
-    d = 'even_temp_test_calibration'
+    d = 'even_temp_test_2/'
     FIG_PER_ROW = 6
-    g = '/Users/mingchiang/Desktop/Data/'
+    g = '/home/mingchiang/Desktop/Data/'
     p = 'black'
-    dir_path = f'{g}{p}/'
-    des_path = f'{g}summary/{p}/{basename(dir_path)}'
+    dir_path = f'{g}{d}'
+    des_path = f'{g}summary/{d}/{basename(dir_path)}'
     try:
         os.mkdir(des_path)
     except:

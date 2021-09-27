@@ -13,8 +13,8 @@ from preprocess import get_highest_power_for_cond
 from preprocess import get_dir_name_from_cond
 
 ### Global
-x_r = (250, 650)
-y_r = (500, 1100)
+x_r = (150, 650)
+y_r = (150, 1100)
 
 # Mac
 PATH = '/Users/mingchiang/Desktop/Data/black/'
@@ -23,11 +23,11 @@ YAML_PATH = '../data/yaml/black.yaml'
 
 
 # Linux
-path = '/home/mingchiang/Desktop/Data/even_temp_test/'
+PATH = '/home/mingchiang/Desktop/Data/even_temp_test/'
 
-blank_path = '/home/mingchiang/Desktop/Data/even_temp_test_calibration'
+BLANK_PATH = '/home/mingchiang/Desktop/Data/even_temp_test_calibration'
 
-yaml_path = f'../data/yaml/even_temp_test.yaml'
+YAML_PATH = f'../data/yaml/even_temp_test.yaml'
 
 with open(YAML_PATH, 'r') as f:
     yaml_dict = yaml.load(f, Loader=yaml.FullLoader)

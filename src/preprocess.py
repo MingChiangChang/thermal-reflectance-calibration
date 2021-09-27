@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 from tqdm import tqdm
 
 from temp_calibration import fit_center
-
+kappa = 1.2*10**-4
 def preprocess(live_img_path, wanted_frames, blank_img_input, x_r=(0, 1024), y_r=(0, 1280),
                blank_bypass=False, center_estimate=False,
                t=False, dwell=False, plot=False, savefig=False):
@@ -166,7 +166,7 @@ def shift_calibration_to_imgs(imgs, blank_im, center_estimate=False,
     ys = []
     pfits = []
     for idx, _ in tqdm(enumerate(imgs), desc='Read and find center...'):
-        imgs[idx] = imgs[idx]-blank_im
+        imgs[idx] = (imgs[idx]-blank_im)/blank_im/kappa
         if center_estimate:
             x, y, pfit = fit_center(imgs[idx], center_estimate, t, dwell, idx, plot, savefig)
         else:

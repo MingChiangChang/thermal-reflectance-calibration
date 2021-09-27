@@ -16,18 +16,21 @@ import matplotlib.pyplot as plt
 from preprocess import *
 
 p = ['Height', 'x', 'y', 'width_x', 'width_y', 'rho', 'base']
+kappa = 1.2*10**-4
+def plot_wafer(diameter):
+    theta = np.linspace(0, 2*np.pi, 180)
+    plt.plot(diameter*np.cos(theta), diameter*np.sin(theta), c='k')
 
 yaml_path = '../data/yaml/even_temp_test.yaml'
 with open(yaml_path, 'r') as f:
     yaml_dict = yaml.load(f, Loader=yaml.FullLoader)
 
 for d in yaml_dict:
-
-    #xs = np.load(f'../data/npy/{d}_xs.npy').tolist()
-    #ys = np.load(f'../data/npy/{d}_ys.npy').tolist()
-    for i in range(5,6):
+    for i in range(6,7):
         try:
-            pfit = np.load(f'../data/npy/{d}_pfit.npy')[:,i].tolist()
+            pfit = np.load(f'../data/npy/{d}_pfit.npy')[:,0]
+            pfit += np.load(f'../data/npy/{d}_pfit.npy')[:,6]
+            pfit = pfit.tolist()
         except FileNotFoundError:
             print(f'{d}_pfit.npy not found.')
             continue
@@ -36,17 +39,11 @@ for d in yaml_dict:
 
         for x, run in enumerate(frames):
             f = frames[run]
-            #mean = np.mean(ys[:len(f)])
-            #new_x = [x-mean for x in ys[:len(f)]]
-            #plt.plot(np.arange(len(f)), pfit[:len(f)])
-            print(len(f))
-            print(np.repeat([-36+4*x], len(f)).shape,
-                  np.arange(-27, 27, 54/len(f)).shape) 
             sc = plt.scatter(np.repeat([-36+4*x], len(f)),
                         np.arange(-27, 27, 54/len(f)),
-                        c=pfit[:len(f)], s=150)#, vmin=0.028, vmax=0.04)
+                        c=np.array(pfit[:len(f)]), s=150, vmin=300, vmax=500)
             del pfit[:len(f)]
-
+        plot_wafer(50)
         plt.colorbar(sc)
         plt.xlabel('x')
         plt.ylabel('y')
@@ -55,5 +52,3 @@ for d in yaml_dict:
         plt.show()
 
 
-if __name__ == '__main__':
-    main()
