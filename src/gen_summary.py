@@ -23,9 +23,9 @@ def existed_conditions(d):
     return ecs
 
 if __name__ == '__main__':
-    d = 'even_temp_test_2/'
+    d = 'even_temp_test_calibration_full/'
     FIG_PER_ROW = 6
-    g = '/home/mingchiang/Desktop/Data/'
+    g = '/Users/mingchiang/Desktop/Data/'
     p = 'black'
     dir_path = f'{g}{d}'
     des_path = f'{g}summary/{d}/{basename(dir_path)}'
@@ -54,7 +54,7 @@ if __name__ == '__main__':
         for i in range(num_sets):
             a_run = []
             for rc in tqdm(running_conditions, desc="Reading.."):
-                if rc['Run']==i and rc['LED'] and rc['Laser']: # This line is key
+                if rc['Run']==i and rc['LED'] and not rc['Laser']: # This line is key
                     print(recon_fn(rc))
                     a_run.append(plt.imread(d+'/'+recon_fn(rc)).astype(float)[:,:,2])
      
