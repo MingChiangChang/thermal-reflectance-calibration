@@ -1,21 +1,18 @@
-import numpy as np
-import matplotlib.pyplot as plt
-import cv2 
-
-from os.path import basename
 from scipy.optimize import leastsq, least_squares
 
-from error_funcs import twod_triangle, gaussian, edgeworth
-from temp_calibration import fit_with, get_box, gaussian_shift, moments
+import numpy as np
+import matplotlib.pyplot as plt
+
+from temp_calibration import fit_with, gaussian_shift, moments
 
 class Block():
-    
+
     kappa = 1.2*10**-4
 
     def __init__(self, img, dwell, power):
-        
-        self.temp = img/self.kappa 
-        self.beam = self.temp 
+
+        self.temp = img/self.kappa
+        self.beam = self.temp
 
         self.dwell = dwell
         self.power = power
@@ -28,11 +25,13 @@ class Block():
         self.y_shift = 0
         self.x_width = 0
         self.y_width = 0
-    
+
+        self.uncertainty = 0
+
     def __repr__(self):
         return ('Condition: {}us, {}W\n'.format(10**self.dwell, self.power)
                +'Fitted results: {}C \n'.format(self.tpeak)
-               +'Center: {}\n'.format(self.center) 
+               +'Center: {}\n'.format(self.center)
                +'Fitting paramters: {}\n'.format(self.profile_params)
                +'Box info: {}, {}, {}, {}\n'.format(self.x_shift,
                                                     self.y_shift,
@@ -48,7 +47,7 @@ class Block():
                                                     self.y_shift,
                                                     self.x_shift+self.x_width,
                                                     self.y_shift+self.y_width))
-    
+
     #def process_image(self):
     #    '''
     #    Process the loaded files into temperature profile ready to
@@ -64,28 +63,28 @@ class Block():
     def get_beam(self, threshold=0.6):
         # Need to be changed
         self.x_shift, self.x_width,\
-        self.y_shift, self.y_width = (200, 400, 200, 900) 
+        self.y_shift, self.y_width = (200, 400, 200, 900)
         print(self.x_shift, self.x_width, self.y_shift, self.y_width)
         self.beam = self.temp[self.x_shift:self.x_shift+self.x_width,
                               self.y_shift:self.y_shift+self.y_width]
 
     def fit_center(self):
         '''
-        Fitting the center center of the beam using a 2d triangle + 
+        Fitting the center center of the beam using a 2d triangle +
         gaussian function
         '''
         #def err(peak_x, peak_y, x0, y0, s1_x, s2_x, s1_y, s2_y, height,
         #        center_x, center_y, width_x, width_y, rho, base):
         #    return lambda x,y: (twod_triangle(x, y, peak_x, peak_y, x0, y0,
-        #                                     s1_x, s2_x, s1_y, s2_y) 
+        #                                     s1_x, s2_x, s1_y, s2_y)
         #                       + gaussian(x, y, height, center_x, center_y,
         #                         width_x, width_y, rho) + base)
         #
-        #param = (500, 100, 120, 348, 40, 20, 20, 20, 
+        #param = (500, 100, 120, 348, 40, 20, 20, 20,
         #         10, 120, 348, 20, 20, 10, 100)
 
         #errorfunction = lambda p: (np.ravel(err(*p)
-        #                           (*np.indices(self.beam.shape)) 
+        #                           (*np.indices(self.beam.shape))
         #                           - self.beam))
         #pfit, pcov, infodict, errmsg, success = leastsq(errorfunction,
         #                                                param, full_output=1,
@@ -150,9 +149,9 @@ class Block():
             plt.plot(xx.T, profile)
             plt.plot(xx.T, oned_gaussian(xx.T, *result.x[:3])+result.x[-1])
             plt.plot(xx.T, np.abs(oned_gaussian(xx.T, *result.x[3:-1])))
-            plt.title(self.dwell + 'us ' + self.power + 'A') 
-            plt.savefig('two gaussain '+ self.dwell + 'us ' + self.power + 'A') 
-            plt.close() 
+            plt.title(self.dwell + 'us ' + self.power + 'A')
+            plt.savefig('two gaussain '+ self.dwell + 'us ' + self.power + 'A')
+            plt.close()
         save = [True, False, True, False, False, False, True]
         self.profile_params = result.x[save]
         self.tpeak = np.max(oned_gaussian(xx.T, *result.x[:3])+result.x[-1])
@@ -163,14 +162,14 @@ class Block():
         Fitting the profile along center
         '''
         profile = self.beam[self.center, :]
-        
+
         #def _edgeworth(height, x0, s, sk, ku, base):
         #    return lambda x: height * edgeworth(x, x0, s, sk, ku) + base
 
         #param = (1000, 290, 1, 1, 1, 100)
         #errorfunction = lambda p: (np.ravel(_edgeworth(*p)
         #                          (*np.indices(profile.shape)) - profile))
-        
+
         def oned_gaussian(x, x0, s):
             return np.exp(-((x-x0)/s)**2)
 
@@ -179,10 +178,10 @@ class Block():
         errorfunction = lambda p: (np.ravel(_gaussian(*p)
                                   (*np.indices(profile.shape)) - profile))
         param = (500, 290, 50, 50)
-        pfit, pcov, infodict, errmsg, success = leastsq(errorfunction,
+        pfit, pcov, _, errmsg, success = leastsq(errorfunction,
                                                         param, full_output=1,
                                                         maxfev=500)
-         
+
         if success not in [1,2,3,4]:
             print(f'Fitting failed for fitting {self.dwell}us {self.power}A.')
             print('Error message: {}'.format(errmsg))
@@ -198,7 +197,7 @@ class Block():
         plt.plot(xs.T, profile)
         plt.plot(xs.T, fit(*xs))
         title = f'{int(10**self.dwell)}us_{int(self.power)}W_gauss'
-        plt.title(f'{int(10**self.dwell)}us_{int(self.power)}W') 
+        plt.title(f'{int(10**self.dwell)}us_{int(self.power)}W')
         plt.savefig(title)
         plt.close()
         self.profile_params = pfit
