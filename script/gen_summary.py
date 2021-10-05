@@ -2,6 +2,7 @@ import glob
 import os
 from os.path import basename
 from math import ceil
+exec(open("insert_path.py").read())
 
 import numpy as np
 import matplotlib.pyplot as plt

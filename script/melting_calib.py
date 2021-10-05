@@ -1,3 +1,4 @@
+exec(open("insert_path.py").read())
 from sh_script_gen import add_header, add_commend
 
 dwells = ['567', '855', '1941', '2924', '4405', '6637', '10000']

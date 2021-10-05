@@ -7,10 +7,11 @@ import yaml
 
 import numpy as np
 
+exec(open("insert_path.py").read())
 from preprocess import parse_laser_condition
 from preprocess import get_wanted_frames_for_condition, preprocess
 from preprocess import get_highest_power_for_cond
-from preprocess import get_dir_name_from_cond
+from preprocess import get_dir_name_from_cond, preprocess_by_frame
 
 ### Global
 x_r = (150, 650)
@@ -21,12 +22,9 @@ PATH = '/Users/mingchiang/Desktop/Data/black/'
 BLANK_PATH = '/Users/mingchiang/Desktop/Data/Calibration_dot'
 YAML_PATH = '../data/yaml/black.yaml'
 
-
 # Linux
 PATH = '/home/mingchiang/Desktop/Data/even_temp_test/'
-
 BLANK_PATH = '/home/mingchiang/Desktop/Data/even_temp_test_calibration'
-
 YAML_PATH = f'../data/yaml/even_temp_test.yaml'
 
 with open(YAML_PATH, 'r') as f:

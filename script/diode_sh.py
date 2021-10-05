@@ -1,4 +1,5 @@
 import numpy as np
+exec(open("insert_path.py").read())
 
 from sh_script_gen import add_header, add_commend
 

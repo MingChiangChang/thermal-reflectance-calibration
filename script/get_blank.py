@@ -1,5 +1,6 @@
 import glob
 import yaml
+exec(open("insert_path.py").read())
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -8,13 +9,14 @@ from tqdm import tqdm
 from preprocess import get_wanted_frames_for_condition, get_calib_dir_name_from_dwell
 from preprocess import recon_fn
 
+data = '0618'
 name = 'even_temp_test_calibration_full'
 
-yaml_path = f'../data/yaml/{name}.yaml'
+yaml_path = f'/home/mingchiang/Desktop/github/thermal-reflectance-calibration/data/yaml/even_temp_test.yaml'
 
-dir_path = f'/Users/mingchiang/Desktop/Data/{name}/'
+dir_path = f'/home/mingchiang/Desktop/Data/{name}/'
 
-dwell = ['6637us']
+dwell = ['6637us_49W']
 
 for d in dwell:
     
@@ -22,10 +24,12 @@ for d in dwell:
         frames = yaml.load(f, Loader=yaml.FullLoader)
     print(frames)
     frames = get_wanted_frames_for_condition(d, frames)
+    fs = np.sum([len(frames[i]) for i in frames]) 
+    print(fs)
+    imgs = np.zeros((fs, 1024, 1280))
 
+    n = 0
     for run in tqdm(frames):
-        n = 0
-        imgs = np.zeros((len(frames[run]), 1024, 1280)) 
         for num in frames[run]:
             cond_dict = {'Run': run,
                  'LED': True,
@@ -36,9 +40,9 @@ for d in dwell:
             imgs[n] = plt.imread(dir_path + cond + '/' + fn).astype(float)[:,:,2]
             n += 1
 
-        #imgs = np.array(imgs)
-        blank = np.mean(imgs, axis=0)
-        np.save(dir_path+d+f'_{run}.npy', blank)
-        #plt.imshow(blank)
-        #plt.title(str(d))
-        #plt.show()
+    #imgs = np.array(imgs)
+    blank = np.mean(imgs, axis=0)
+    np.save(dir_path+d+'.npy', blank)
+    plt.imshow(blank)
+    plt.title(str(d))
+    plt.show()

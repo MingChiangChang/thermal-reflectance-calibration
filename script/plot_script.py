@@ -9,6 +9,7 @@
 '''
 
 import yaml
+exec(open("insert_path.py").read())
 
 import numpy as np
 import matplotlib.pyplot as plt

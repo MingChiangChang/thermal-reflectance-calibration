@@ -5,6 +5,7 @@ import numpy as np
 import sys
 import glob
 from functools import partial
+exec(open("insert_path.py").read())
 
 from mpl_toolkits.mplot3d import Axes3D
 from matplotlib import cm

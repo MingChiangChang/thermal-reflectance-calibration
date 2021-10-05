@@ -6,6 +6,7 @@ import numpy as np
 import scipy.linalg as la
 
 from mpl_toolkits.mplot3d import Axes3D
+exec(open("insert_path.py").read())
 
 from temp_calibration import estimate_noise, fitgaussian, gaussian_shift,\
                              fit_mask, trail, get_box, fit_edgeworth,\
