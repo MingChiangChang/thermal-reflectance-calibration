@@ -3,14 +3,15 @@ Functions for turning raw data into usable input data for
 CalibMnger. The process involves stacking beams on top of
 each other and averages.
 '''
-
+from functools import partial
+from pathlib import Path
+from multiprocessing import Pool
 import glob
 import os
-from pathlib import Path
 
+from tqdm import tqdm
 import numpy as np
 import matplotlib.pyplot as plt
-from tqdm import tqdm
 
 from temp_calibration import fit_center
 
@@ -46,8 +47,15 @@ def preprocess_by_frame(live_img, blank_img, x_r, y_r):
     live = live_img - blank_img
     R = np.mean(blank_img[300:,:])
     live = (live/KAPPA/R)[x_r[0]:x_r[1], y_r[0]:y_r[1]]
-    x, y, pfit = fit_center(live)
-    return x, y, pfit
+    _, _, pfit = fit_center(live)
+    return pfit
+
+def parrallel_processing_frames(live_imgs, blank_imgs, x_r, y_r):
+    ''' Multiprocessing version of preprocess_by_frame '''
+    preprocess_in_range = partial(preprocess_by_frame, x_r=x_r, y_r=y_r)
+    with Pool() as pool:
+        t = pool.starmap(preprocess_in_range, zip(live_imgs, blank_imgs))
+        return t
 
 def generate_png_name(run, led, laser, num):
     '''
