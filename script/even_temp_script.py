@@ -19,10 +19,14 @@ from preprocess import get_dir_name_from_cond
 from preprocess import generate_png_name, read_img_array
 from preprocess import shift_calibration_to_imgs, preprocess_by_frame
 from preprocess import parrallel_processing_frames
+from temp_calibration import self_blank
 ### Global
 x_r = (150, 650)
 y_r = (150, 1100)
-
+mask = np.zeros((1024, 1280))
+mask[-350:, :] = 1
+mask[:, -350:] = 1
+mask = mask.astype(bool)
 
 if __name__ == "__main__":
     freeze_support()
@@ -32,6 +36,8 @@ if __name__ == "__main__":
     BLANK_PATH = home / 'Desktop' / 'Data' /\
                  'even_temp_test_calibration_full' / '06637us_000.00W'
     YAML_PATH = '../data/yaml/even_temp_test.yaml'
+    
+    blank = np.load("blank.npy")
     
     with open(YAML_PATH, 'r') as f:
         yaml_dict = yaml.load(f, Loader=yaml.FullLoader)
@@ -46,13 +52,12 @@ if __name__ == "__main__":
                        for d in live_img_conds]
     intensity = []
     pfit_ls = []
-    #bl = np.load('/home/mingchiang/Desktop/Data/even_temp_test_calibration_full/6637us_49W.npy')
     for cond in yaml_dict:
         dir_name = get_dir_name_from_cond(cond)
         cond_dict = parse_laser_condition(dir_name)
         wanted_frame = get_wanted_frames_for_condition(cond, yaml_dict)
         dw = cond_dict['dwell']
-        for run in list(wanted_frame.keys())[:1]:
+        for run in tqdm(wanted_frame):
             png_ls = [PATH / generate_png_name(str(run), True, True, str(i))
                       for i in wanted_frame[run]]
             blank_ls = [BLANK_PATH / generate_png_name(str(run), True, False, str(i))
@@ -63,11 +68,12 @@ if __name__ == "__main__":
             blank_imgs = np.zeros((len(blank_ls), 1024, 1280))
             for idx, png in enumerate(png_ls):
                 live_imgs[idx] = plt.imread(png)[:,:,2]
-                blank_imgs[idx] = plt.imread(blank_ls[idx])[:,:,2]
+
+                blank_imgs[idx] = self_blank(live_imgs[idx], blank, mask)
                 #_, _, pfit = preprocess_by_frame(l, b, x_r, y_r)
                 #print(pfit)
                 #p[idx] = pfit
             #pfit_ls.append(p)
             t = parrallel_processing_frames(live_imgs, blank_imgs, x_r, y_r)
-            print(np.array(t))
+            pfit_ls.append(t)
     #print(pfit_ls)

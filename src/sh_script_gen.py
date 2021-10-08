@@ -1,5 +1,3 @@
-import numpy as np
-
 '''
 Acceptible keywords:
     -pt, --plot      Plot on screen
@@ -25,6 +23,7 @@ Acceptible keywords:
             Number of loopshj
 '''
 
+import numpy as np
 
 def add_header(f):
     f.write('#!/bin/sh')
@@ -72,24 +71,6 @@ def parse_position(s):
 
 if __name__ == '__main__':
     conditions = {
-#            '250': 
-#               { 'power': np.linspace(20, 80, 13),
-#                 'runs': 30 },
-#            '377': 
-#               { 'power': np.linspace(20, 80, 13),
-#                 'runs': 30 },
-#            '567': 
-#               { 'power': np.linspace(20, 65, 10),
-#                 'runs': 20 },
-#            '855': 
-#               { 'power': np.linspace(20, 60, 9),
-#                 'runs': 20 },
-#            '1288': 
-#               { 'power': np.linspace(20, 55, 8),
-#                 'runs': 10},
-#            '1941': 
-#               { 'power': np.linspace(20, 50, 7),
-#                 'runs': 10},
             '2924': 
                { 'power': np.linspace(20, 50, 7),
                  'runs': 7},
@@ -113,7 +94,8 @@ if __name__ == '__main__':
                 add_commend(f, n=runs, pmin='1 -40', pmax='1 40',
                            d=dw, p=0, pre='Calibration_0622', c='True', r=100)
                 for i in conditions[dw]['power']:
-                    add_commend(f, n=runs, d=dw, p=i, m='r', yr='-40 40', xr='1.5 2', pre='0622', r=100)
+                    add_commend(f, n=runs, d=dw, p=i, m='r', yr='-40 40',
+                                xr='1.5 2', pre='0622', r=100)
             else:
                 add_commend(f, n=runs, pmin='{} -25'.format(0+counter*0.8),
                              pmax='{} 25'.format(0+counter*0.8),
