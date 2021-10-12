@@ -1,11 +1,12 @@
 import glob
 import yaml
-exec(open("insert_path.py").read()) # Must have for all scripts
+import sys 
 
 import matplotlib.pyplot as plt
 import numpy as np
 from tqdm import tqdm
 
+sys.path.insert(0, '../src')
 from preprocess import get_wanted_frames_for_condition, get_calib_dir_name_from_dwell
 from preprocess import recon_fn
 
@@ -37,9 +38,5 @@ for d in dwell:
             imgs[n] = plt.imread(dir_path + cond + '/' + fn).astype(float)[:,:,2]
             n += 1
 
-        #imgs = np.array(imgs)
         blank = np.mean(imgs, axis=0)
         np.save(dir_path+d+f'_{run}.npy', blank)
-        #plt.imshow(blank)
-        #plt.title(str(d))
-        #plt.show()

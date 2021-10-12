@@ -6,12 +6,15 @@ Each image is fitted and shifted in order to be properly stacked.
 from pathlib import Path
 from multiprocessing import freeze_support
 import yaml
-exec(open("insert_path.py").read())
+import sys
 
+from tqdm import tqdm
+from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
 import matplotlib.pyplot as plt
-from tqdm import tqdm
+import cv2
 
+sys.path.insert(0, "../src")
 from preprocess import parse_laser_condition
 from preprocess import get_wanted_frames_for_condition, preprocess
 from preprocess import get_highest_power_for_cond
@@ -20,11 +23,12 @@ from preprocess import generate_png_name, read_img_array
 from preprocess import shift_calibration_to_imgs, preprocess_by_frame
 from preprocess import parrallel_processing_frames
 from temp_calibration import self_blank
+
 ### Global
 x_r = (150, 650)
 y_r = (150, 1100)
 mask = np.zeros((1024, 1280))
-mask[-350:, :] = 1
+mask[:100, :] = 1
 mask[:, -350:] = 1
 mask = mask.astype(bool)
 
@@ -74,6 +78,13 @@ if __name__ == "__main__":
                 #print(pfit)
                 #p[idx] = pfit
             #pfit_ls.append(p)
+            fig = plt.figure()
+            ax = fig.add_subplot(projection='3d')
+            re = cv2.resize(live_imgs[0]-blank_imgs[0], (50, 40),
+                            interpolation=cv2.INTER_AREA)
+            xx, yy = np.indices(re.shape)
+            ax.scatter(xx, yy, re)
+            plt.show()
             t = parrallel_processing_frames(live_imgs, blank_imgs, x_r, y_r)
             pfit_ls.append(t)
     #print(pfit_ls)

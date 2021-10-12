@@ -1,11 +1,12 @@
+import sys
 import glob
 import yaml
-exec(open("insert_path.py").read())
 
 import matplotlib.pyplot as plt
 import numpy as np
 from tqdm import tqdm
 
+sys.path.insert(0, '../src')
 from preprocess import get_wanted_frames_for_condition, get_calib_dir_name_from_dwell
 from preprocess import recon_fn
 

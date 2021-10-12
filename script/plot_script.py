@@ -7,13 +7,13 @@
 5: rho
 6: base
 '''
-
+import sys
 import yaml
-exec(open("insert_path.py").read())
 
 import numpy as np
 import matplotlib.pyplot as plt
 
+sys.path.insert(0, '../src')
 from preprocess import *
 
 p = ['Height', 'x', 'y', 'width_x', 'width_y', 'rho', 'base']

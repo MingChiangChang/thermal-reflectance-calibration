@@ -1,11 +1,10 @@
+from functools import partial
 import yaml
 import os
 import matplotlib.pyplot as plt
 import numpy as np
 import sys
 import glob
-from functools import partial
-exec(open("insert_path.py").read())
 
 from mpl_toolkits.mplot3d import Axes3D
 from matplotlib import cm
@@ -14,6 +13,7 @@ from sympy import Symbol, solve
 from scipy.optimize import fsolve, leastsq
 from tqdm import tqdm
 
+sys.path.insert(0, '../src')
 from CalibMnger import CalibMnger
 from error_funcs import twod_surface, power_fit_func, linear
 from util import parse

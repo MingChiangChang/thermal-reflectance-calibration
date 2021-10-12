@@ -4,10 +4,11 @@ import os
 import matplotlib.pyplot as plt
 import numpy as np 
 import scipy.linalg as la
+import sys
 
 from mpl_toolkits.mplot3d import Axes3D
-exec(open("insert_path.py").read())
 
+sys.path.insert(0, '../src')
 from temp_calibration import estimate_noise, fitgaussian, gaussian_shift,\
                              fit_mask, trail, get_box, fit_edgeworth,\
                              twod_edgeworth, default_value_approx,\

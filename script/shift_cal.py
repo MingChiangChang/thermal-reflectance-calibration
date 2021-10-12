@@ -1,11 +1,12 @@
 import yaml
 import os
 import glob
-exec(open("insert_path.py").read())
+import sys
 
 import numpy as np
 import matplotlib.pyplot as plt
 
+sys.path.insert(0, '../src')
 from Block import Block
 from temp_calibration import fit_with, gaussian_shift, moments, fit_center
 

@@ -1,12 +1,13 @@
 import glob
 import os
 import json
-exec(open("insert_path.py").read())
+import sys
 
 import numpy as np
 import matplotlib.pyplot as plt
 from tqdm import tqdm
 
+sys.path.insert(0, '../src')
 import preprocess as pp
 
 kappa = 1.2e-3

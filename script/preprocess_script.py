@@ -4,10 +4,11 @@ Take raw reflectance and yaml file and output npy files
 Each image is fitted and shifted in order to be properly stacked.
 '''
 import yaml
+import sys
 
 import numpy as np
 
-exec(open("insert_path.py").read())
+sys.path.insert(0, '../src')
 from preprocess import parse_laser_condition
 from preprocess import get_wanted_frames_for_condition, preprocess
 from preprocess import get_highest_power_for_cond

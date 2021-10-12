@@ -1,13 +1,13 @@
-import glob
-import os
 from os.path import basename
 from math import ceil
-exec(open("insert_path.py").read())
+import glob
+import sys
 
 import numpy as np
 import matplotlib.pyplot as plt
 from tqdm import tqdm
 
+sys.path.insert(0, '../src')
 from preprocess import parse_laser_condition, parse_name, recon_fn
 
 def existed_conditions(d):
@@ -16,7 +16,7 @@ def existed_conditions(d):
     print(png_ls)
     for png in png_ls:
         print(png) 
-        condition = os.path.basename(png)
+        condition = basename(png)
         condition = condition.split('_')
         c = (int(condition[0][:condition[0].index('us')]),
              int(condition[1][:2]))
