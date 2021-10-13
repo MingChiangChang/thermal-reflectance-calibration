@@ -1,6 +1,7 @@
 """
-Test script for gp fitting blanks 
+Test script for gp fitting blanks
 """
+# pylint: disable=E1101
 from pathlib import Path
 
 from sklearn.gaussian_process import GaussianProcessRegressor

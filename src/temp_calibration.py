@@ -1,5 +1,5 @@
-''' 
-Functions for fitting thermal reflectance data and temperature profiles 
+'''
+Functions for fitting thermal reflectance data and temperature profiles
 '''
 
 from scipy.optimize import leastsq
@@ -8,9 +8,10 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
+from error_funcs import gaussian_shift
 
 def fit_center(data, center_estimate=False, power=False,
-               dwell=False, num=False, plot=False, 
+               dwell=False, num=False, plot=False,
                savefig=False, verbose=False):
     '''
     Find the center of the gaussian with given array of data.
@@ -23,12 +24,12 @@ def fit_center(data, center_estimate=False, power=False,
         t, dwell, num: numbers for naming
         plot: whether to plot a figure for the fit
         savefig: whether to save the plotted figure
-    
+
     Return:
         xs, ys: array of center positions
         pfit: an array of fitted parameters of the gaussian
     '''
-    
+
     if center_estimate:
         params = list(moments(data))
         params[1] = center_estimate[0]
@@ -36,19 +37,19 @@ def fit_center(data, center_estimate=False, power=False,
         pfit, _ = fit_with(gaussian_shift, data,
                            param=params, verbose=verbose)
     else:
-        pfit, _ = fit_with(gaussian_shift, data, 
+        pfit, _ = fit_with(gaussian_shift, data,
                            param_estimator=moments, verbose=verbose)
     fit = gaussian_shift(*pfit)
     x_s, y_s = np.indices(data.shape)
     fitted = fit(*(x_s, y_s))
     tpeak = np.max(fitted)
     center = np.where(fitted==tpeak)
-    
+
     if verbose:
         print(center)
     x_center = center[0][0]
     y_center = center[1][0]
-    
+
     if plot:
         _, axs = plt.subplots(4)
         axs[0].imshow(data)
@@ -59,12 +60,12 @@ def fit_center(data, center_estimate=False, power=False,
         axs[3].plot(fitted[:, y_center])
         axs[3].plot(data[:, y_center])
         axs[3].set_title('y_fit')
-        
+
         if savefig:
             plt.savefig(f'{power}_{dwell}_{num}.png')
         else:
             plt.show()
-        
+
         plt.close()
     return x_center, y_center, pfit
 
@@ -102,11 +103,14 @@ def fit_xy_to_z_surface_with_func(x, y, z, func, param,
     return pfit, pcov, infodict
 
 def self_blank(live, blank, mask):
-
+    '''
+    Fit blank using live image and a blank prototype * (linear plane)
+    Mask has to be applied so that laser and residual heat is blocked
+    '''
     def f(a, b, c):
         return lambda x, y: blank[mask] * (a*x + b*y + c)
 
-    pfit, err = fit_with(f, live, mask, param=[0, 0, 1])
+    pfit, _ = fit_with(f, live, mask, param=[0, 0, 1])
     a, b, c = pfit
     x, y = np.indices(live.shape)
     return blank * (a*x + b*y + c)
@@ -160,36 +164,6 @@ def surface_plot (matrix, fit, **kwargs):
     surf1 = ax.plot_surface(x.T, y.T, fit(*np.indices(matrix.shape)), **kwargs)
     return (fig, ax, surf1)
 
-
-def gaussian(height, center_x, center_y, width_x, width_y, rho):
-    """Returns a gaussian function with the given parameters"""
-    width_x = float(width_x)
-    width_y = float(width_y)
-    return lambda x,y: height*np.exp( -(
-        ((center_x-x)/width_x)**2 +
-        ((center_y-y)/width_y)**2 -
-        (2*rho*(x - center_x)*(y - center_y))
-        /(width_x*width_y))/(2*(1-rho**2)))
-
-def gaussian_shift(height, center_x, center_y, width_x, width_y, rho, shift):
-    """Returns a gaussian function with the given parameters"""
-    width_x = float(width_x)
-    width_y = float(width_y)
-    return lambda x,y: height*np.exp( -(
-        (abs(center_x-x)/width_x)**2 +
-        (abs(center_y-y)/width_y)**2 -
-        (2*rho*(x - center_x)*(y - center_y))
-        /(width_x*width_y))/(2*(1-rho**2))) + shift
-
-def g_gaussian(height, center_x, center_y, width_x, width_y, e_g):
-    """Returns a gaussian function with the given parameters"""
-    width_x = float(width_x)
-    width_y = float(width_y)
-    return lambda x,y: height*np.exp( -(
-        (np.abs(center_x-x)/width_x)**e_g +
-        (np.abs(center_y-y)/width_y)**2
-        )/np.sqrt(2.*e_g))
-
 def moments(data):
     """
     Returns (height, x, y, width_x, width_y)
@@ -215,26 +189,30 @@ def moments(data):
     shift = 0.0
     return height, x, y, width_x, width_y, rho, shift
 
-def edgeworth(x, x_0, s, s_k, k_u):
-    ''' 1d edgeworth function '''
-    return 1/(2*np.pi*s)\
-           * np.exp(-(x-x_0)**2/(2*s**2))\
-           * edge_expansion( (x-x_0)/s, s_k, k_u)
-
-def edge_expansion(r, k_3, k_4):
-    ''' 3rd and 4th order of edgeworth expansion. '''
-    return 1 + k_3*(r**3 - 3*r)/6 + k_4/12 * (r**4 - 6*r**2+3)\
-           + k_3**2 * ( r**6 - 15*r**4 + 45*r**2 - 15)/72
-
-def twod_edgeworth(height, x_0, y_0, s_x, s_y,
-            sk_x, sk_y, ku_x, ku_y): # pylint: disable=too-many-arguments
-    ''' Construct a 2d edgeworth function with given parameters. '''
-    return lambda x, y: (height
-                        * edgeworth(x, x_0, s_x, sk_x, ku_x)
-                        * edgeworth(y, y_0, s_y, sk_y, ku_y))
-
 def default_value_approx(data):
     ''' Estimate the fitting value using the first 4 moment of the data '''
+    total = data.sum()
+    X, Y = np.indices(data.shape)
+    x = (X*data).sum()/total
+    y = (Y*data).sum()/total
+
+    col = data[:, int(y)]
+    s_x0 = np.sqrt(np.abs((np.arange(col.size)-x)**2*col).sum()/np.abs(col.sum()))
+    sk_x0 = ((np.arange(col.size)-x)**3*col).sum()/s_x0**3
+    ku_x0 = ((np.arange(col.size)-x)**4*col).sum()/s_x0**4-3
+
+    row = data[int(x), :]
+    s_y0 = np.sqrt(np.abs((np.arange(row.size)-y)**2*row).sum()/np.abs(row.sum()))
+    sk_y0 = ((np.arange(row.size)-y)**3*row).sum()/s_y0**3
+    ku_y0 = ((np.arange(row.size)-y)**4*row).sum()/s_y0**4-3
+    height = data.max()
+    print((f"Default height: {height}, x: {x}, y: {y}, s_x: {s_x0}, "
+           f"s_y: {s_y0}, sk_x: {sk_x0}, sk_y: {sk_y0}, ku_x: {ku_x0}, "
+           f"ku_y: {ku_y0}"))
+    return height, x, y, s_x0, s_y0, sk_x0, sk_y0, ku_x0, ku_y0
+
+def edgeworth_default_param_approx(data):
+    ''' Function for estimating 2d edgeoworth parameters '''
     total = data.sum()
     X, Y = np.indices(data.shape)
     x = (X*data).sum()/total

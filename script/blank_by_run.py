@@ -1,6 +1,6 @@
-import glob
+''' Script for'''
+import sys
 import yaml
-import sys 
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -11,15 +11,13 @@ from preprocess import get_wanted_frames_for_condition, get_calib_dir_name_from_
 from preprocess import recon_fn
 
 name = 'even_temp_test_calibration_full'
-
 yaml_path = f'../data/yaml/{name}.yaml'
-
 dir_path = f'/Users/mingchiang/Desktop/Data/{name}/'
 
 dwell = ['6637us']
 
 for d in dwell:
-    
+
     with open(yaml_path, 'r') as f:
         frames = yaml.load(f, Loader=yaml.FullLoader)
     print(frames)
@@ -27,7 +25,7 @@ for d in dwell:
 
     for run in tqdm(frames):
         n = 0
-        imgs = np.zeros((len(frames[run]), 1024, 1280)) 
+        imgs = np.zeros((len(frames[run]), 1024, 1280))
         for num in frames[run]:
             cond_dict = {'Run': run,
                  'LED': True,

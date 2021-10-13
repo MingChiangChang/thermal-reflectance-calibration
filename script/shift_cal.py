@@ -1,19 +1,15 @@
-import yaml
-import os
+''' Script for doing shift calibartion'''
 import glob
 import sys
+import yaml
 
-import numpy as np
 import matplotlib.pyplot as plt
 
 sys.path.insert(0, '../src')
-from Block import Block
-from temp_calibration import fit_with, gaussian_shift, moments, fit_center
-
-kappa = 1.3*10**-4
+from temp_calibration import fit_center
 
 #def stage_flatness_calibration()
-
+KAPPA = 1.2 * 10**-4
 directory = '/Users/mingchiang/Desktop/2021.03.09_calib/raw_data/'
 dir_ls = glob.glob(directory + '*')
 
@@ -32,11 +28,12 @@ for cond in data_structure:
 for c in cond_dict:
     print(c, cond_dict[c])
 
-blank = plt.imread('/Users/mingchiang/Desktop/2021.03.09_calib/raw_data/5000us/55W/live_000.bmp')[:,:,2].astype(float)
+blank = plt.imread(('/Users/mingchiang/Desktop/2021.03.09_calib/'
+                   'raw_data/5000us/55W/live_000.bmp'))[:,:,2].astype(float)
 for c in cond_dict:
     dw = c
     watt = cond_dict[c][-1]
-    fp = f'{directory}/{dw}us/{watt}W' 
+    fp = f'{directory}/{dw}us/{watt}W'
     cond = f'{dw}us_{watt}W'
 
     # Load Blank
@@ -49,7 +46,7 @@ for c in cond_dict:
         start = fn.index('_')+1
         serial_num.append(int(fn[start:start+3]))
         image = plt.imread(f'{fp}/{fn}')[:,:,2].astype(float)-blank
-        image = image/blank/kappa
+        image = image/blank/KAPPA
         #sc = plt.imshow(image)
         #plt.colorbar(sc)
         #plt.show()
@@ -62,7 +59,7 @@ for c in cond_dict:
         x, y = fit_center(im, f'{c}us', f'{watt}W', idx)
         xs.append(x)
         ys.append(y)
-   
+
     serial_num, xs, ys = zip(*sorted(zip(serial_num, xs, ys)))
 
     fig, ax1 = plt.subplots()
@@ -76,5 +73,4 @@ for c in cond_dict:
     ax2.set_xlabel('Frame')
     plt.title(f'{c}us_{watt}W')
     plt.savefig(f'{c}us_{watt}W')
-    plt.close()            
-
+    plt.close()

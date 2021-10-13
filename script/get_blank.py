@@ -1,5 +1,5 @@
+''' Script for generating blank image by average over blank images '''
 import sys
-import glob
 import yaml
 
 import matplotlib.pyplot as plt
@@ -13,19 +13,20 @@ from preprocess import recon_fn
 data = '0618'
 name = 'even_temp_test_calibration_full'
 
-yaml_path = f'/home/mingchiang/Desktop/github/thermal-reflectance-calibration/data/yaml/even_temp_test.yaml'
+yaml_path = ('/home/mingchiang/Desktop/github/'
+             'thermal-reflectance-calibration/data/yaml/even_temp_test.yaml')
 
 dir_path = f'/home/mingchiang/Desktop/Data/{name}/'
 
 dwell = ['6637us_49W']
 
 for d in dwell:
-    
+
     with open(yaml_path, 'r') as f:
         frames = yaml.load(f, Loader=yaml.FullLoader)
     print(frames)
     frames = get_wanted_frames_for_condition(d, frames)
-    fs = np.sum([len(frames[i]) for i in frames]) 
+    fs = np.sum([len(frames[i]) for i in frames])
     print(fs)
     imgs = np.zeros((fs, 1024, 1280))
 

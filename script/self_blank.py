@@ -14,7 +14,7 @@ path = home / 'Desktop' / 'Data' / 'even_temp_test' / '06637us_055.00W'
 
 live = plt.imread(path / 'Run-0002_LED-On_Power-On_Frame-0022.png')[:,:,2]
 
-# load template 
+# load template
 blank = np.load("blank.npy")
 
 mask = np.zeros(live.shape)
@@ -23,6 +23,7 @@ mask[:,-350:] = 1
 mask = mask.astype(bool)
 
 def f(a,b,c):
+    ''' blank fitting function'''
     return lambda x, y: blank[mask] * (a*x + b*y + c)
 
 pfit, err = fit_with(f, live, mask, param=[0 ,0 ,1])

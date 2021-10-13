@@ -1,5 +1,4 @@
-import yaml
-
+''' Script for plotting fitting result for even_temp_test'''
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -34,4 +33,3 @@ plt.xlabel("x (mm)")
 plt.ylabel("y (mm)")
 plt.title("Peak temperature at each position")
 plt.show()
-

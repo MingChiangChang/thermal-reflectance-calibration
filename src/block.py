@@ -1,10 +1,11 @@
 ''' Define Block class for storing and fitting data at each condition(dwell, power)'''
-
+# pylint: disable=E1120
 from scipy.optimize import leastsq, least_squares
 import numpy as np
 import matplotlib.pyplot as plt
 
-from temp_calibration import fit_with, gaussian_shift, moments
+from temp_calibration import fit_with, moments
+from error_funcs import gaussian_shift
 
 class Block():
     ''' Storing data and include profile fitting functions'''

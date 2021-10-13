@@ -1,3 +1,4 @@
+''' Script for creating shell script for diode runs '''
 import sys
 
 import numpy as np
@@ -57,5 +58,5 @@ with open('diode.sh', 'w') as f:
                             yr='-27 27',
                             xr='{:2f} {:2f}'.format(-40+counter,
                                                     -39.5+counter),
-                            pre=pre, r=100, a='LSA')      
+                            pre=pre, r=100, a='LSA')
                 counter += 1

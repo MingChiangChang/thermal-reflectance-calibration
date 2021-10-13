@@ -1,21 +1,20 @@
+''' Script for using calib_mnger and block to fit temperature profile '''
+# pylint: disable=W0511
 from functools import partial
-import yaml
 import os
-import matplotlib.pyplot as plt
-import numpy as np
 import sys
 import glob
+import yaml
 
-from mpl_toolkits.mplot3d import Axes3D
-from matplotlib import cm
 from sympy.utilities.lambdify import lambdify
 from sympy import Symbol, solve
 from scipy.optimize import fsolve, leastsq
-from tqdm import tqdm
+import matplotlib.pyplot as plt
+import numpy as np
 
 sys.path.insert(0, '../src')
 from CalibMnger import CalibMnger
-from error_funcs import twod_surface, power_fit_func, linear
+from error_funcs import twod_surface, linear
 from util import parse
 
 # Mac path
@@ -82,7 +81,7 @@ with open("../data/yaml/melt.yaml", "r") as f:
 #        '2924': 50.5,
 #        '4405': 48.25,
 #        '6637': 45.5,
-#        '10000': 44 
+#        '10000': 44
 #        }
 
 fitted_melting_power = {}
@@ -96,19 +95,19 @@ powers = np.array(list(map(float, real_power_to_melt.values())))
 uncertainty = np.sqrt(np.diag(np.array(Calib.uncertainty_at(powers, dwells))))
 
 for d in real_power_to_melt:
-    sol_t = partial(t_func, y=np.log10(float(d)))
-    to_fit = lambda x: 1414-sol_t(x)
-    fitted_melting_power[d]=fsolve(to_fit, real_power_to_melt[d])[0]
+    sol_t = partial(t_func, y = np.log10(float(d)))
+    to_fit = lambda x: 1414 - sol_t(x)
+    fitted_melting_power[d] = fsolve(to_fit, real_power_to_melt[d])[0]
 
 for u, d in zip(uncertainty, real_power_to_melt):
-    sol_t = partial(t_func, y=np.log10(float(d)))
-    to_fit = lambda x: -u+1414-sol_t(x)
-    lower_melting_power[d]=fsolve(to_fit, real_power_to_melt[d])[0]
+    sol_t = partial(t_func, y = np.log10(float(d)))
+    to_fit = lambda x: -u + 1414 - sol_t(x)
+    lower_melting_power[d] = fsolve(to_fit, real_power_to_melt[d])[0]
 
 for u, d in zip(uncertainty, real_power_to_melt):
-    sol_t = partial(t_func, y=np.log10(float(d)))
-    to_fit = lambda x: u+1414-sol_t(x)
-    upper_melting_power[d]=fsolve(to_fit, real_power_to_melt[d])[0]
+    sol_t = partial(t_func, y = np.log10(float(d)))
+    to_fit = lambda x: u + 1414 - sol_t(x)
+    upper_melting_power[d] = fsolve(to_fit, real_power_to_melt[d])[0]
 
 real = np.array([real_power_to_melt[d] for d in real_power_to_melt])
 fitted = np.array([fitted_melting_power[d] for d in real_power_to_melt])
@@ -178,8 +177,8 @@ Calib.fitting_profile_params(twod_surface, param)#, mask)
 for param in param_dict:
     fig = plt.figure()
     ax = fig.add_subplot(111, projection='3d')
-    ax.scatter(np.array(Calib.power_lst),#[mask], 
-               np.array(Calib.dwell_lst),#[mask], 
+    ax.scatter(np.array(Calib.power_lst),#[mask],
+               np.array(Calib.dwell_lst),#[mask],
                param_dict[param])#[mask])
     dw = np.array(Calib.dwell_lst)
     pw = np.array(Calib.power_lst)

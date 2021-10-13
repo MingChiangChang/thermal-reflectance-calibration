@@ -25,69 +25,72 @@ Acceptible keywords:
 
 import numpy as np
 
-def add_header(f):
-    f.write('#!/bin/sh')
-    f.write('\n')
+# pylint: disable=C0116
+# Mostly self explanatory
+
+def add_header(output_file):
+    output_file.write('#!/bin/sh')
+    output_file.write('\n')
     # f.write('cd /Users/mingchiang/Desktop/Work/sara-socket-client/Scripts/')
-    f.write('\n')
+    output_file.write('\n')
 
-def add_commend(f, **kwargs):
-    f.write('python3 ThermalReflectance.py ')
+def add_commend(output_file, **kwargs):
+    output_file.write('python3 ThermalReflectance.py ')
     for key, item in kwargs.items():
-        f.write(f'-{key} {item} ')
-    f.write('\n')
+        output_file.write(f'-{key} {item} ')
+    output_file.write('\n')
 
-def add_condition_grid(f, dw_ls, pw_ls, xr, ymin, ymax, **kwargs):
-    xs = np.min(xr)
-    for dw in dw_ls:
-        for pw in pw_ls:
-            new_dict = dict(kwargs, d=dw, p=pw, 
-                            pmin=f'{xs} {ymin}',
-                            pmax=f'{xs} {ymax}')
-            add_commend(f, **new_dict)
+def add_condition_grid(output_file, dw_ls, pw_ls, x_r, ymin, ymax, **kwargs):
+    x_s = np.min(x_r)
+    for dwell in dw_ls:
+        for power in pw_ls:
+            new_dict = dict(kwargs, d=dwell, p=power,
+                            pmin=f'{x_s} {ymin}',
+                            pmax=f'{x_s} {ymax}')
+            add_commend(output_file, **new_dict)
             #xs += 0.01
-            if xs > np.max(xr): 
+            if x_s > np.max(x_r):
                 print('Failed. Position requested out of bound.')
 
-def add_dws_n_powers(f, dws, pws, **kwargs):
-    for dw, pw in zip(dws, pws):
-        new_dict = dict(kwargs, d=dw, p=pw)
-        add_commend(f, **new_dict)
+def add_dws_n_powers(output_file, dws, pws, **kwargs):
+    for dwell, power in zip(dws, pws):
+        new_dict = dict(kwargs, d=dwell, p=power)
+        add_commend(output_file, **new_dict)
 
-def add_moving_scan(f, interval, **kwargs):
+def add_moving_scan(output_file, interval, **kwargs):
     num = kwargs['n']
-    for i in range(num):
+    for _ in range(num):
         kwargs['n'] = 1
         x, y = parse_position(kwargs['pmin'])
         new_x = str(float(x)+interval)
         kwargs['pmin'] = f'{new_x} {y}'
-        add_commend(f, **kwargs)
+        add_commend(output_file, **kwargs)
 
 def parse_position(s):
-    xy = s.split(' ')
-    x = xy[0]
-    y = xy[1]
+    x_and_y = s.split(' ')
+    x = x_and_y[0]
+    y = x_and_y[1]
     return x, y
 
 if __name__ == '__main__':
     conditions = {
-            '2924': 
+            '2924':
                { 'power': np.linspace(20, 50, 7),
                  'runs': 7},
-            '4405': 
+            '4405':
                { 'power': np.linspace(20, 45, 6),
                  'runs': 6},
-            '6637': 
+            '6637':
                { 'power': np.linspace(20, 40, 5),
                  'runs': 5},
-            '10000': 
+            '10000':
                { 'power': np.linspace(20, 40, 5),
                  'runs': 4}
             }
 
     with open('0622.sh', 'w') as f:
         add_header(f)
-        counter = 0
+        counter = 0 # pylint: disable=invalid-name
         for dw in conditions:
             runs = conditions[dw]['runs']
             if int(dw)<=1941:

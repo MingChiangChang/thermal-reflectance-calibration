@@ -3,8 +3,8 @@ Script for preprocessing images for temperature surface fitting
 Take raw reflectance and yaml file and output npy files
 Each image is fitted and shifted in order to be properly stacked.
 '''
-import yaml
 import sys
+import yaml
 
 import numpy as np
 
@@ -26,7 +26,7 @@ YAML_PATH = '../data/yaml/black.yaml'
 # Linux
 PATH = '/home/mingchiang/Desktop/Data/even_temp_test/'
 BLANK_PATH = '/home/mingchiang/Desktop/Data/even_temp_test_calibration'
-YAML_PATH = f'../data/yaml/even_temp_test.yaml'
+YAML_PATH = '../data/yaml/even_temp_test.yaml'
 
 with open(YAML_PATH, 'r') as f:
     yaml_dict = yaml.load(f, Loader=yaml.FullLoader)
@@ -40,7 +40,7 @@ for idx, p in enumerate(live_img_conds):
 all_conds = [parse_laser_condition(d)
                    for d in live_img_conds]
 
-for cond in live_img_conds: 
+for cond in live_img_conds:
     dir_name = get_dir_name_from_cond(cond)
     live_img_dir = PATH + dir_name
     print(live_img_dir)

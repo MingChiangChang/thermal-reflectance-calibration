@@ -63,26 +63,6 @@ def g_gaussian(height, center_x, center_y, width_x, width_y, e_g):
         (np.abs(center_y-y)/width_y)**2
         )/np.sqrt(2.*e_g))
 
-def moments(data):
-    """Returns (height, x, y, width_x, width_y)
-    the gaussian parameters of a 2D distribution by calculating its
-    moments """
-    total = data.sum()
-    X, Y = np.indices(data.shape)
-    x = (X*data).sum()/total
-    y = (Y*data).sum()/total
-    col = data[:, int(y)]
-    #print(np.abs((np.arange(col.size)-x)**2*col))
-    width_x = np.sqrt(np.abs((np.arange(col.size)-x)**2*col).sum()/np.abs(col.sum()))
-    row = data[int(x), :]
-    #print(np.abs((np.arange(row.size)-y)**2*row))
-    width_y = np.sqrt(np.abs((np.arange(row.size)-y)**2*row).sum()/np.abs(row.sum()))
-    height = data.max()
-    rho = 0.0
-    shift = 0.0
-    print('Moments: {}, {}, {}, {}, {}'.format(height, x, y, width_x, width_y))
-    return height, x, y, width_x, width_y, rho, shift
-
 def edgeworth(x, x_0, s, sk, ku):
     ''' Edgeworth function '''
     return (1/(2*np.pi*s)
@@ -99,25 +79,3 @@ def twod_edgeworth(height, x_0, y_0, s_x, s_y, sk_x, sk_y, ku_x, ku_y):
     ''' 2d Edgeworth function '''
     return lambda x, y: height * edgeworth(x, x_0, s_x, sk_x, ku_x)\
                         * edgeworth(y, y_0, s_y, sk_y, ku_y)
-
-def edgeworth_default_param_approx(data):
-    ''' Function for estimating 2d edgeoworth parameters '''
-    total = data.sum()
-    X, Y = np.indices(data.shape)
-    x = (X*data).sum()/total
-    y = (Y*data).sum()/total
-
-    col = data[:, int(y)]
-    s_x0 = np.sqrt(np.abs((np.arange(col.size)-x)**2*col).sum()/np.abs(col.sum()))
-    sk_x0 = ((np.arange(col.size)-x)**3*col).sum()/s_x0**3
-    ku_x0 = ((np.arange(col.size)-x)**4*col).sum()/s_x0**4-3
-
-    row = data[int(x), :]
-    s_y0 = np.sqrt(np.abs((np.arange(row.size)-y)**2*row).sum()/np.abs(row.sum()))
-    sk_y0 = ((np.arange(row.size)-y)**3*row).sum()/s_y0**3
-    ku_y0 = ((np.arange(row.size)-y)**4*row).sum()/s_y0**4-3
-    height = data.max()
-    print((f"Default height: {height}, x: {x}, y: {y}, s_x: {s_x0}, "
-           f"s_y: {s_y0}, sk_x: {sk_x0}, sk_y: {sk_y0}, ku_x: {ku_x0}, "
-           f"ku_y: {ku_y0}"))
-    return height, x, y, s_x0, s_y0, sk_x0, sk_y0, ku_x0, ku_y0
