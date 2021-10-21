@@ -1,10 +1,19 @@
 # Thermoreflectance Calibration Module
 Developed for calibrating the laser spike annealing system in Michael O. Thompsons lab at Cornell University.
 
+# Workflow
+1. Produces shell script that contains the necessary conditions for collecting all the laser data
+2. Run shell script to collect data
+3. Meanwhile run gen\_summery.py to generate summary images and start to write up yaml files (that designates the usable frames)
+4. Run preprocess\_script.py to process the data and produces fitting npys
+5. Measure melting power for different materials and put it into temp\_surface.py script
+6. Run temp\_surface.py to get the surface fitting
+
 ## TODOs
 - [x] Reading yaml to select images
 - [x] Quick image selection method
 - [x] Stacking images correclty
+- [ ] Width fit! 
 - [ ] On-the-fly summerizing data
 
 ## Concept
