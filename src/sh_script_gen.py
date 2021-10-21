@@ -94,8 +94,8 @@ if __name__ == '__main__':
         for dw in conditions:
             runs = conditions[dw]['runs']
             if int(dw)<=1941:
-                add_commend(f, n=runs, pmin='1 -40', pmax='1 40',
-                           d=dw, p=0, pre='Calibration_0622', c='True', r=100)
+                add_commend(f, n=1, pmin='0 -40', pmax='0 40',
+                           d=dw, p=0, pre='Calibration_chess', c='True', r=100)
                 for i in conditions[dw]['power']:
                     add_commend(f, n=runs, d=dw, p=i, m='r', yr='-40 40',
                                 xr='1.5 2', pre='0622', r=100)
