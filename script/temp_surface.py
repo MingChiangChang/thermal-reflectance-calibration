@@ -17,24 +17,30 @@ sys.path.insert(0, '../src/')
 from temp_calibration import fit_xy_to_z_surface_with_func
 from error_funcs import twod_surface
 
+############# Function choices ###################
 fit_surface = fit_xy_to_z_surface_with_func
 surface_func = twod_surface
 guess = [1 for _ in range(len(getfullargspec(surface_func).args))]
 
 def parse_npy_fn(npy_file_name):
+    ''' parse npy file name into dwell and power'''
     a = npy_file_name.split('_')
     dwell = a[0][:a[0].index('us')]
     power = a[1][:a[1].index('W')]
     return dwell, power
 
 def remove_outliers(t):
+    ''' Remove outlier with 1.5 IQR and must > 0''' 
     a = sorted(t)
     num = len(a) 
     IQR = a[(num//4)*3] - a[num//4]
     median = a[num//2]
     a = np.array(a)
-    return a[np.logical_and(a < median + 1.5*IQR, a > median - 1.5*IQR, a>0)]
+    return a[np.logical_and(a < median + 1.5*IQR,
+                            a > median - 1.5*IQR,
+                            a>0, a<1500)]
 
+############# Loading data ####################
 home = Path.home()
 path = home / 'Desktop' / 'github' / 'thermal-reflectance-calibration'
 path = path / 'data' / 'npy' / 'pfits'
@@ -52,10 +58,6 @@ si_melt = [si for _ in range(3)]
 si_melt = np.array(si_melt).reshape((9,4))
 result = []
 
-# TODO Better outlier removal
-# TODO Look at the outliers
-# TODO Width surface
-
 ################# Load Data ##################
 for npy in npy_ls:
     npy_fn = os.path.basename(npy)
@@ -63,6 +65,7 @@ for npy in npy_ls:
         pfit = np.load(npy)
     except ValueError:
         print(f"{npy_fn} cannot be read.")
+
     npy = os.path.basename(npy)
     dwell, power = parse_npy_fn(str(npy_fn))
 
@@ -131,15 +134,14 @@ for i in tqdm(range(10)):
 t = (pfit/kappa).tolist()
 print(t)
 
-############### Saving #################
+############### Save as json (optional)  #################
 with open('test.json', 'w') as f:
     json.dump(t, f)
 
-############### Inversing #################
+############### Inversing (optional) ####################
 t_func = cubic_surface(*t)
 tpeak = Symbol('tpeak', real=True, positive=True)
 dwell = Symbol('dwell', real=True, positive=True)
 power = Symbol('power', real=True, positive=True)
-#print(solve(tpeak-t_func(dwell, power), power))
 p_func = lambdify([tpeak, dwell], solve(tpeak-t_func(dwell, power), power)[0])
 
