@@ -1,6 +1,8 @@
 '''Error funcs for fitting in thermal reflectance calibration'''
+import math
 
 import numpy as np
+import sympy as sp
 
 def linear(a,b):
     ''' Linear function ax+b'''
@@ -9,6 +11,17 @@ def linear(a,b):
 def twod_surface(base, a, b, c, d, e):
     ''' 2d quadratic surface '''
     return lambda x, y: base + a*x + b*y + c*x**2 + d*y**2 + e*x*y
+
+def cubic_surface(base, a, b, c, d, e, f, g):
+    return lambda x, y: base + a*x + b*y + c*x**2 + d*y**2 + e*x*y + f*x**4 + g*y**4
+
+def temp_surface(base, a, b, c, d, e, f, g):
+    ''' Temperture surface'''
+    return lambda x, y: base + a*x + b*y + c*x**2 + d*y**2 + e*x*y + f*np.sqrt(x) + g*np.sqrt(y)
+
+def temp_surface_sp(base, a, b, c, d, e, f, g):
+    ''' Temperture surface'''
+    return lambda x, y: base + a*x + b*y + c*x**2 + d*y**2 + e*x*y + f*sp.sqrt(x) + g*sp.sqrt(y)
 
 def jacobian_twod_surface():
     ''' Jacobian of a quadratic function at position (x, y)'''
