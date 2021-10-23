@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 sys.path.insert(0, '../src')
-from CalibMnger import CalibMnger
+from calib_mnger import CalibMnger
 from error_funcs import twod_surface, linear
 from util import parse
 

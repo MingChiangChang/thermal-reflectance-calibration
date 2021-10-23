@@ -29,16 +29,16 @@ def parse_npy_fn(npy_file_name):
     power = a[1][:a[1].index('W')]
     return dwell, power
 
-def remove_outliers(t):
-    ''' Remove outlier with 1.5 IQR and must > 0''' 
-    a = sorted(t)
-    num = len(a) 
-    IQR = a[(num//4)*3] - a[num//4]
+def remove_outliers(data):
+    ''' Remove outlier with 1.5 IQR and must > 0'''
+    a = sorted(data)
+    num = len(a)
+    IQR = a[(num//4)*3] - a[num//4] # pylint: disable=C0103
     median = a[num//2]
     a = np.array(a)
     return a[np.logical_and(a < median + 1.5*IQR,
                             a > median - 1.5*IQR,
-                            a>0, a<1500)]
+                            a>0)]
 
 ############# Loading data ####################
 home = Path.home()
@@ -56,9 +56,9 @@ si = [[2000, 88, 1414, 0],
       [10000, 61, 1414, 0]]
 si_melt = [si for _ in range(3)]
 si_melt = np.array(si_melt).reshape((9,4))
-result = []
 
 ################# Load Data ##################
+result = []
 for npy in npy_ls:
     npy_fn = os.path.basename(npy)
     try:
@@ -86,9 +86,8 @@ pfit, pcov, infodict = fit_surface(np.log10(result[:,0]),
 fit_func = surface_func(*pfit)
 
 ################### Fitting kappa ##################
-def f(kappa):
-    print(dd, pp, si_melt_temp)
-    return fit_func(np.log10(dd), pp)/kappa - si_melt_temp
+def f(scaling): # pylint: disable=C0116
+    return fit_func(np.log10(dd), pp)/scaling - si_melt_temp
 
 kappa, pcov, infodict, errmsg, success = leastsq(f, [1],
                                           full_output=1)
@@ -103,7 +102,8 @@ ax = fig.add_subplot(projection='3d')
 
 cmap = ListedColormap(['r', 'g', 'b'])
 ax.scatter(np.log10(dd), pp, si_melt_temp, c=si_melt_temp, cmap=cmap)
-ax.scatter(np.log10(result[:,0]), result[:,1], result[:,2]/kappa[0], c=result[:,2]/kappa[0], cmap='bwr')
+ax.scatter(np.log10(result[:,0]), result[:,1], result[:,2]/kappa[0],
+           c=result[:,2]/kappa[0], cmap='bwr')
 ax.plot_surface(xx, yy, fit_func(xx, yy)/kappa[0], alpha=0.3)
 ax.set_xlabel('log dwell')
 ax.set_ylabel('Current (amps)')
@@ -122,10 +122,10 @@ for i in tqdm(range(10)):
                                   result[:,1],
                                   result[:,2],
                                   surface_func, guess)
-    fit_func = cubic_surface(*pfit)
+    fit_func = surface_func(*pfit)
 
-    def f(kappa):
-        return fit_func(np.log10(dd), pp)/kappa - si_melt_temp
+    def f(scaling): # pylint: disable=C0116, E0102
+        return fit_func(np.log10(dd), pp)/scaling - si_melt_temp
 
     kappa, pcov, infodict, errmsg, success = leastsq(f, [1],
                                           full_output=1)
@@ -139,9 +139,8 @@ with open('test.json', 'w') as f:
     json.dump(t, f)
 
 ############### Inversing (optional) ####################
-t_func = cubic_surface(*t)
+t_func = surface_func(*t)
 tpeak = Symbol('tpeak', real=True, positive=True)
 dwell = Symbol('dwell', real=True, positive=True)
 power = Symbol('power', real=True, positive=True)
 p_func = lambdify([tpeak, dwell], solve(tpeak-t_func(dwell, power), power)[0])
-
