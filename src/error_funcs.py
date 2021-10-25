@@ -13,11 +13,13 @@ def twod_surface(base, a, b, c, d, e):
     return lambda x, y: base + a*x + b*y + c*x**2 + d*y**2 + e*x*y
 
 def cubic_surface(base, a, b, c, d, e, f, g):
+    ''' 2d cubic surface without cross terms'''
     return lambda x, y: base + a*x + b*y + c*x**2 + d*y**2 + e*x*y + f*x**4 + g*y**4
 
 def temp_surface(base, a, b, c, d, e, f, g):
     ''' Temperture surface'''
-    return lambda x, y: base + a*x + b*y + c*x**2 + d*y**2 + e*x*y + f*np.sqrt(x) + g*np.sqrt(y)
+    return lambda x, y: ( base + a*x + b*y + c*x**2 + d*y**2 
+                          + e*x*y + f*x*y**2 + g*x**2* y )
 
 def temp_surface_sp(base, a, b, c, d, e, f, g):
     ''' Temperture surface'''
