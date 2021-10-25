@@ -31,7 +31,7 @@ def validate(args):
     else:
         if args.tpeak is not None and args.power is not None:
             return fsolve(lambda x: (t_func(np.log10(x), args.power)
-                                     - args.tpeak), [3])
+                                     - args.tpeak), [2000])
 
 if __name__ == "__main__":
     
