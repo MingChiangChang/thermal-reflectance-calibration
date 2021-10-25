@@ -41,9 +41,9 @@ def remove_outliers(data):
     IQR = a[(num//4)*3] - a[num//4] # pylint: disable=C0103
     median = a[num//2]
     a = np.array(a)
-    return a[np.logical_and(a < median + 1.5*IQR,
-                            a > median - 1.5*IQR,
-                            a>0)]
+    return a[np.logical_and(np.logical_and(a < median + 1.5*IQR,
+                            a > median - 1.5*IQR),
+                            a>20)]
 
 ############# Loading data ####################
 home = Path.home()
@@ -56,9 +56,9 @@ dd = np.array([2000, 5000, 10000])
 pp = np.array([88, 66, 61])
 si_melt_temp = np.repeat(1414, pp.shape[0])
 
-si = [[2000, 88, 1414, 0],
-      [5000, 66, 1414, 0],
-      [10000, 61, 1414, 0]]
+si = [[2000, 88, 1414, 5],
+      [5000, 66, 1414, 5],
+      [10000, 61, 1414, 5]]
 si_melt = [si for _ in range(3)]
 si_melt = np.array(si_melt).reshape((9,4))
 
@@ -87,7 +87,8 @@ result = np.array(result)
 pfit, pcov, infodict = fit_surface(np.log10(result[:,0]),
                                    result[:,1],
                                    result[:,2],
-                                   surface_func, guess)
+                                   surface_func, guess,
+                                   uncertainty=result[:,3])
 fit_func = surface_func(*pfit)
 
 ################### Fitting kappa ##################
@@ -109,6 +110,11 @@ cmap = ListedColormap(['r', 'g', 'b'])
 ax.scatter(np.log10(dd), pp, si_melt_temp, c=si_melt_temp, cmap=cmap)
 ax.scatter(np.log10(result[:,0]), result[:,1], result[:,2]/kappa[0],
            c=result[:,2]/kappa[0], cmap='bwr')
+for i in range(result.shape[0]):
+    ax.plot([np.log10(result[i,0]), np.log10(result[i, 0])],
+            [result[i,1], result[i,1]],
+            [(result[i,2]-result[i,3])/kappa[0],
+             (result[i, 2]+result[i,3])/kappa[0]], c='purple')
 ax.plot_surface(xx, yy, fit_func(xx, yy)/kappa[0], alpha=0.3)
 ax.set_xlabel('log dwell')
 ax.set_ylabel('Current (amps)')
@@ -126,7 +132,7 @@ for i in tqdm(range(10)):
     pfit, pcov, infodict = fit_surface(np.log10(result[:,0]),
                                   result[:,1],
                                   result[:,2],
-                                  surface_func, guess)
+                                  surface_func, guess, uncertainty=result[:,3])
     fit_func = surface_func(*pfit)
 
     def f(scaling): # pylint: disable=C0116, E0102
@@ -137,7 +143,6 @@ for i in tqdm(range(10)):
     result[:-3,2] /= kappa[0]
 
 t = (pfit/kappa).tolist()
-print(t)
 
 ############### Storing temperauture and power function ################
 t_func = surface_func(*t)
