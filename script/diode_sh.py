@@ -15,7 +15,7 @@ conditions = {
                 'runs': 20},
            '855':
               { 'power': np.linspace(40, 90, 12),
-                'runs': 20},
+                'runs': 12},
            '1288':
               { 'power': np.linspace(30, 75, 12),
                 'runs': 10},
@@ -36,7 +36,7 @@ conditions = {
                  'runs': 5}
             }
 
-pre = 'Chess_diode'
+pre = 'at_CHESS_LD'
 
 with open('diode.sh', 'w') as f:
     counter=0
@@ -45,18 +45,18 @@ with open('diode.sh', 'w') as f:
         if int(dw)<=1000:
             add_commend(f, n=runs, pmin='0 -40', pmax='0 40',
                     d=dw, p=0, pre=f'Calibration_{pre}', c='True',
-                    r=100, a='LSA')
+                    r=100)
             for i in conditions[dw]['power']:
                 add_commend(f, n=runs, p=round(i, 2), d=dw, m='r', yr='-40 40',
-                            xr='1.5 2', pre=pre, r=100, a='LSA')
+                            xr='1.5 2', pre=pre, r=100)
         else:
             add_commend(f, n=runs, pmin='{} -27'.format(-40+counter),
                         pmax='{} 27'.format(-40+counter), d=dw, p=0,
-                        pre='Calibration_diode', c='True', r=100, a='LSA')
+                        pre=f'Calibration_{pre}', c='True', r=100)
             for i in conditions[dw]['power']:
                 add_commend(f, n=runs, d=dw, p=round(i, 2), m='r',
                             yr='-27 27',
                             xr='{:2f} {:2f}'.format(-40+counter,
                                                     -39.5+counter),
-                            pre=pre, r=100, a='LSA')
+                            pre=pre, r=100)
                 counter += 1

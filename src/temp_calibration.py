@@ -274,9 +274,9 @@ def fit_with(func, data, mask=None, param_estimator=None,
 
     s_sq = (err_func(pfit)**2).sum()/(len(data.flatten()))
     error = []
-    for i in range(len(pfit)):
-        pcov = pcov * s_sq
-        error.append(np.absolute(pcov[i][i])**0.5)
+    #for i in range(len(pfit)):
+    #    pcov = pcov * s_sq
+    #    error.append(np.absolute(pcov[i][i])**0.5)
     pfit_leastsq = pfit
     #perr_leastsq = np.array(error)
     return pfit_leastsq, np.sqrt(s_sq)
