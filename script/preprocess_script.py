@@ -69,20 +69,5 @@ for cond in live_img_conds[75:]:
         temp_fit = parrallel_processing_frames(live_imgs, blank_imgs, x_r, y_r)
         for fit in temp_fit:
             pfit_ls.append(fit)
-        #if max_pw != cond_dict['power']:
-        #    dw = cond_dict['dwell']
-        #    print(f'The center is estimated by {dw}us_{max_pw}W data')
-        #    ref_xs = np.load(f'../data/npy/{dw}us_{max_pw}W_xs.npy')
-        #    ref_ys = np.load(f'../data/npy/{dw}us_{max_pw}W_ys.npy')
-        #    estimate = (np.mean(ref_xs), np.mean(ref_ys))
-        #else:
-        #    estimate = False
-        #live_im, xs, ys, pfits = preprocess(live_img_dir, wanted_frame,
-        #                     blank_im, x_r=x_r, y_r=y_r, blank_bypass=True,
-        #                     center_estimate=estimate, t=cond_dict['power'],
-        #                     dwell=cond_dict['dwell'], plot=True, savefig=True)
-
-        #np.save(f'../data/npy/{cond}_img.npy', live_im)
-        #np.save(f'../data/npy/{cond}_xs.npy', xs)
-        #np.save(f'../data/npy/{cond}_ys.npy', ys)
+        
     np.save(f'../data/npy/chess_TR/{cond}_pfit.npy', np.array(pfit_ls))
