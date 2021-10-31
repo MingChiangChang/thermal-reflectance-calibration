@@ -3,30 +3,37 @@ Script for preprocessing images for temperature surface fitting
 Take raw reflectance and yaml file and output npy files
 Each image is fitted and shifted in order to be properly stacked.
 '''
+from pathlib import Path
 import sys
 import yaml
+import json
 
+from tqdm import tqdm
 import numpy as np
+import matplotlib.pyplot as plt
 
 sys.path.insert(0, '../src')
 from preprocess import parse_laser_condition
 from preprocess import get_wanted_frames_for_condition, preprocess
 from preprocess import get_highest_power_for_cond
-from preprocess import get_dir_name_from_cond, preprocess_by_frame
+from preprocess import get_dir_name_from_cond
+from preprocess import generate_png_name, read_img_array
+from preprocess import shift_calibration_to_imgs, preprocess_by_frame
+from preprocess import parrallel_processing_frames
+from temp_calibration import self_blank
 
 ### Global
-x_r = (150, 650)
-y_r = (150, 1100)
-
-# Mac
-PATH = '/Users/mingchiang/Desktop/Data/black/'
-BLANK_PATH = '/Users/mingchiang/Desktop/Data/Calibration_dot'
-YAML_PATH = '../data/yaml/black.yaml'
+x_r = (300, 650)
+y_r = (0, 850)
+mask = np.zeros((1024, 1280))
+mask[:, 1000:] = 1
+mask[800:, :] = 1
+mask = mask.astype(bool)
 
 # Linux
-PATH = '/home/mingchiang/Desktop/Data/even_temp_test/'
-BLANK_PATH = '/home/mingchiang/Desktop/Data/even_temp_test_calibration'
-YAML_PATH = '../data/yaml/even_temp_test.yaml'
+home = Path.home()
+PATH = home / 'Desktop' / 'Data' / 'Chess_diode'
+YAML_PATH = '../data/yaml/Chess_diode.yaml'
 
 with open(YAML_PATH, 'r') as f:
     yaml_dict = yaml.load(f, Loader=yaml.FullLoader)
@@ -37,35 +44,45 @@ live_img_conds = list(yaml_dict.keys())
 for idx, p in enumerate(live_img_conds):
     print(idx, p)
 
-all_conds = [parse_laser_condition(d)
-                   for d in live_img_conds]
+all_conds = [parse_laser_condition(d) for d in live_img_conds]
+print(all_conds)
 
-for cond in live_img_conds:
-    dir_name = get_dir_name_from_cond(cond)
-    live_img_dir = PATH + dir_name
-    print(live_img_dir)
-    wanted_frame = get_wanted_frames_for_condition(cond, yaml_dict)
-    cond_dict = parse_laser_condition(dir_name)
+for cond in live_img_conds[75:]:
     print(f'Working on {cond}')
-    max_pw = int(get_highest_power_for_cond(cond_dict, all_conds))
+    dir_name = get_dir_name_from_cond(cond)
+    cond_dict = parse_laser_condition(dir_name)
+    wanted_frame = get_wanted_frames_for_condition(cond, yaml_dict)
+    #max_pw = int(get_highest_power_for_cond(cond_dict, all_conds))
     dw = cond_dict['dwell']
-    blank_im = np.load(BLANK_PATH + f'/{dw}us.npy')
+    blank = np.load(f'../data/npy/chess_blanks/{dw}.npy')
+    pfit_ls = [] 
+    
+    for run in tqdm(wanted_frame):
+        png_ls = [PATH / dir_name / generate_png_name(str(run), True, True, str(i))
+                      for i in wanted_frame[run]]
+        live_imgs = np.zeros((len(png_ls), 1024, 1280))
+        blank_imgs = np.zeros((len(png_ls), 1024, 1280))
+        for idx, png in enumerate(png_ls):
+            live_imgs[idx] = plt.imread(png)[:,:,2]
+            blank_imgs[idx] = self_blank(live_imgs[idx], blank, mask)
 
-    if wanted_frame:
-        if max_pw != cond_dict['power']:
-            dw = cond_dict['dwell']
-            print(f'The center is estimated by {dw}us_{max_pw}W data')
-            ref_xs = np.load(f'../data/npy/{dw}us_{max_pw}W_xs.npy')
-            ref_ys = np.load(f'../data/npy/{dw}us_{max_pw}W_ys.npy')
-            estimate = (np.mean(ref_xs), np.mean(ref_ys))
-        else:
-            estimate = False
-        live_im, xs, ys, pfits = preprocess(live_img_dir, wanted_frame,
-                             blank_im, x_r=x_r, y_r=y_r, blank_bypass=True,
-                             center_estimate=estimate, t=cond_dict['power'],
-                             dwell=cond_dict['dwell'], plot=True, savefig=True)
+        temp_fit = parrallel_processing_frames(live_imgs, blank_imgs, x_r, y_r)
+        for fit in temp_fit:
+            pfit_ls.append(fit)
+        #if max_pw != cond_dict['power']:
+        #    dw = cond_dict['dwell']
+        #    print(f'The center is estimated by {dw}us_{max_pw}W data')
+        #    ref_xs = np.load(f'../data/npy/{dw}us_{max_pw}W_xs.npy')
+        #    ref_ys = np.load(f'../data/npy/{dw}us_{max_pw}W_ys.npy')
+        #    estimate = (np.mean(ref_xs), np.mean(ref_ys))
+        #else:
+        #    estimate = False
+        #live_im, xs, ys, pfits = preprocess(live_img_dir, wanted_frame,
+        #                     blank_im, x_r=x_r, y_r=y_r, blank_bypass=True,
+        #                     center_estimate=estimate, t=cond_dict['power'],
+        #                     dwell=cond_dict['dwell'], plot=True, savefig=True)
 
-        np.save(f'../data/npy/{cond}_img.npy', live_im)
-        np.save(f'../data/npy/{cond}_xs.npy', xs)
-        np.save(f'../data/npy/{cond}_ys.npy', ys)
-        np.save(f'../data/npy/{cond}_pfit.npy', pfits)
+        #np.save(f'../data/npy/{cond}_img.npy', live_im)
+        #np.save(f'../data/npy/{cond}_xs.npy', xs)
+        #np.save(f'../data/npy/{cond}_ys.npy', ys)
+    np.save(f'../data/npy/chess_TR/{cond}_pfit.npy', np.array(pfit_ls))
