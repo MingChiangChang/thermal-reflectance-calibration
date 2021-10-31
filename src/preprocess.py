@@ -49,7 +49,7 @@ def preprocess_by_frame(live_img, blank_img, x_r, y_r):
     '''
     live = live_img - blank_img
     reflectance = np.mean(blank_img[300:,:])
-    live = (live/KAPPA/reflectance)[x_r[0]:x_r[1], y_r[0]:y_r[1]]
+    live = (live/reflectance)[x_r[0]:x_r[1], y_r[0]:y_r[1]]
     _, _, pfit = fit_center(live)
     return pfit
 
